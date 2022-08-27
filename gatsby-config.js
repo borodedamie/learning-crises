@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `learningcrises`,
+    title: `Learning Crises`,
     siteUrl: `https://www.yourdomain.tld`
   },
   // plugins: [{
@@ -10,4 +10,8 @@ module.exports = {
   //     "spaceId": ""
   //   }
   // }]
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+  ],
 };
