@@ -3,11 +3,11 @@ module.exports = {
     title: `learningcrises`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": "",
-      "spaceId": ""
-    }
-  }]
+  // plugins: [{
+  //   resolve: 'gatsby-source-contentful',
+  //   options: {
+  //     "accessToken": "",
+  //     "spaceId": ""
+  //   }
+  // }]
 };
