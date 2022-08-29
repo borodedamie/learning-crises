@@ -1,3 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+  }
+
+/* NavBar and Header CSS */
 .navbar {
     background-color: #555555;
     border-radius: 20px 20px 0px 0px;
@@ -6,19 +16,19 @@
 }
 
 .logo {
-    width: 30vw;
-    margin: 15px 70px;
+    width: 25vw;
+    margin: 20px 0 20px 60px;
 }
 
 .search-box {
-    width: 180px;
+    width: 80px;
     align-items: center;
     background-color: #FCB900;
     padding: 15px 50px;
     border-radius: 0 20px 0 0;
 }
 
-.search-box i {
+.search-box-icon {
     padding: 20px 0 0 15px;
     color: #ffff;
     font-size: 20px;
@@ -47,4 +57,68 @@
     font-weight: 600;
     border-bottom: 2px solid #FCB900;
     padding-bottom: 3px;
+}
+
+/* Footer CSS Styling */
+.footer {
+    display: flex;
+    background-color: #555555;
+    color: #FFFF;
+    padding: 40px 65px;
+    border-radius: 0 0 20px 20px;
+}
+
+.footer-logo {
+    width: 25vw;
+}
+
+.footer .footer-logo .icon {
+    color: #ffff;
+    padding-right: 15px;
+    padding-top: 20px;
+    font-size: 20px; 
+}
+
+.footer .footer-subscription,
+.footer .footer-contact,
+.footer .footer-pages{
+    margin-left: 90px ;
+}
+
+.footer .footer-subscription h3,
+.footer .footer-contact h3,
+.footer .footer-pages h3{
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    
+}
+
+.footer .footer-contact p,
+.footer .footer-pages li {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.footer .footer-subscription input{
+    width: 250px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+}
+
+.footer .footer-subscription .submit-button button{
+    background: #FCB900;
+    color: #ffff;
+    box-shadow: 0px 4px 23px 1px rgba(252, 185, 0, 0.25);
+    border-radius: 6px;
+    border: none;
+    width: 100px;
+    padding: 5px;
+    margin: 15px 0px;
+    font-size: 14px;
+    font-weight: 600;
 }

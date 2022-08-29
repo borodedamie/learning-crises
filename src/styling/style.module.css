@@ -1,0 +1,93 @@
+/* styling For Caurosel Section */
+section .container .slider-section {
+    display: flex;
+    width: 100%;
+    padding: 65px;
+}
+
+.carousel {
+    position: relative;
+    height: 550px;
+    width: 800px;
+    margin: 10px auto ;
+}
+
+.carousel-image {
+    width: 800px;
+    object-fit: cover;
+}
+
+.carousel-track-container {
+    background-color: lightgreen;
+    height: 100%;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel-button-left{
+    left: -20px;
+}
+
+.carousel-button-right{
+    right:-20px;
+}
+
+
+.carousel-button .icon{
+    font-size: 20px;
+}
+
+.carousel-nav{
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel-indicator{
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(0,0,0,0.3);
+    margin: -3rem -1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Column boxes  */
+section .container .slider-section .boxes .col1 .box-container{
+    background: url(/src/images/Rectangle4.png);
+    color: #FFFFFF;
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background-size: contain;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 28.6452px;
+}

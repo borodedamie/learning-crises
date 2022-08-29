@@ -13,5 +13,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `League Spartan\:300,500,600`,
+          `source sans pro\:300,400,400i,700` 
+        ],
+        display: 'swap'
+      }
+    }
   ],
 };

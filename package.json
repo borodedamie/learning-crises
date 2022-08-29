@@ -15,7 +15,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "gatsby": "^4.21.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-source-contentful": "^7.19.1",
