@@ -14,6 +14,7 @@ import { navbar,
         footerPages,
         footerContact,
         footerSubscription,
+        logoCon,
         submitButton } from './layout.module.css'
 // Serve images from filesystem
 import { StaticImage } from 'gatsby-plugin-image'
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
       <div>
         <header>
             <div className={ navbar }>
-                <div>
+                <div className={ logoCon }>
                     <StaticImage 
                         alt='logo'
                         src='../../images/logo.png'
