@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 const InsightPage = () => {
     return (
     <Layout>
-        <h1>Edu Insight Page</h1>
+        <h1>Edu Insight Page/Read More</h1>
     </Layout>
     )
 }
