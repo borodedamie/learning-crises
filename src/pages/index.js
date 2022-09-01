@@ -54,9 +54,37 @@ const IndexPage = () => {
                   </Swiper>
               </div>
 
-              <div className="aside">
-                <h1>This is Aside</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae harum animi debitis quod qui vel nemo veniam explicabo accusamus, suscipit inventore. A doloremque voluptatum dolore incidunt, facilis quas eligendi expedita, cum rem perspiciatis quibusdam ipsum unde, ad provident error deserunt? Tenetur inventore eligendi eaque optio exercitationem distinctio saepe, quo minima.</p>
+              <div className={ indexStyles.aside }>
+                <div className={ indexStyles.asideBox }>
+                   <StaticImage
+                      src='../images/Rectangle.png'
+                      className={indexStyles.asideImage}
+
+                    /> 
+                    <div className={indexStyles.overlay}>
+                      <div className={ indexStyles.asideText}>
+                        <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
+                        <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
+                        <p className={ indexStyles.date }> August 5, 2022</p>
+                      </div>
+                    </div>  
+                </div>
+
+                <div className={ indexStyles.asideBox }>
+                   <StaticImage
+                      src='../images/Rectangle.png'
+                      className={indexStyles.asideImage}
+
+                    /> 
+                    <div className={indexStyles.overlay}>
+                      <div className={ indexStyles.asideText}>
+                        <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
+                        <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
+                        <p className={ indexStyles.date }> August 5, 2022</p>
+                      </div>
+                    </div>  
+                </div>
+               
               </div>
       </section>
 

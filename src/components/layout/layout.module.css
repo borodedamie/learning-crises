@@ -61,61 +61,55 @@
 /* Footer CSS Styling */
 .footer {
   display: flex;
+  justify-content: space-between;
   background-color: #555555;
   color: #ffff;
   padding: 40px 65px;
   /* border-radius: 0 0 20px 20px; */
 }
-
 .footer-logo {
   width: 25vw;
+  margin-bottom: 1rem;
 }
-
-.footer .footer-logo .icon {
+.footer-logo .icon {
   color: #ffff;
-  padding-right: 15px;
-  padding-top: 20px;
   font-size: 20px;
+  display: flex;
+  gap: 1.5rem;
 }
-
-.footer .footer-subscription,
-.footer .footer-contact,
-.footer .footer-pages {
-  margin-left: 90px;
+.footer a{
+    color: #fff;
 }
-
-.footer .footer-subscription h3,
-.footer .footer-contact h3,
-.footer .footer-pages h3 {
+.footer  h3 {
   font-size: 18px;
   font-weight: 700;
-  padding-top: 10px;
-  padding-bottom: 15px;
+  margin-bottom: .8rem;
 }
+.footer li{
+    margin-bottom: 10px;
 
+}
 .footer .footer-contact p,
 .footer .footer-pages li {
   color: #ffff;
   font-weight: 500;
   font-size: 14px;
 }
-
-.footer .footer-subscription input {
+ .footer-subscription input {
   width: 250px;
   padding: 10px;
   border-radius: 12px;
   border: none;
   outline: none;
 }
-
-.footer .footer-subscription .submit-button button {
+ .footer-subscription .submit-button button {
   background: #fcb900;
   color: #ffff;
   box-shadow: 0px 4px 23px 1px rgba(252, 185, 0, 0.25);
   border-radius: 6px;
   border: none;
   width: 100px;
-  padding: 5px;
+  padding: 10px ;
   margin: 15px 0px;
   font-size: 14px;
   font-weight: 600;
