@@ -22,7 +22,13 @@
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-source-contentful": "^7.19.1",
     "gatsby-source-filesystem": "^4.21.1",
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.1.0"
+=======
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "swiper": "^8.3.2"
+>>>>>>> e76d306224fb91d9643be516ff4de17982447f93
   }
 }

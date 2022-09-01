@@ -1,124 +1,122 @@
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: 'League Spartan', sans-serif;
-  }
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "League Spartan", sans-serif;
+}
 
 /* NavBar and Header CSS */
 .navbar {
-    background-color: #555555;
-    border-radius: 20px 20px 0px 0px;
-    display: flex;
-    justify-content: space-between;
+  background-color: #555555;
+  /* border-radius: 20px 20px 0px 0px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.logoCon {
+  padding-left: 3rem;
+}
 .logo {
-    width: 25vw;
-    margin: 20px 0 20px 60px;
+  width: 25vw;
 }
-
 .search-box {
-    width: 80px;
-    align-items: center;
-    background-color: #FCB900;
-    padding: 15px 50px;
-    border-radius: 0 20px 0 0;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcb900;
+  padding: 30px 50px;
+  /* border-radius: 0 20px 0 0; */
 }
-
 .search-box-icon {
-    padding: 20px 0 0 15px;
-    color: #ffff;
-    font-size: 20px;
+  color: #ffff;
+  font-size: 20px;
 }
-
 .menu-list {
-    border-bottom: 2px solid #FCB900;
-    padding: 20px 280px;
-    background-color: #FFFF;
+  border-bottom: 2px solid #fcb900;
+  background-color: #ffff;
+  padding: 15px 0;
 }
-
 .menu-list-nav .menu-items {
-    display: flex;
-    justify-content: space-around; 
+  display: flex;
+  justify-content: space-around;
 }
-
 .nav-links {
-    color: #555555;
-    font-weight: 500;
-    font-size: 14px;
+  color: #555555;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.4s linear;
 }
 
 .nav-links:hover {
-    color: #FCB900;
-    font-size: 16px;
-    font-weight: 600;
-    border-bottom: 2px solid #FCB900;
-    padding-bottom: 3px;
+  color: #fcb900;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #fcb900;
+  padding-bottom: 3px;
 }
 
 /* Footer CSS Styling */
 .footer {
-    display: flex;
-    background-color: #555555;
-    color: #FFFF;
-    padding: 40px 65px;
-    border-radius: 0 0 20px 20px;
+  display: flex;
+  background-color: #555555;
+  color: #ffff;
+  padding: 40px 65px;
+  /* border-radius: 0 0 20px 20px; */
 }
 
 .footer-logo {
-    width: 25vw;
+  width: 25vw;
 }
 
 .footer .footer-logo .icon {
-    color: #ffff;
-    padding-right: 15px;
-    padding-top: 20px;
-    font-size: 20px; 
+  color: #ffff;
+  padding-right: 15px;
+  padding-top: 20px;
+  font-size: 20px;
 }
 
 .footer .footer-subscription,
 .footer .footer-contact,
-.footer .footer-pages{
-    margin-left: 90px ;
+.footer .footer-pages {
+  margin-left: 90px;
 }
 
 .footer .footer-subscription h3,
 .footer .footer-contact h3,
-.footer .footer-pages h3{
-    font-size: 18px;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    
+.footer .footer-pages h3 {
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .footer .footer-contact p,
 .footer .footer-pages li {
-    color: #ffff;
-    font-weight: 500;
-    font-size: 14px;
+  color: #ffff;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-.footer .footer-subscription input{
-    width: 250px;
-    padding: 10px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
+.footer .footer-subscription input {
+  width: 250px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
 }
 
-.footer .footer-subscription .submit-button button{
-    background: #FCB900;
-    color: #ffff;
-    box-shadow: 0px 4px 23px 1px rgba(252, 185, 0, 0.25);
-    border-radius: 6px;
-    border: none;
-    width: 100px;
-    padding: 5px;
-    margin: 15px 0px;
-    font-size: 14px;
-    font-weight: 600;
+.footer .footer-subscription .submit-button button {
+  background: #fcb900;
+  color: #ffff;
+  box-shadow: 0px 4px 23px 1px rgba(252, 185, 0, 0.25);
+  border-radius: 6px;
+  border: none;
+  width: 100px;
+  padding: 5px;
+  margin: 15px 0px;
+  font-size: 14px;
+  font-weight: 600;
 }
