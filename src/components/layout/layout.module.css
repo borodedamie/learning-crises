@@ -10,7 +10,7 @@
 /* NavBar and Header CSS */
 .navbar {
   background-color: #555555;
-  /* border-radius: 20px 20px 0px 0px; */
+  border-radius: 20px 20px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,7 @@
   align-items: center;
   background-color: #fcb900;
   padding: 30px 50px;
-  /* border-radius: 0 20px 0 0; */
+  border-radius: 0 20px 0 0;
 }
 .search-box-icon {
   color: #ffff;
@@ -37,7 +37,7 @@
 .menu-list {
   border-bottom: 2px solid #fcb900;
   background-color: #ffff;
-  padding: 15px 0;
+  padding: 20px 280px;
 }
 .menu-list-nav .menu-items {
   display: flex;

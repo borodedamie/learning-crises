@@ -32,32 +32,37 @@ const IndexPage = () => {
                       <SwiperSlide >
                           <StaticImage 
                           alt='carousel-image'
-                          src='../images/sliderImg.png'
+                          src='../images/Rectangle 3.png'
                           className={indexStyles.swiperImage }
                         />
                       </SwiperSlide>
                       <SwiperSlide>
                         <StaticImage 
                             alt='carousel-image'
-                            src='../images/sliderImg.png'
+                            src='../images/Rectangle 3.png'
                             className={indexStyles.swiperImage }
                           />
                       </SwiperSlide>
                       <SwiperSlide>
                           <StaticImage 
                                 alt='carousel-image'
-                                src='../images/sliderImg.png'
+                                src='../images/Rectangle 3.png'
                                 className={indexStyles.swiperImage }
                               />
                       </SwiperSlide>
                       
                   </Swiper>
               </div>
-
+              
               <div className={ indexStyles.aside }>
+                <div className={ indexStyles.asideHeader}>
+                    <h4>
+                    Latest Article
+                    </h4>
+                </div>
                 <div className={ indexStyles.asideBox }>
                    <StaticImage
-                      src='../images/Rectangle.png'
+                      src='../images/Rectangle 4 (1).png'
                       className={indexStyles.asideImage}
 
                     /> 
@@ -70,9 +75,15 @@ const IndexPage = () => {
                     </div>  
                 </div>
 
+
+                <div className={ indexStyles.asideHeader}>
+                    <h4>
+                    Incase You Missed It
+                    </h4>
+                </div>                    
                 <div className={ indexStyles.asideBox }>
                    <StaticImage
-                      src='../images/Rectangle.png'
+                      src='../images/Rectangle 8 (1).png'
                       className={indexStyles.asideImage}
 
                     /> 
@@ -140,7 +151,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -162,7 +173,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -192,7 +203,7 @@ const IndexPage = () => {
 
                     <StaticImage
                       alt='carousel-arrow'
-                      src='../images/Vectorr.png'
+                      src='../images/Vector (1).png'
                       className={indexStyles.swiperArrow }
                     />
                   </div>
@@ -213,7 +224,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -235,7 +246,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -257,7 +268,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -286,7 +297,7 @@ const IndexPage = () => {
 
                     <StaticImage
                       alt='carousel-arrow'
-                      src='../images/Vectorr.png'
+                      src='../images/Vector (1).png'
                       className={indexStyles.swiperArrow }
                     />
                   </div>
@@ -308,7 +319,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -330,7 +341,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperFlexImage }  >
                               <StaticImage 
                                 alt='carousel-image'
-                                src='../images/Rectangle.png'
+                                src='../images/Rectangle 4 (1).png'
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -358,7 +369,7 @@ const IndexPage = () => {
 
                     <StaticImage
                       alt='carousel-arrow'
-                      src='../images/Vectorr.png'
+                      src='../images/Vector (1).png'
                       className={indexStyles.swiperArrow }
                     />
                   </div>
