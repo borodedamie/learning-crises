@@ -19,10 +19,7 @@ const InsightPage = () => {
                 </div>
                 <div className={ insightStyles.content1Paragraph } >
                     <p>
-                    By Jane Doe and Dan Abrov
-                    </p>
-                    <p>
-                    August 5, 2022
+                    By Jane Doe and Dan Abrov, August 5, 2022
                     </p>
                 </div>
                 <div className={ insightStyles.content1Image } >
