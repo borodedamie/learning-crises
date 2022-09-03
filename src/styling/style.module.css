@@ -247,21 +247,38 @@ button {
 .content1Body p{
   color: #555555;
   font-size: 14px;
-  line-height: 1rem;
-  margin-bottom: 5px;
+  line-height: 22px;
+  /* line-height: 1rem; */
+  margin-bottom: 8px;
   font-weight: 500;
   font-family: 'League Spartan';
+
+
 }
 .content1Body button{
   background-color: #fff;
-  color: #555555;
+  /* color: #555555; */
   font-weight: 700;
   font-size: 14px;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: 13px;
+  
 }
-
-
 .content1Body span a {
   font-size: 12px;
-  margin-top: 7px;
+}
+.actionBtns{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 13px;
+}
+.animation{
+  transition: all .4s ease;
+}
+.closeBtn{
+  color: #EE0000;
+
 }
