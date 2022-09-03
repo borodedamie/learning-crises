@@ -246,8 +246,8 @@ button {
 
 .content1Body p{
   color: #555555;
-  font-size: 14px;
-  line-height: 1rem;
+  font-size: 15px;
+  line-height: 1.5rem;
   margin-bottom: 5px;
   font-weight: 500;
   font-family: 'League Spartan';
@@ -264,4 +264,99 @@ button {
 .content1Body span a {
   font-size: 12px;
   margin-top: 7px;
+}
+
+/* EduData Page */
+.mycarousel{
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  align-items: center;
+  margin: 3rem 0rem;
+
+}
+
+.mycarouselimage{
+  width: 100%;
+  border-radius: 37px;
+}
+
+.grid{
+  margin: 5rem;
+}
+
+.gridHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.gridHeader h4{
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+color: #555555;
+}
+
+.grid3Column{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid3ColumnflowImage{
+  margin-bottom: 0.5rem;
+  border-radius: 29.6624px;
+}
+
+.grid3ColumnText{
+  margin-left: 6px;
+}
+
+.grid3ColumnText h4{
+  font-size: 15px;
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+.grid3ColumnText p{
+  font-size: 12px;
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 7px;
+}
+
+.grid3ColumnButton {
+  margin-left: 6px;
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+
+}
+
+.grid3ColumnButton button:first-child{
+  background-color: #fff;
+  color: #FCB900;
+  font-size: 12px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 120px;
+  border-radius: 6px;
+}
+
+.grid3ColumnButton button:last-child{
+  background-color: #FCB900;
+  color:#fff ;
+  font-size: 12px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 120px;
+  border-radius: 6px;
 }
