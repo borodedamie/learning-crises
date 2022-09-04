@@ -8,20 +8,22 @@ import { useQuery, gql } from '@apollo/client'
 import {AiOutlineArrowRight} from '@react-icons/all-files/Ai/AiOutlineArrowRight'
 
 const GET_EDU_INSIGHTS = gql`
-query GetEduInsights() {
-    eduInsightCollection {
-        items {
-          sys {
-            id
-            publishedAt
-          }
+query {
+    eduInsightCollection(limit: 10) {
+      items {
+        sys {
+          id
+          publishedAt
         }
+      }
     }
-}
+  }
 `;
 
 const InsightPage = () => {
     const { data, loading, error } = useQuery(GET_EDU_INSIGHTS);
+    console.log(data)
+    
     if (loading) return 'Loading...';
 
     return (

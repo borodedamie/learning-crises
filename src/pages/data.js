@@ -63,7 +63,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -78,7 +78,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 191.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image2"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -93,7 +93,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image3"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -108,7 +108,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image4"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -123,7 +123,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 191.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image5"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -138,7 +138,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image6"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -153,7 +153,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image7"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -168,7 +168,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 191.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image8"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>
@@ -183,7 +183,7 @@ const DataPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 190.png'
                                 className={dataStyles.grid3ColumnflowImage}
-
+                                alt="data-page-image9"
                             /> 
                             <div className= {dataStyles.grid3ColumnText}>
                                 <h4>Impact of Mother Tongue on Education in Nigeria</h4>

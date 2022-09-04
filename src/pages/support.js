@@ -36,7 +36,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -51,7 +51,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image2"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -66,7 +66,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image3"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -81,7 +81,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image4"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -96,7 +96,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image5"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -111,7 +111,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image6"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -126,7 +126,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image7"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
@@ -141,7 +141,7 @@ const SupportPage = () => {
                             <StaticImage
                                 src='../images/Rectangle3.png'
                                 className={supportStyles.grid3ColumnflowImage}
-
+                                alt="support-page-image8"
                             /> 
                             <div className= {supportStyles.grid3ColumnText}>
                                 <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>

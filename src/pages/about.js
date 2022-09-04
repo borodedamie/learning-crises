@@ -50,7 +50,7 @@ const AboutPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 15.png'
                                 className={aboutStyles.grid2ColumnflowImage}
-
+                                alt="about-page-image"
                             /> 
                             <div className= {aboutStyles.grid2ColumnText}>
                                 <h4>Adedeji Adeniran</h4>
@@ -78,7 +78,7 @@ const AboutPage = () => {
                             <StaticImage
                                 src='../images/Rectangle 15.png'
                                 className={aboutStyles.grid2ColumnflowImage}
-
+                                alt="about-page-image2"
                             /> 
                             <div className= {aboutStyles.grid2ColumnText}>
                                 <h4>Adedeji Adeniran</h4>

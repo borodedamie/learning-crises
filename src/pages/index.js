@@ -60,6 +60,7 @@ const IndexPage = () => {
                    <StaticImage
                       src='../images/Rectangle 4 (1).png'
                       className={indexStyles.asideImage}
+                      alt="index-page-image"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
@@ -78,6 +79,7 @@ const IndexPage = () => {
                    <StaticImage
                       src='../images/Rectangle 8 (1).png'
                       className={indexStyles.asideImage}
+                      alt="index-page-image2"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
