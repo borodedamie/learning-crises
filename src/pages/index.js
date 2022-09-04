@@ -1,10 +1,9 @@
-// import * as React from "react"
+import * as React from "react"
 import Layout from "../components/layout/layout"
 import { Link } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
 
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,8 +18,7 @@ import { Navigation } from "swiper";
 const IndexPage = () => {
   return (
     <Layout>
-      <section className={ indexStyles.container }>
-        
+      <section className={ indexStyles.container }>    
               <div className={indexStyles.sliderContainer}>
                   <Swiper
                     pagination={{
@@ -49,11 +47,9 @@ const IndexPage = () => {
                                 src='../images/Rectangle 3.png'
                                 className={indexStyles.swiperImage }
                               />
-                      </SwiperSlide>
-                      
+                      </SwiperSlide>               
                   </Swiper>
-              </div>
-              
+              </div>    
               <div className={ indexStyles.aside }>
                 <div className={ indexStyles.asideHeader}>
                     <h4>
@@ -64,7 +60,6 @@ const IndexPage = () => {
                    <StaticImage
                       src='../images/Rectangle 4 (1).png'
                       className={indexStyles.asideImage}
-
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
@@ -74,8 +69,6 @@ const IndexPage = () => {
                       </div>
                     </div>  
                 </div>
-
-
                 <div className={ indexStyles.asideHeader}>
                     <h4>
                     Incase You Missed It
@@ -85,7 +78,6 @@ const IndexPage = () => {
                    <StaticImage
                       src='../images/Rectangle 8 (1).png'
                       className={indexStyles.asideImage}
-
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
@@ -98,12 +90,10 @@ const IndexPage = () => {
                
               </div>
       </section>
-
       <section className={ indexStyles.about }>
             <div className={ indexStyles.aboutBtn }>
               <button>About the Blog</button>
             </div>
-
             <div className={ indexStyles.aboutCon }>
               <div className={ indexStyles.aboutCon1 }>
                   <h3>BRIEF</h3>
@@ -119,7 +109,6 @@ const IndexPage = () => {
                     development economics, SDGs and public choice economics.
                   </p>
               </div>
-
               <div className={ indexStyles.aboutCon2 }>
                 <h3>APPROACH</h3>
                 <ul>
@@ -137,14 +126,12 @@ const IndexPage = () => {
           <div className={ indexStyles.boxCon }  >
               <div className={ indexStyles.box }  >
                 <h3>EduInsight</h3>
-                <Swiper
-                    
+                <Swiper                 
                     navigation
                     loop= {"true"}
                     // navigation={true}
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}
-                     
+                    className={indexStyles.mySwiper}                  
                     >
                       <SwiperSlide >
                         <div className={ indexStyles.swiperFlex}>
@@ -162,10 +149,7 @@ const IndexPage = () => {
                               <p className={ indexStyles.date }> August 5, 2022</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
-                        </div>
-
-                         
-                          
+                        </div>                    
                       </SwiperSlide>
 
                       <SwiperSlide >

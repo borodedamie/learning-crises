@@ -3,15 +3,31 @@ import Layout from "../components/layout/layout"
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from "gatsby";
 import * as insightStyles from '../styling/style.module.css'
-
-
+import { useQuery, gql } from '@apollo/client'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/Ai/AiOutlineArrowRight'
+
+const GET_EDU_INSIGHTS = gql`
+query GetEduInsights() {
+    eduInsightCollection {
+        items {
+          sys {
+            id
+            publishedAt
+          }
+        }
+    }
+}
+`;
+
 const InsightPage = () => {
+    const { data, loading, error } = useQuery(GET_EDU_INSIGHTS);
+    if (loading) return 'Loading...';
+
     return (
     <Layout>
         <section className={ insightStyles.container1 }>
-            <div className={ insightStyles.content1 } >
+            <div>
                 <div className={ insightStyles.content1Header } >
                     <h4>
                     Impact of Mother Tongue on Education in Nigeria
