@@ -76,6 +76,7 @@ const Layout = ({ children }) => {
                     <li><Link to='/insight'>EduInsight</Link></li>
                     <li><Link to='/data'>EduData</Link></li>
                     <li><Link to='/support'>EduSupport</Link></li>
+                    <li><Link to='/about'>About Us</Link></li>
                 </ul>
             </div>
             <div className={ footerContact }>

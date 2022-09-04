@@ -338,6 +338,16 @@ color: #555555;
   margin-bottom: 7px;
 }
 
+.grid3ColumnText h6{
+  font-size: 12px;
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 500;
+  color: #FF6900;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+
 .grid3ColumnButton {
   margin-left: 6px;
   display: flex;
@@ -349,7 +359,7 @@ color: #555555;
 .grid3ColumnButton button:first-child{
   background-color: #fff;
   color: #FCB900;
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
   width: 120px;
@@ -359,7 +369,7 @@ color: #555555;
 .grid3ColumnButton button:last-child{
   background-color: #FCB900;
   color:#fff ;
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
   width: 120px;
@@ -377,4 +387,117 @@ color: #555555;
 .closeBtn{
   color: #EE0000;
 
+}
+
+/* Edusupport Page */
+.selectButton{
+  margin: 1rem 0.5rem 2rem ;
+  border-radius: 6px;
+}
+.grid h2{
+  color: #555555;
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+.selectButton button:first-child{
+  background-color: #FCB900;
+  color:#fff ;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.selectButton button{
+    background-color: #fff;
+    color: #555555;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: 1px solid #FCB900;
+}
+
+/* About Us Page */
+.aboutTeam,
+.aboutDetails{
+  margin: 5rem;
+}
+
+.aboutTeamHeader,
+.aboutDetailsHeader{
+ display: flex;
+ justify-content: center;
+  margin: 3rem 0rem 3rem;
+}
+
+.aboutTeamHeader h3,
+.aboutDetailsHeader h3{
+  background-color: rgba(252, 185, 0, 0.2);
+  color: #FCB900;
+  padding: 15px 25px;
+  border-radius: 37px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'League Spartan';
+  width: 150px;
+  text-align: center;
+}
+
+.aboutDetailsBody p{
+  color: #555555;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-family: 'League Spartan';
+
+} 
+
+.grid2Columnflow{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.grid2ColumnflowImage{
+  border-radius: 37px;
+}
+.grid2ColumnText{
+  margin-top: 3rem ;
+}
+.grid2ColumnText h4{
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 0.5rem;
+}
+
+.grid2ColumnText h6{
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(85, 85, 85, 0.6);;
+  margin-bottom: 0.5rem;
+}
+
+.aboutIcon{
+  font-size: 20px;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom:1rem ;
+}
+
+.aboutIcon a{
+  color: #555555;
+}
+
+.grid2ColumnText p{
+  color: #555555;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-family: 'League Spartan';
 }
