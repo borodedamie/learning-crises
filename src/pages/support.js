@@ -3,9 +3,29 @@ import Layout from "../components/layout/layout"
 import { Link } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
+import { useQuery, gql } from '@apollo/client'
 
+const GET_EDU_SUPPORT = gql`
+query {
+    eduSupportCollection(limit: 10) {
+      items {
+        sys {
+          id
+          publishedAt
+        }
+        title
+        image {
+          url
+        }
+      }
+    }
+  }
+`;
 
 const SupportPage = () => {
+    const { data, loading, error } = useQuery(GET_EDU_SUPPORT);
+
+    if(loading) return 'Loading...';
     return(
         <Layout>
             <section className= {supportStyles.container1}>
@@ -17,144 +37,21 @@ const SupportPage = () => {
                         <button>Texts Only</button>
                     </div>
                     <div className= {supportStyles.grid3Column }>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
+                    { data?.eduSupportCollection.items.map((item, i) => (
+                        <div key={ item?.sys.id } className= {supportStyles.grid3Columnflow}>
+                           <img src={ item?.image.url } /> 
+                                <div className= {supportStyles.grid3ColumnText}>
+                                    <h4>{ item?.title }</h4>
+                                    <h6>Category: Texts </h6>
+                                    <p>Posted { item?.sys.publishedAt }</p>
+                                </div>
+                                <div className= {supportStyles.grid3ColumnButton}>
+                                    <button>View</button> 
+                                </div>
                         </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image2"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image3"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image4"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image5"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image6"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image7"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button>View</button> 
-                            </div>
-                        </div>
-                        <div className= {supportStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle3.png'
-                                className={supportStyles.grid3ColumnflowImage}
-                                alt="support-page-image8"
-                            /> 
-                            <div className= {supportStyles.grid3ColumnText}>
-                                <h4>First Aid Treatment for a Covid 19 Patient Breakdown</h4>
-                                <h6>Category: Texts </h6>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {supportStyles.grid3ColumnButton}>
-                                <button >View</button> 
-                            </div>
-                        </div>
-                        
+                    ))}    
+                       </div>                   
                     </div> 
-                </div>
             </section>
         </Layout>
     )

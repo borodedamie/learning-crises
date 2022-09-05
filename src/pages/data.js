@@ -35,8 +35,6 @@ query {
 const DataPage = () => {
     const { data, loading, error } = useQuery(GET_EDU_DATA);
 
-    console.log(data)
-
     if(loading) return 'Loading...';
 
     return (
