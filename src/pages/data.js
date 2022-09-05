@@ -3,20 +3,42 @@ import Layout from "../components/layout/layout"
 import { Link } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as dataStyles from '../styling/style.module.css'
-
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 // import required modules
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
+// apollo client useQuery and gql hooks
+import { useQuery, gql } from '@apollo/client'
+
+const GET_EDU_DATA = gql`
+query {
+    eduDataCollection(limit: 10) {
+      items {
+        sys {
+          id
+          publishedAt
+        }
+        title
+        infographics {
+          url
+        }
+      }
+    }
+  }
+`;
 
 const DataPage = () => {
+    const { data, loading, error } = useQuery(GET_EDU_DATA);
+
+    console.log(data)
+
+    if(loading) return 'Loading...';
+
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
@@ -59,142 +81,24 @@ const DataPage = () => {
                         </h4>
                     </div> 
                     <div className= {dataStyles.grid3Column }>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
+
+                    { data?.eduDataCollection.items.map((item, i) => (
+                        <div key={ item?.sys.id } className= {dataStyles.grid3Columnflow}>
+                            <img 
+                                src={ item?.infographics.url } 
+                                className={dataStyles.grid3ColumnflowImage} 
+                            />
+                        <div className= {dataStyles.grid3ColumnText}>
+                            <h4>{ item?.title }</h4>
+                            <p>Posted { item?.sys.publishedAt }</p>
                         </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 191.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image2"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
+                        <div className= {dataStyles.grid3ColumnButton}>
+                            <button>Preview</button> 
+                            <button>Download</button> 
                         </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image3"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image4"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 191.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image5"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image6"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image7"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 191.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image8"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button>Download</button> 
-                            </div>
-                        </div>
-                        <div className= {dataStyles.grid3Columnflow}>
-                            <StaticImage
-                                src='../images/Rectangle 190.png'
-                                className={dataStyles.grid3ColumnflowImage}
-                                alt="data-page-image9"
-                            /> 
-                            <div className= {dataStyles.grid3ColumnText}>
-                                <h4>Impact of Mother Tongue on Education in Nigeria</h4>
-                                <p>Posted August 5, 2022</p>
-                            </div>
-                            <div className= {dataStyles.grid3ColumnButton}>
-                                <button>Preview</button> 
-                                <button >Download</button> 
-                            </div>
-                        </div>
-                        
+                        </div>   
+                    ))}    
+
                     </div> 
                 </div>
             </section>

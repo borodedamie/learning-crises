@@ -1,6 +1,5 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from "gatsby";
 import * as insightStyles from '../styling/style.module.css'
 import { useQuery, gql } from '@apollo/client'
@@ -31,7 +30,6 @@ query {
 
 const InsightPage = () => {
     const { data, loading, error } = useQuery(GET_EDU_INSIGHTS);
-    console.log(data)
 
     if (loading) return 'Loading...';
 
@@ -51,9 +49,9 @@ const InsightPage = () => {
                     </p>
                 </div>
                 <div className={ insightStyles.content1Image } >
-                <StaticImage 
+                <img
                     alt='carousel-image'
-                    src={ item?.coverImage.url }
+                    src={item?.coverImage.url}
                     className={insightStyles.contentImage }
                 />
                 </div>
