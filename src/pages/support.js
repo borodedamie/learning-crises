@@ -39,7 +39,10 @@ const SupportPage = () => {
                     <div className= {supportStyles.grid3Column }>
                     { data?.eduSupportCollection.items.map((item, i) => (
                         <div key={ item?.sys.id } className= {supportStyles.grid3Columnflow}>
-                           <img src={ item?.image.url } /> 
+                           <img 
+                           src={ item?.image.url } 
+                           className={supportStyles.grid3ColumnflowImage}
+                           /> 
                                 <div className= {supportStyles.grid3ColumnText}>
                                     <h4>{ item?.title }</h4>
                                     <h6>Category: Texts </h6>
