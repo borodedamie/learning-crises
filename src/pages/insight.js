@@ -59,8 +59,11 @@ const InsightPage = () => {
                     <p>
                         { item?.introduction }
                     </p>
-                    <button><Link>Show More</Link></button>
-                    <span><Link><AiOutlineArrowRight/></Link></span> 
+                    <div className= { insightStyles.content1Button}>
+                        <button><Link>Show More</Link></button>
+                        <span><Link><AiOutlineArrowRight/></Link></span> 
+                    </div>
+                    
                 </div>
             </div>
             ))}

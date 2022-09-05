@@ -209,6 +209,7 @@ button {
   justify-content: center;
   text-align: center;
 }
+
 .content1Header h4{
   font-weight: 700;
   font-size: 20px;
@@ -255,6 +256,10 @@ button {
 
 
 }
+
+.content1Button{
+  display: flex;
+}
 .content1Body button{
   background-color: #fff;
   /* color: #555555; */
@@ -263,7 +268,7 @@ button {
   display: flex;
   align-items: center;
   gap: .3rem;
-  margin-top: 13px;
+  margin-right: 5px;
   
 }
 .content1Body span a {
@@ -308,12 +313,15 @@ color: #555555;
 .grid3Column{
   display: grid;
   gap: 2rem;
+  width: 400px;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .grid3ColumnflowImage{
   margin-bottom: 0.5rem;
   border-radius: 29.6624px;
+  width: 350px;
+  height: 220px;
 }
 
 .grid3ColumnText{
