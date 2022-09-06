@@ -42,9 +42,9 @@ const Layout = ({ children }) => {
             <div className={ menuList }>
                 <nav className={ menuListNav }>
                     <ul className={ menuItems }>
-                        <li><Link to='/' className={ navLinks }>Home</Link></li>
+                        <li><Link to='/' className={ navLinks } activeClassName="active">Home</Link></li>
                         <li><Link to='/insight' className={ navLinks }>EduInsight</Link></li>
-                        <li><Link to='/data' className={ navLinks }>EduData</Link></li>
+                        <li><Link to='/data' className={ navLinks } activeClassName="active">EduData</Link></li>
                         <li><Link to='/support' className={ navLinks }>EduSupport</Link></li>
                         <li><Link to='/about' className={ navLinks }>About Us</Link></li>
                     </ul>
