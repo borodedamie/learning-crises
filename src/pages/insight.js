@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import * as insightStyles from '../styling/style.module.css'
 import { useQuery, gql } from '@apollo/client'
 // Serve images from filesystem
-import {AiOutlineArrowRight} from '@react-icons/all-files/Ai/AiOutlineArrowRight'
+import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 
 const GET_EDU_INSIGHTS = gql`
 query {
