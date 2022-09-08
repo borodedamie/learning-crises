@@ -3,19 +3,45 @@ import Layout from "../components/layout/layout"
 import { Link } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 // import required modules
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
+import { useQuery, gql } from '@apollo/client'
+
+const GET_ALL_EDU_INSIGHTS = gql`
+query {
+    eduInsightCollection(limit: 10) {
+      items {
+        sys {
+          id
+          publishedAt
+        }
+        title
+        author
+        coverImage {
+           url
+        }
+        introduction
+        article {
+          json
+        }
+      }
+    }
+  }
+`;
 
 const IndexPage = () => {
+  const { data, loading, error } = useQuery(GET_ALL_EDU_INSIGHTS);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  console.log(data)
   return (
     <Layout>
       <section className={ indexStyles.container }>    
@@ -126,7 +152,7 @@ const IndexPage = () => {
 
       <section className={ indexStyles.boxSection }>
           <div className={ indexStyles.boxCon }  >
-              <div className={ indexStyles.box }  >
+            <div className={ indexStyles.box }  >
                 <h3>EduInsight</h3>
                 <Swiper                 
                     navigation
@@ -134,76 +160,49 @@ const IndexPage = () => {
                     // navigation={true}
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}                  
-                    >
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>                    
-                      </SwiperSlide>
-
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>
-
-                         
-                          
-                      </SwiperSlide>
-                     
-                      
-                      
-                  </Swiper>
-
-                  <div className={indexStyles.navigationBtns }>
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector.png'
-                      className={indexStyles.swiperArrow }
-                    />
-
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector (1).png'
-                      className={indexStyles.swiperArrow }
+                >
+            { data?.eduInsightCollection.items.map((item, i) => (
+              <SwiperSlide key={ item?.sys.id }>
+                <div className={ indexStyles.swiperFlex}>
+                  <div className={ indexStyles.swiperFlexImage }  >
+                    <img 
+                      alt='carousel-image'
+                      src={ item?.coverImage.url }
+                      className={indexStyles.swiperImagee }
                     />
                   </div>
+                  <div className={ indexStyles.swiperText }  >
+                    <h4>{ item?.title }</h4>
+                    <p className={ indexStyles.author }> By { item?.author }</p>
+                    <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
+                    <button><Link>Read More</Link></button>                             
+                  </div>
+                </div>                    
+              </SwiperSlide>
+              ))
+            }
+            </Swiper>
+              <div className={indexStyles.navigationBtns }>
+                <StaticImage
+                  alt='carousel-arrow'
+                  src='../images/Vector.png'
+                  className={indexStyles.swiperArrow }
+                />
 
+                <StaticImage
+                  alt='carousel-arrow'
+                  src='../images/Vector (1).png'
+                  className={indexStyles.swiperArrow }
+                />
               </div>
+            </div>
 
               <div className={ indexStyles.box }  >
-                <h3>EduInsight</h3>
-                <Swiper
-                   
+                <h3>EduData</h3>
+                <Swiper                 
                     navigation={true}
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}
-                     
+                    className={indexStyles.mySwiper}              
                     >
                       <SwiperSlide >
                         <div className={ indexStyles.swiperFlex}>
@@ -214,17 +213,13 @@ const IndexPage = () => {
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
-
                             <div className={ indexStyles.swiperText }  >
                               <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
                               <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
                               <p className={ indexStyles.date }> August 5, 2022</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
-                        </div>
-
-                         
-                          
+                        </div>            
                       </SwiperSlide>
 
                       <SwiperSlide >
@@ -243,10 +238,7 @@ const IndexPage = () => {
                               <p className={ indexStyles.date }> August 5, 2022</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
-                        </div>
-
-                         
-                          
+                        </div>    
                       </SwiperSlide>
 
                       <SwiperSlide >
@@ -265,10 +257,7 @@ const IndexPage = () => {
                               <p className={ indexStyles.date }> August 5, 2022</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
-                        </div>
-
-                         
-                          
+                        </div>              
                       </SwiperSlide>
                       
                       
@@ -292,7 +281,7 @@ const IndexPage = () => {
 
 
               <div className={ indexStyles.box }  >
-                <h3>EduInsight</h3>
+                <h3>EduSupport</h3>
                 <Swiper
                     
                     navigation={true}

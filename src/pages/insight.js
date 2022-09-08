@@ -32,6 +32,7 @@ const InsightPage = () => {
     const { data, loading, error } = useQuery(GET_EDU_INSIGHTS);
 
     if (loading) return 'Loading...';
+    if (error) return `Error! ${error.message}`;
 
     return (
     <Layout>
