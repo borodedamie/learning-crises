@@ -13,35 +13,54 @@ import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 import { useQuery, gql } from '@apollo/client'
 
-const GET_ALL_EDU_INSIGHTS = gql`
+const GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT = gql`
 query {
-    eduInsightCollection(limit: 10) {
-      items {
-        sys {
-          id
-          publishedAt
-        }
-        title
-        author
-        coverImage {
-           url
-        }
-        introduction
-        article {
-          json
-        }
+  eduInsightCollection (limit: 3) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      title
+      author
+      coverImage {
+        url
       }
     }
   }
+  eduDataCollection (limit: 3) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      title 
+      infographics {
+        url
+      }
+    }
+  }
+  eduSupportCollection(limit: 3) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      title
+      image {
+        url
+      }
+    }
+  }
+}
 `;
 
 const IndexPage = () => {
-  const { data, loading, error } = useQuery(GET_ALL_EDU_INSIGHTS);
+  const { data, loading, error } = useQuery(GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
-  console.log(data)
   return (
     <Layout>
       <section className={ indexStyles.container }>    
@@ -204,62 +223,25 @@ const IndexPage = () => {
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}              
                     >
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>            
-                      </SwiperSlide>
-
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>    
-                      </SwiperSlide>
-
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>              
-                      </SwiperSlide>
-                      
+                    { data?.eduDataCollection.items.map((item, i) => (
+                      <SwiperSlide key={ item?.sys.id }>
+                      <div className={ indexStyles.swiperFlex}>
+                          <div className={ indexStyles.swiperFlexImage }  >
+                            <img 
+                              alt='carousel-image'
+                              src={ item?.infographics.url }
+                              className={indexStyles.swiperImagee }
+                            />
+                          </div>
+                          <div className={ indexStyles.swiperText }  >
+                            <h4>{ item?.title }</h4>
+                            <p className={ indexStyles.author }></p>
+                            <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
+                            <button><Link>Read More</Link></button>                             
+                          </div>
+                      </div>            
+                    </SwiperSlide> 
+                    ))}                
                       
                   </Swiper>
 
@@ -276,64 +258,35 @@ const IndexPage = () => {
                       className={indexStyles.swiperArrow }
                     />
                   </div>
-
               </div>
-
 
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
-                <Swiper
-                    
+                <Swiper                 
                     navigation={true}
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}
-                     
+                    className={indexStyles.mySwiper}         
                     >
-                      <SwiperSlide >
+                    { data?.eduSupportCollection.items.map((item, i) => (
+                      <SwiperSlide key={ item?.sys.id }>
                         <div className={ indexStyles.swiperFlex}>
                             <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
+                              <img 
                                 alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
+                                src={ item?.image.url }
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
 
                             <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
+                              <h4>{ item?.title }</h4>
+                              <p className={ indexStyles.author }></p>
+                              <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
-                        </div>
-
-                         
-                          
-                      </SwiperSlide>
-
-                      <SwiperSlide >
-                        <div className={ indexStyles.swiperFlex}>
-                            <div className={ indexStyles.swiperFlexImage }  >
-                              <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 4 (1).png'
-                                className={indexStyles.swiperImagee }
-                              />
-                            </div>
-
-                            <div className={ indexStyles.swiperText }  >
-                              <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                              <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                              <p className={ indexStyles.date }> August 5, 2022</p>
-                              <button><Link>Read More</Link></button>                             
-                            </div>
-                        </div>
-
-                         
-                          
-                      </SwiperSlide>
-                      
-                      
+                        </div>                         
+                      </SwiperSlide> 
+                    ))}                     
                   </Swiper>
                   <div className={indexStyles.navigationBtns }>
                     <StaticImage
