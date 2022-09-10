@@ -1,6 +1,6 @@
 // import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
 // Import Swiper React components
@@ -14,24 +14,7 @@ import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_DATA = graphql`
-query EduData {
-    allContentfulEduData(limit: 10) {
-      nodes {
-        id
-        createdAt
-        infographics {
-          url
-        }
-        title
-      }
-    }
-  }
-`;
-
-const DataPage = () => {
-const data = useStaticQuery(GET_EDU_DATA);
-
+const DataPage = ({ data }) => {
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
@@ -85,6 +68,21 @@ const data = useStaticQuery(GET_EDU_DATA);
         </Layout>
     )
 }
+
+export const query = graphql`
+query EduData {
+    allContentfulEduData(limit: 10) {
+      nodes {
+        id
+        createdAt
+        infographics {
+          url
+        }
+        title
+      }
+    }
+  }
+`;
 
 export default DataPage
 

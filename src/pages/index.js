@@ -1,6 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
 // Import Swiper React components
@@ -13,45 +13,7 @@ import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT = graphql`
-query EduInsightsDataSupport {
-  allContentfulEduInsight(limit: 3) {
-    nodes {
-      id
-      createdAt
-      title
-      author
-      coverImage {
-        url
-      }
-    }
-  }
-  allContentfulEduData(limit: 3) {
-    nodes {
-      id
-      createdAt
-      title
-      infographics {
-        url
-      }
-    }
-  }
-  allContentfulEduSupport(limit: 3) {
-    nodes {
-      id
-      createdAt
-      title
-      image {
-        url
-      }
-    }
-  }
-}
-`;
-
-const IndexPage = () => {
-  const data = useStaticQuery(GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT);
-
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <section className={ indexStyles.container }>    
@@ -299,6 +261,42 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+query EduInsightsDataSupport {
+  allContentfulEduInsight(limit: 3) {
+    nodes {
+      id
+      createdAt
+      title
+      author
+      coverImage {
+        url
+      }
+    }
+  }
+  allContentfulEduData(limit: 3) {
+    nodes {
+      id
+      createdAt
+      title
+      infographics {
+        url
+      }
+    }
+  }
+  allContentfulEduSupport(limit: 3) {
+    nodes {
+      id
+      createdAt
+      title
+      image {
+        url
+      }
+    }
+  }
+}
+`;
 
 export default IndexPage
 

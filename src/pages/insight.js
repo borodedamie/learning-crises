@@ -1,36 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_INSIGHTS = graphql`
-query EduInsights {
-    allContentfulEduInsight(limit: 10) {
-      nodes {
-        id
-        createdAt
-        title
-        author
-        coverImage {
-          url
-        }
-        introduction {
-          introduction
-        }
-        article {
-          raw
-        }
-      }
-    }
-  }
-`;
-
-const InsightPage = () => {
-const data = useStaticQuery(GET_EDU_INSIGHTS);
-
+const InsightPage = ({ data }) => {
     return (
     <Layout>
         <section className={ insightStyles.container1 }>
@@ -69,6 +45,28 @@ const data = useStaticQuery(GET_EDU_INSIGHTS);
     </Layout>
     )
 }
+
+export const query = graphql`
+query EduInsights {
+    allContentfulEduInsight(limit: 10) {
+      nodes {
+        id
+        createdAt
+        title
+        author
+        coverImage {
+          url
+        }
+        introduction {
+          introduction
+        }
+        article {
+          raw
+        }
+      }
+    }
+  }
+`;
 
 export default InsightPage
 

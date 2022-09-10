@@ -1,28 +1,11 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_SUPPORT = graphql`
-query EduSupport {
-  allContentfulEduSupport(limit: 10) {
-    nodes {
-      id
-      createdAt
-      title
-      image {
-        url
-      }
-    }
-  }
-}
-`;
-
-const SupportPage = () => {
-    const data = useStaticQuery(GET_EDU_SUPPORT);
-
+const SupportPage = ({ data }) => {
     return(
         <Layout>
             <section className= {supportStyles.container1}>
@@ -57,6 +40,21 @@ const SupportPage = () => {
     )
     
 }
+
+export const query = graphql`
+query EduSupport {
+  allContentfulEduSupport(limit: 10) {
+    nodes {
+      id
+      createdAt
+      title
+      image {
+        url
+      }
+    }
+  }
+}
+`;
 
 export default SupportPage
 
