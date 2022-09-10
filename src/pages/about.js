@@ -1,43 +1,14 @@
 import * as React from 'react'
 import Layout from "../components/layout/layout"
-import { Link } from 'gatsby'
+import { Link , graphql} from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as aboutStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
-// apollo client
-import { useQuery, gql } from '@apollo/client'
 
-const GET_ABOUT_PAGE_DATA = gql`
-query {
-    about(id: "1zV0qCZiYNBQTCIg1K1Vo9") {
-      learningRises
-      teamCollection {
-        items {
-          sys {
-            id
-          }
-          name
-          position
-          avatar {
-            url
-          }
-          facebook
-          twitter
-          gmail
-          bio
-        }
-      }
-    }
-  }
-`;
-
-const AboutPage = () => {
-    const { data, loading, error } = useQuery(GET_ABOUT_PAGE_DATA);
-    if(loading) return 'Loading...'
-
+const AboutPage = ({ data }) => {
     return(
         <Layout>
             <section className= {aboutStyles.container1} >
@@ -46,7 +17,7 @@ const AboutPage = () => {
                         <h3>About Learning Rises</h3>
                     </div>
                     <div className= {aboutStyles.aboutDetailsBody}>
-                        <p>{ data?.about.learningRises }</p>
+                        <p>{ data?.contentfulAbout.learningRises.learningRises }</p>
                     </div>   
                 </div>
                 <div className= {aboutStyles.aboutTeam}>
@@ -54,8 +25,8 @@ const AboutPage = () => {
                         <h3>Meet The Team</h3>
                     </div>
                     <div className= {aboutStyles.aboutTeamBody}>
-                        { data?.about.teamCollection.items.map((item, i) => (
-                            <div key={ item?.sys.id } className= {aboutStyles.grid2Columnflow}>
+                        { data?.contentfulAbout.team.map((item, i) => (
+                            <div key={ item?.id } className= {aboutStyles.grid2Columnflow}>
                                 <img 
                                     src={ item?.avatar.url }
                                     className={ aboutStyles.grid2ColumnflowImage }
@@ -68,7 +39,7 @@ const AboutPage = () => {
                                         <Link to=""><FaTwitter /></Link>
                                         <Link to=""><SiGmail /></Link>
                                     </div>
-                                    <p>{ item?.bio }</p>
+                                    <p>{ item?.bio.bio }</p>
                                 </div>
                             </div>
                         ))}
@@ -79,6 +50,30 @@ const AboutPage = () => {
         </Layout>
     )
 }
+
+export const query = graphql`
+query AboutPage {
+    contentfulAbout(contentful_id: {eq: "1zV0qCZiYNBQTCIg1K1Vo9"}) {
+      learningRises {
+        learningRises
+      }
+      team {
+        name
+        position
+        avatar {
+          url
+        }
+        facebook
+        twitter
+        gmail
+        bio {
+          bio
+        }
+        id
+      }
+    }
+  }
+`;
 
 export default AboutPage
 export const Head = () => <title>About Page</title>
