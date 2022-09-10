@@ -14,6 +14,7 @@ import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
 import { useQuery, gql } from '@apollo/client'
+import { convertDate } from "../utils/convertDate";
 
 const GET_EDU_DATA = gql`
 query {
@@ -88,7 +89,7 @@ const DataPage = () => {
                             />
                         <div className= {dataStyles.grid3ColumnText}>
                             <h4>{ item?.title }</h4>
-                            <p>Posted { item?.sys.publishedAt }</p>
+                            <p>Posted { convertDate(item?.sys.publishedAt) }</p>
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
                             <button>Preview</button> 

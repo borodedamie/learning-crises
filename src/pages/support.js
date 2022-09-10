@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
 import { useQuery, gql } from '@apollo/client'
+import { convertDate } from "../utils/convertDate";
 
 const GET_EDU_SUPPORT = gql`
 query {
@@ -46,7 +47,7 @@ const SupportPage = () => {
                                 <div className= {supportStyles.grid3ColumnText}>
                                     <h4>{ item?.title }</h4>
                                     <h6>Category: Texts </h6>
-                                    <p>Posted { item?.sys.publishedAt }</p>
+                                    <p>Posted { convertDate(item?.sys.publishedAt) }</p>
                                 </div>
                                 <div className= {supportStyles.grid3ColumnButton}>
                                     <button>View</button> 

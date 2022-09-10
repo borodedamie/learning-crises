@@ -5,6 +5,7 @@ import * as insightStyles from '../styling/style.module.css'
 import { useQuery, gql } from '@apollo/client'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
+import { convertDate } from "../utils/convertDate";
 
 const GET_EDU_INSIGHTS = gql`
 query GetEduInsights {
@@ -45,7 +46,7 @@ const InsightPage = () => {
                 </div>
                 <div className={ insightStyles.content1Paragraph } >
                     <p>
-                    By { item?.author }, { item?.sys.publishedAt }
+                    By { item?.author }, { convertDate(item?.sys.publishedAt) }
                     </p>
                 </div>
                 <div className={ insightStyles.content1Image } >
