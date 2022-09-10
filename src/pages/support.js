@@ -1,32 +1,28 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
-import { useQuery, gql } from '@apollo/client'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_SUPPORT = gql`
-query {
-    eduSupportCollection(limit: 10) {
-      items {
-        sys {
-          id
-          publishedAt
-        }
-        title
-        image {
-          url
-        }
+const GET_EDU_SUPPORT = graphql`
+query EduSupport {
+  allContentfulEduSupport(limit: 10) {
+    nodes {
+      id
+      createdAt
+      title
+      image {
+        url
       }
     }
   }
+}
 `;
 
 const SupportPage = () => {
-    const { data, loading, error } = useQuery(GET_EDU_SUPPORT);
+    const data = useStaticQuery(GET_EDU_SUPPORT);
 
-    if(loading) return 'Loading...';
     return(
         <Layout>
             <section className= {supportStyles.container1}>
@@ -38,16 +34,16 @@ const SupportPage = () => {
                         <button>Texts Only</button>
                     </div>
                     <div className= {supportStyles.grid3Column }>
-                    { data?.eduSupportCollection.items.map((item, i) => (
-                        <div key={ item?.sys.id } className= {supportStyles.grid3Columnflow}>
+                    { data?.allContentfulEduSupport.nodes.map((node, i) => (
+                        <div key={ node?.id } className= {supportStyles.grid3Columnflow}>
                            <img 
-                           src={ item?.image.url } 
+                           src={ node?.image.url } 
                            className={supportStyles.grid3ColumnflowImage}
                            /> 
                                 <div className= {supportStyles.grid3ColumnText}>
-                                    <h4>{ item?.title }</h4>
+                                    <h4>{ node?.title }</h4>
                                     <h6>Category: Texts </h6>
-                                    <p>Posted { convertDate(item?.sys.publishedAt) }</p>
+                                    <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= {supportStyles.grid3ColumnButton}>
                                     <button>View</button> 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
 // Import Swiper React components
@@ -11,17 +11,14 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
-import { useQuery, gql } from '@apollo/client'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT = gql`
-query {
-  eduInsightCollection (limit: 3) {
-    items {
-      sys {
-        id
-        publishedAt
-      }
+const GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT = graphql`
+query EduInsightsDataSupport {
+  allContentfulEduInsight(limit: 3) {
+    nodes {
+      id
+      createdAt
       title
       author
       coverImage {
@@ -29,24 +26,20 @@ query {
       }
     }
   }
-  eduDataCollection (limit: 3) {
-    items {
-      sys {
-        id
-        publishedAt
-      }
-      title 
+  allContentfulEduData(limit: 3) {
+    nodes {
+      id
+      createdAt
+      title
       infographics {
         url
       }
     }
   }
-  eduSupportCollection(limit: 3) {
-    items {
-      sys {
-        id
-        publishedAt
-      }
+  allContentfulEduSupport(limit: 3) {
+    nodes {
+      id
+      createdAt
       title
       image {
         url
@@ -57,10 +50,7 @@ query {
 `;
 
 const IndexPage = () => {
-  const { data, loading, error } = useQuery(GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT);
-
-  if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  const data = useStaticQuery(GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT);
 
   return (
     <Layout>
@@ -104,15 +94,15 @@ const IndexPage = () => {
                 </div>
                 <div className={ indexStyles.asideBox }>
                    <img
-                      src={ data.eduInsightCollection.items[0].coverImage.url }
+                      src={ data.allContentfulEduInsight.nodes[0].coverImage.url }
                       className={indexStyles.asideImage}
                       alt="index-page-image"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
-                        <h4>{ data.eduInsightCollection.items[0].title }</h4>
-                        <p className={ indexStyles.author }>By { data.eduInsightCollection.items[0].author }</p>
-                        <p className={ indexStyles.date }>{ convertDate(data.eduInsightCollection.items[0].sys.publishedAt) }</p>
+                        <h4>{ data.allContentfulEduInsight.nodes[0].title }</h4>
+                        <p className={ indexStyles.author }>By { data.allContentfulEduInsight.nodes[0].author }</p>
+                        <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[0].createdAt) }</p>
                       </div>
                     </div>  
                 </div>
@@ -123,15 +113,15 @@ const IndexPage = () => {
                 </div>                    
                 <div className={ indexStyles.asideBox }>
                    <img
-                      src={ data.eduInsightCollection.items[1].coverImage.url }
+                      src={  data.allContentfulEduInsight.nodes[1].coverImage.url }
                       className={indexStyles.asideImage}
                       alt="index-page-image2"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
-                        <h4>{ data.eduInsightCollection.items[1].title }</h4>
-                        <p className={ indexStyles.author }> By { data.eduInsightCollection.items[0].author }</p>
-                        <p className={ indexStyles.date }>{ convertDate(data.eduInsightCollection.items[0].sys.publishedAt) }</p>
+                        <h4>{ data.allContentfulEduInsight.nodes[1].title }</h4>
+                        <p className={ indexStyles.author }> By { data.allContentfulEduInsight.nodes[1].author }</p>
+                        <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[1].createdAt) }</p>
                       </div>
                     </div>  
                 </div>
@@ -181,20 +171,20 @@ const IndexPage = () => {
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}                  
                 >
-            { data?.eduInsightCollection.items.map((item, i) => (
-              <SwiperSlide key={ item?.sys.id }>
+            { data?.allContentfulEduInsight.nodes.map((node, i) => (
+              <SwiperSlide key={ node?.id }>
                 <div className={ indexStyles.swiperFlex}>
                   <div className={ indexStyles.swiperFlexImage }  >
                     <img 
                       alt='carousel-image'
-                      src={ item?.coverImage.url }
+                      src={ node?.coverImage.url }
                       className={indexStyles.swiperImagee }
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
-                    <h4>{ item?.title }</h4>
-                    <p className={ indexStyles.author }> By { item?.author }</p>
-                    <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
+                    <h4>{ node?.title }</h4>
+                    <p className={ indexStyles.author }> By { node?.author }</p>
+                    <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
                     <button><Link>Read More</Link></button>                             
                   </div>
                 </div>                    
@@ -224,20 +214,20 @@ const IndexPage = () => {
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}              
                     >
-                    { data?.eduDataCollection.items.map((item, i) => (
-                      <SwiperSlide key={ item?.sys.id }>
+                    { data?.allContentfulEduData.nodes.map((node, i) => (
+                      <SwiperSlide key={ node?.id }>
                       <div className={ indexStyles.swiperFlex}>
                           <div className={ indexStyles.swiperFlexImage }  >
                             <img 
                               alt='carousel-image'
-                              src={ item?.infographics.url }
+                              src={ node?.infographics.url }
                               className={indexStyles.swiperImagee }
                             />
                           </div>
                           <div className={ indexStyles.swiperText }  >
-                            <h4>{ item?.title }</h4>
+                            <h4>{ node?.title }</h4>
                             <p className={ indexStyles.author }></p>
-                            <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
+                            <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
                             <button><Link>Read More</Link></button>                             
                           </div>
                       </div>            
@@ -268,21 +258,21 @@ const IndexPage = () => {
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}         
                     >
-                    { data?.eduSupportCollection.items.map((item, i) => (
-                      <SwiperSlide key={ item?.sys.id }>
+                    { data?.allContentfulEduSupport.nodes.map((node, i) => (
+                      <SwiperSlide key={ node?.id }>
                         <div className={ indexStyles.swiperFlex}>
                             <div className={ indexStyles.swiperFlexImage }  >
                               <img 
                                 alt='carousel-image'
-                                src={ item?.image.url }
+                                src={ node?.image.url }
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
 
                             <div className={ indexStyles.swiperText }  >
-                              <h4>{ item?.title }</h4>
+                              <h4>{ node?.title }</h4>
                               <p className={ indexStyles.author }></p>
-                              <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
+                              <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
                         </div>                         

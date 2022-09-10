@@ -1,64 +1,61 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import * as insightStyles from '../styling/style.module.css'
-import { useQuery, gql } from '@apollo/client'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_INSIGHTS = gql`
-query GetEduInsights {
-    eduInsightCollection(limit: 10) {
-        items {
-          sys {
-            id
-            publishedAt
-          }
-          title
-          author
-          coverImage {
-             url
-          }
+const GET_EDU_INSIGHTS = graphql`
+query EduInsights {
+    allContentfulEduInsight(limit: 10) {
+      nodes {
+        id
+        createdAt
+        title
+        author
+        coverImage {
+          url
+        }
+        introduction {
           introduction
-          article {
-            json
-          }
+        }
+        article {
+          raw
         }
       }
+    }
   }
 `;
 
 const InsightPage = () => {
-    const { data, loading, error } = useQuery(GET_EDU_INSIGHTS);
+const data = useStaticQuery(GET_EDU_INSIGHTS);
 
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
     return (
     <Layout>
         <section className={ insightStyles.container1 }>
-            { data?.eduInsightCollection.items.map((item, i) => (
-            <div key={ item?.sys.id }>
+            { data?.allContentfulEduInsight.nodes.map((node, i) => (
+            <div key={ node?.id }>
                 <div className={ insightStyles.content1Header } >
                     <h4>
-                    { item?.title }
+                    { node?.title }
                     </h4>
                 </div>
                 <div className={ insightStyles.content1Paragraph } >
                     <p>
-                    By { item?.author }, { convertDate(item?.sys.publishedAt) }
+                    By { node?.author }, { convertDate(node?.createdAt) }
                     </p>
                 </div>
                 <div className={ insightStyles.content1Image } >
                 <img
                     alt='carousel-image'
-                    src={item?.coverImage.url}
+                    src={node?.coverImage.url}
                     className={insightStyles.contentImage }
                 />
                 </div>
                 <div className= { insightStyles.content1Body}>
                     <p>
-                        { item?.introduction }
+                        { node?.introduction.introduction }
                     </p>
                     <div className= { insightStyles.content1Button}>
                         <button><Link>Show More</Link></button>

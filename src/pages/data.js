@@ -1,7 +1,6 @@
 // import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
+import { Link, useStaticQuery, graphql } from "gatsby";
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
 // Import Swiper React components
@@ -13,30 +12,25 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
-import { useQuery, gql } from '@apollo/client'
 import { convertDate } from "../utils/convertDate";
 
-const GET_EDU_DATA = gql`
-query {
-    eduDataCollection(limit: 10) {
-      items {
-        sys {
-          id
-          publishedAt
-        }
-        title
+const GET_EDU_DATA = graphql`
+query EduData {
+    allContentfulEduData(limit: 10) {
+      nodes {
+        id
+        createdAt
         infographics {
           url
         }
+        title
       }
     }
   }
 `;
 
 const DataPage = () => {
-    const { data, loading, error } = useQuery(GET_EDU_DATA);
-
-    if(loading) return 'Loading...';
+const data = useStaticQuery(GET_EDU_DATA);
 
     return (
         <Layout>
@@ -49,28 +43,15 @@ const DataPage = () => {
                         modules={[Pagination]}
                         className={dataStyles.mycarousel}
                         >
-                        <SwiperSlide >
-                            <StaticImage 
-                            alt='carousel-image'
-                            src='../images/Rectangle 9.png'
-                            className={dataStyles.mycarouselimage }
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <StaticImage 
+                        { data?.allContentfulEduData.nodes.slice(0, 2).map((node, i) => (
+                            <SwiperSlide key={ node?.id }>
+                                <img 
                                 alt='carousel-image'
-                                src='../images/Rectangle 9.png'
+                                src={ node?.infographics.url }
                                 className={dataStyles.mycarouselimage }
                             />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <StaticImage 
-                                    alt='carousel-image'
-                                    src='../images/Rectangle 9.png'
-                                    className={dataStyles.mycarouselimage }
-                                />
-                        </SwiperSlide>
-                        
+                            </SwiperSlide> 
+                        ))}                       
                     </Swiper>
                 </div>
                 <div className= {dataStyles.grid}>
@@ -81,15 +62,15 @@ const DataPage = () => {
                     </div> 
                     <div className= {dataStyles.grid3Column }>
 
-                    { data?.eduDataCollection.items.map((item, i) => (
-                        <div key={ item?.sys.id } className= {dataStyles.grid3Columnflow}>
+                    { data?.allContentfulEduData.nodes.map((node, i) => (
+                        <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
                             <img 
-                                src={ item?.infographics.url } 
+                                src={ node?.infographics.url } 
                                 className={dataStyles.grid3ColumnflowImage} 
                             />
                         <div className= {dataStyles.grid3ColumnText}>
-                            <h4>{ item?.title }</h4>
-                            <p>Posted { convertDate(item?.sys.publishedAt) }</p>
+                            <h4>{ node?.title }</h4>
+                            <p>Posted { convertDate( node?.createdAt) }</p>
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
                             <button>Preview</button> 
