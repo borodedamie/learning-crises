@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 import { useQuery, gql } from '@apollo/client'
+import { convertDate } from "../utils/convertDate";
 
 const GET_EDU_INSIGHTS_AND_EDU_DATA_AND_EDU_SUPPORT = gql`
 query {
@@ -102,16 +103,16 @@ const IndexPage = () => {
                     </h4>
                 </div>
                 <div className={ indexStyles.asideBox }>
-                   <StaticImage
-                      src='../images/Rectangle 4 (1).png'
+                   <img
+                      src={ data.eduInsightCollection.items[0].coverImage.url }
                       className={indexStyles.asideImage}
                       alt="index-page-image"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
-                        <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                        <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                        <p className={ indexStyles.date }> August 5, 2022</p>
+                        <h4>{ data.eduInsightCollection.items[0].title }</h4>
+                        <p className={ indexStyles.author }>By { data.eduInsightCollection.items[0].author }</p>
+                        <p className={ indexStyles.date }>{ convertDate(data.eduInsightCollection.items[0].sys.publishedAt) }</p>
                       </div>
                     </div>  
                 </div>
@@ -121,16 +122,16 @@ const IndexPage = () => {
                     </h4>
                 </div>                    
                 <div className={ indexStyles.asideBox }>
-                   <StaticImage
-                      src='../images/Rectangle 8 (1).png'
+                   <img
+                      src={ data.eduInsightCollection.items[1].coverImage.url }
                       className={indexStyles.asideImage}
                       alt="index-page-image2"
                     /> 
                     <div className={indexStyles.overlay}>
                       <div className={ indexStyles.asideText}>
-                        <h4>Impact of Mother Tongue onEducation in Nigeria</h4>
-                        <p className={ indexStyles.author }> By Jane Doe and Dan Abrov</p>
-                        <p className={ indexStyles.date }> August 5, 2022</p>
+                        <h4>{ data.eduInsightCollection.items[1].title }</h4>
+                        <p className={ indexStyles.author }> By { data.eduInsightCollection.items[0].author }</p>
+                        <p className={ indexStyles.date }>{ convertDate(data.eduInsightCollection.items[0].sys.publishedAt) }</p>
                       </div>
                     </div>  
                 </div>
@@ -193,7 +194,7 @@ const IndexPage = () => {
                   <div className={ indexStyles.swiperText }  >
                     <h4>{ item?.title }</h4>
                     <p className={ indexStyles.author }> By { item?.author }</p>
-                    <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
+                    <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
                     <button><Link>Read More</Link></button>                             
                   </div>
                 </div>                    
@@ -236,7 +237,7 @@ const IndexPage = () => {
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ item?.title }</h4>
                             <p className={ indexStyles.author }></p>
-                            <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
+                            <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
                             <button><Link>Read More</Link></button>                             
                           </div>
                       </div>            
@@ -281,7 +282,7 @@ const IndexPage = () => {
                             <div className={ indexStyles.swiperText }  >
                               <h4>{ item?.title }</h4>
                               <p className={ indexStyles.author }></p>
-                              <p className={ indexStyles.date }>{ item?.sys.publishedAt }</p>
+                              <p className={ indexStyles.date }>{ convertDate(item?.sys.publishedAt) }</p>
                               <button><Link>Read More</Link></button>                             
                             </div>
                         </div>                         
