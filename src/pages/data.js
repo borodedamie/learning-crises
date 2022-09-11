@@ -13,6 +13,7 @@ import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
 import { convertDate } from "../utils/convertDate";
+import Seo from "../components/seo";
 
 const DataPage = ({ data }) => {
     return (
@@ -86,4 +87,4 @@ query EduData {
 
 export default DataPage
 
-export const Head = () => <title>EduData Page</title>
+export const Head = () => <Seo title="EduData Page" />

@@ -7,6 +7,7 @@ import * as aboutStyles from '../styling/style.module.css'
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
+import Seo from '../components/seo'
 
 const AboutPage = ({ data }) => {
     return(
@@ -76,4 +77,4 @@ query AboutPage {
 `;
 
 export default AboutPage
-export const Head = () => <title>About Page</title>
+export const Head = () => <Seo title="About Page" />

@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 import { convertDate } from "../utils/convertDate";
+import Seo from '../components/seo'
 
 const IndexPage = ({ data }) => {
   return (
@@ -300,4 +301,4 @@ query EduInsightsDataSupport {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <Seo title="Home Page" />

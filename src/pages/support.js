@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
 import { convertDate } from "../utils/convertDate";
+import Seo from "../components/seo";
 
 const SupportPage = ({ data }) => {
     return(
@@ -58,4 +59,4 @@ query EduSupport {
 
 export default SupportPage
 
-export const Head = () => <title>EduSupport Page</title>
+export const Head = () => <Seo title="EduSupport Page" />

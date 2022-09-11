@@ -5,6 +5,7 @@ import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { convertDate } from "../utils/convertDate";
+import Seo from "../components/seo";
 
 const InsightPage = ({ data }) => {
     return (
@@ -70,4 +71,4 @@ query EduInsights {
 
 export default InsightPage
 
-export const Head = () => <title>EduInsight Page</title>
+export const Head = () => <Seo title="EduInsight Page" />
