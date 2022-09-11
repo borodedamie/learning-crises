@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
+// import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
 import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
@@ -30,7 +30,7 @@ const SupportPage = ({ data }) => {
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= {supportStyles.grid3ColumnButton}>
-                                    <button>View</button> 
+                                    <Link to={`/supports/${node.id}`}>View</Link> 
                                 </div>
                         </div>
                     ))}    
@@ -46,6 +46,7 @@ export const query = graphql`
 query EduSupport {
   allContentfulEduSupport(limit: 10) {
     nodes {
+      contentful_id
       id
       createdAt
       title
