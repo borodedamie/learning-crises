@@ -20,14 +20,15 @@
 }
 .logo {
   width: 25vw;
+  margin: 30px auto;
 }
 .search-box {
-  width: 80px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fcb900;
-  padding: 30px 50px;
+  padding: 45px 50px;
   border-radius: 0 20px 0 0;
 }
 .search-box-icon {
@@ -50,12 +51,22 @@
   transition: 0.4s linear;
 }
 
+
+.nav-links:active,
 .nav-links:hover {
   color: #fcb900;
   font-size: 16px;
   font-weight: 600;
   border-bottom: 2px solid #fcb900;
   padding-bottom: 3px;
+}
+
+.active{
+  color: #0000;
+  font-size: 16px;
+  font-weight: 600;
+  background:#fcb900;
+  padding: 3px;
 }
 
 /* Footer CSS Styling */
@@ -113,4 +124,8 @@
   margin: 15px 0px;
   font-size: 14px;
   font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  
 }
