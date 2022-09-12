@@ -1,11 +1,32 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, graphql } from "gatsby";
+import { Link, graphql } from "gatsby"
 import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
-import { convertDate } from "../utils/convertDate";
-import Seo from "../components/seo";
+import { convertDate } from "../utils/convertDate"
+import Seo from "../components/seo"
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+
+const options = {
+  renderMark: {
+    [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
+  },
+  renderNode: {
+    [ BLOCKS.PARAGRAPH ]: (node, children) => <p>{ children }</p>,
+    [ INLINES.HYPERLINK ]: ( node, children ) => {
+      const { uri } = node.data
+      return (
+        <a href={ uri }>{ children }</a>
+      )
+    }
+  },
+    [ BLOCKS.HEADING_2 ]: ( node, children ) => {
+      return <h2>{ children }</h2>
+  }
+}
+
 
 const InsightPage = ({ data }) => {
     return (
@@ -35,10 +56,9 @@ const InsightPage = ({ data }) => {
                         { node?.introduction.introduction }
                     </p>
                     <div className= { insightStyles.content1Button}>
-                        <button><Link>Show More</Link></button>
-                        <span><Link><AiOutlineArrowRight/></Link></span> 
+                        <button><Link>Show More <span><AiOutlineArrowRight/></span></Link></button>
                     </div>
-                    
+                    <div>{ renderRichText(node?.article, options)}</div>                  
                 </div>
             </div>
             ))}

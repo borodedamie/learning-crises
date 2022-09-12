@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout/layout'
-import { convertDate } from "../../utils/convertDate";
+import { convertDate } from "../../utils/convertDate"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 
