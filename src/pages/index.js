@@ -50,44 +50,50 @@ const IndexPage = ({ data }) => {
                   </Swiper>
               </div>    
               <div className={ indexStyles.aside }>
-                <div className={ indexStyles.asideHeader}>
-                    <h4>
-                    Latest Article
-                    </h4>
+                <div className= {indexStyles.asidecol}>
+                  <div className={ indexStyles.asideHeader}>
+                      <h4>
+                      Latest Article
+                      </h4>
+                  </div>
+                  <div className={ indexStyles.asideBox }>
+                    <img
+                        src={ data.allContentfulEduInsight.nodes[0].coverImage.url }
+                        className={indexStyles.asideImage}
+                        alt="index-page-image"
+                      /> 
+                      <div className={indexStyles.overlay}>
+                        <div className={ indexStyles.asideText}>
+                          <h4>{ data.allContentfulEduInsight.nodes[0].title }</h4>
+                          <p className={ indexStyles.author }>By { data.allContentfulEduInsight.nodes[0].author }</p>
+                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[0].createdAt) }</p>
+                        </div>
+                      </div>  
+                  </div>
                 </div>
-                <div className={ indexStyles.asideBox }>
-                   <img
-                      src={ data.allContentfulEduInsight.nodes[0].coverImage.url }
-                      className={indexStyles.asideImage}
-                      alt="index-page-image"
-                    /> 
-                    <div className={indexStyles.overlay}>
-                      <div className={ indexStyles.asideText}>
-                        <h4>{ data.allContentfulEduInsight.nodes[0].title }</h4>
-                        <p className={ indexStyles.author }>By { data.allContentfulEduInsight.nodes[0].author }</p>
-                        <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[0].createdAt) }</p>
-                      </div>
-                    </div>  
+                <div className= {indexStyles.asidecol}>
+                  <div className={ indexStyles.asideHeader}>
+                      <h4>
+                      Incase You Missed It
+                      </h4>
+                  </div>                    
+                  <div className={ indexStyles.asideBox }>
+                    <img
+                        src={  data.allContentfulEduInsight.nodes[1].coverImage.url }
+                        className={indexStyles.asideImage}
+                        alt="index-page-image2"
+                      /> 
+                      <div className={indexStyles.overlay}>
+                        <div className={ indexStyles.asideText}>
+                          <h4>{ data.allContentfulEduInsight.nodes[1].title }</h4>
+                          <p className={ indexStyles.author }> By { data.allContentfulEduInsight.nodes[1].author }</p>
+                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[1].createdAt) }</p>
+                        </div>
+                      </div>  
+                  </div>
                 </div>
-                <div className={ indexStyles.asideHeader}>
-                    <h4>
-                    Incase You Missed It
-                    </h4>
-                </div>                    
-                <div className={ indexStyles.asideBox }>
-                   <img
-                      src={  data.allContentfulEduInsight.nodes[1].coverImage.url }
-                      className={indexStyles.asideImage}
-                      alt="index-page-image2"
-                    /> 
-                    <div className={indexStyles.overlay}>
-                      <div className={ indexStyles.asideText}>
-                        <h4>{ data.allContentfulEduInsight.nodes[1].title }</h4>
-                        <p className={ indexStyles.author }> By { data.allContentfulEduInsight.nodes[1].author }</p>
-                        <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[1].createdAt) }</p>
-                      </div>
-                    </div>  
-                </div>
+                
+                
                
               </div>
       </section>
