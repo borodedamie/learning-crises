@@ -87,8 +87,7 @@ const IndexPage = ({ data }) => {
                         <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[1].createdAt) }</p>
                       </div>
                     </div>  
-                </div>
-               
+                </div>              
               </div>
       </section>
       <section className={ indexStyles.about }>
@@ -161,7 +160,6 @@ const IndexPage = ({ data }) => {
                   src='../images/Vector.png'
                   className={indexStyles.swiperArrow }
                 />
-
                 <StaticImage
                   alt='carousel-arrow'
                   src='../images/Vector (1).png'
@@ -169,7 +167,6 @@ const IndexPage = ({ data }) => {
                 />
               </div>
             </div>
-
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
                 <Swiper                 
@@ -195,17 +192,14 @@ const IndexPage = ({ data }) => {
                           </div>
                       </div>            
                     </SwiperSlide> 
-                    ))}                
-                      
+                    ))}                                     
                   </Swiper>
-
                   <div className={indexStyles.navigationBtns }>
                     <StaticImage
                       alt='carousel-arrow'
                       src='../images/Vector.png'
                       className={indexStyles.swiperArrow }
                     />
-
                     <StaticImage
                       alt='carousel-arrow'
                       src='../images/Vector (1).png'
@@ -213,7 +207,6 @@ const IndexPage = ({ data }) => {
                     />
                   </div>
               </div>
-
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
                 <Swiper                 
@@ -248,14 +241,12 @@ const IndexPage = ({ data }) => {
                       src='../images/Vector.png'
                       className={indexStyles.swiperArrow }
                     />
-
                     <StaticImage
                       alt='carousel-arrow'
                       src='../images/Vector (1).png'
                       className={indexStyles.swiperArrow }
                     />
                   </div>
-
               </div>
           </div>
       </section>

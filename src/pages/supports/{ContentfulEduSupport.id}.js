@@ -2,6 +2,26 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout/layout'
 import { convertDate } from "../../utils/convertDate";
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+
+const options = {
+  renderMark: {
+    [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
+  },
+  renderNode: {
+    [ BLOCKS.PARAGRAPH ]: (node, children) => <p>{ children }</p>,
+    [ INLINES.HYPERLINK ]: ( node, children ) => {
+      const { uri } = node.data
+      return (
+        <a href={ uri }>{ children }</a>
+      )
+    }
+  },
+    [ BLOCKS.HEADING_2 ]: ( node, children ) => {
+      return <h2>{ children }</h2>
+  }
+}
 
 const EduSupportPostPage = (props) => {
     return (
@@ -9,7 +29,8 @@ const EduSupportPostPage = (props) => {
             <section style={{ padding: '2rem' }}>
                 <img src={ props.data.contentfulEduSupport.image.url } />
                 <h4>{ props.data.contentfulEduSupport.title }</h4>
-                <p>{ convertDate(props.data.contentfulEduSupport.createdAt) }</p>
+                <p>Posted { convertDate(props.data.contentfulEduSupport.createdAt) }</p>
+                <div>{ renderRichText(props.data.contentfulEduSupport.post, options) }</div>
             </section>
         </Layout>
     )

@@ -49,24 +49,28 @@ const InsightPage = ({ data }) => {
 
 export const query = graphql`
 query EduInsights {
-    allContentfulEduInsight(limit: 10) {
-      nodes {
-        id
-        createdAt
-        title
-        author
-        coverImage {
-          url
+  allContentfulEduInsight(limit: 10) {
+    nodes {
+      id
+      createdAt
+      title
+      author
+      coverImage {
+        url
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+      introduction {
+        introduction
+        childMarkdownRemark {
+          html
         }
-        introduction {
-          introduction
-        }
-        article {
-          raw
-        }
+      }
+      article {
+        raw
       }
     }
   }
+}
 `;
 
 export default InsightPage
