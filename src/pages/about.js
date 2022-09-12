@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from "../components/layout/layout"
-import { Link , graphql} from 'gatsby'
+import { Link , graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as aboutStyles from '../styling/style.module.css'
 // Serve images from filesystem
@@ -44,8 +44,7 @@ const AboutPage = ({ data }) => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                    
+                    </div>                   
                 </div>
             </section>
         </Layout>
