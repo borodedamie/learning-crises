@@ -1,9 +1,10 @@
 /* styling For Caurosel Section */
 .container {
-  padding: 3rem;
+  /* padding: 3rem; */
+  margin: 3rem ;
   display: flex;
-  gap: 2rem;
-  justify-content: space-between;
+  gap: 1rem;
+  justify-content: space-around;
   height: 550px;
 }
 button {
@@ -24,18 +25,22 @@ button {
 }
 /* aside section */
 .aside{
-    width: 30%;
+    width: 25%;
     
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
+.asideCol{
+  /* position: relative; */
+    height: 100%;
+}
 .asideBox{
     position: relative;
-    height: 42%;
+    height: 80%;
 }
 .asideImage{
-    width: 100%;
+    width: 320px;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
@@ -48,7 +53,7 @@ button {
     height: 10vh;
     width: 100%;
     z-index: 1;
-    padding: 10px 20px;
+    padding: 14px 20px;
     border-radius: 0 0 20px 20px;
 }
 .asideText{
@@ -129,6 +134,7 @@ button {
 }
 .boxSection {
   padding: 3rem;
+  
 }
 .boxCon {
   display: flex;
@@ -156,12 +162,12 @@ button {
 }
 .swiperFlex {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: space-between;
  
 }
 .swiperFlexImage {
-  width: 160px;
+  width: 120px;
 }
 .swiperImagee {
   object-fit: contain;
@@ -515,13 +521,84 @@ color: #555555;
   .container{
     display:block;
     width: 100%;
+    margin: 3rem 0;
   }
   .aside{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 80%;
-    gap: 5rem;
+    width: 70%;
+    gap: 3rem;
+    margin: 5rem 6rem;
   }
 
+
+
+  .overlay{
+    height: 7vh;
+    padding: 10px 13px;
+  }
+  .sliderContainer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .swiperImage{
+    width: 100%;
+  }
+
+  .about{
+    margin-top:14rem ;
+  }
+
+  .boxCon{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+  } 
+  .box{
+    width: 42%;
+  }
+
+}
+
+@media (max-width: 768px){
+  .aside{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 2rem;
+    margin: 5rem 4rem;
+  }
+  .aboutCon {
+    grid-template-columns: 1fr ;
+  }
+}
+
+@media (max-width: 540px){
+  .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    margin: 3rem auto;
+  }
+
+  .boxCon{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+  } 
+  .box{
+    width: 80%;
+  }
 }

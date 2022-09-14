@@ -7,6 +7,7 @@ import { navbar,
         menuList,
         menuListNav,
         menuItems,
+        menuButton,
         navLinks,
         footer,
         footerLogo,
@@ -22,6 +23,7 @@ import { FiSearch } from '@react-icons/all-files/fi/FiSearch'
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
+import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 
 const Layout = ({ children }) => {
     return (
@@ -47,6 +49,7 @@ const Layout = ({ children }) => {
                         <li><Link to='/data' className={ navLinks } activeClassName="active">EduData</Link></li>
                         <li><Link to='/support' className={ navLinks }>EduSupport</Link></li>
                         <li><Link to='/about' className={ navLinks }>About Us</Link></li>
+                        <li><Link to = "" className= {menuButton}><BiMenu /></Link></li>
                     </ul>
                 </nav>
             </div>
