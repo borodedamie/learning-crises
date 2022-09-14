@@ -1,9 +1,11 @@
-import * as React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby"
 import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
+import { FaShareAlt } from '@react-icons/all-files/fa/FaShareAlt'
+import { GrClose } from '@react-icons/all-files/gr/GrClose'
 import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
@@ -29,6 +31,15 @@ const options = {
 
 
 const InsightPage = ({ data }) => {
+const [ newItems, setNewItems ] = useState({})
+  
+const toggleHandler = (id) => {
+  setNewItems((txt) => ({
+    ...txt,
+    [id]: !txt[id],
+  }));
+};
+
     return (
     <Layout>
         <section className={ insightStyles.container1 }>
@@ -56,9 +67,19 @@ const InsightPage = ({ data }) => {
                         { node?.introduction.introduction }
                     </p>
                     <div className= { insightStyles.content1Button}>
-                        <button><Link>Show More <span><AiOutlineArrowRight/></span></Link></button>
+                        { !newItems[i] ? <button onClick={ () => toggleHandler(i) }><Link>Show More <span><AiOutlineArrowRight/></span></Link></button> : '' }
                     </div>
-                    <div>{ renderRichText(node?.article, options)}</div>                  
+                    { newItems[i] && 
+                      <>
+                        <div>
+                          { renderRichText(node?.article, options)}
+                        </div>  
+                        <div className='text share'>
+                          <span>Share <FaShareAlt /></span>
+                          <span onClick={ () => toggleHandler(i) } >Close <GrClose /></span>
+                        </div>
+                      </>
+                    }                
                 </div>
             </div>
             ))}
