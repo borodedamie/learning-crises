@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => {
                   </Swiper>
               </div>    
               <div className={ indexStyles.aside }>
-                <div className= {indexStyles.asidecol}>
+                <div className= {indexStyles.asideCol}>
                   <div className={ indexStyles.asideHeader}>
                       <h4>
                       Latest Article
@@ -190,7 +190,7 @@ const IndexPage = ({ data }) => {
                           </div>
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ node?.title }</h4>
-                            <p className={ indexStyles.author }></p>
+                            <p className={ indexStyles.author }>  By { node?.author }</p>
                             <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
                             <button><Link>Read More</Link></button>                             
                           </div>
