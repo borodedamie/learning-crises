@@ -5,18 +5,14 @@
   display: flex;
   gap: 1rem;
   justify-content: space-around;
-  height: 550px;
 }
 button {
     cursor: pointer;
 }
 .sliderContainer {
-  width: 70%;
+  width: 60vw;
 }
 
-.mySwiper {
-  height: 100%;
-}
 .swiperImage {
   object-fit: contain;
   width: 100%;
@@ -25,7 +21,7 @@ button {
 }
 /* aside section */
 .aside{
-    width: 25%;
+    /* width: 25%; */
     
     display: flex;
     flex-direction: column;
@@ -40,8 +36,8 @@ button {
     height: 80%;
 }
 .asideImage{
-    width: 320px;
-    height: 100%;
+    width: 23vw;
+    height: 12vw;
     object-fit: cover;
     border-radius: 20px;
 }
@@ -141,8 +137,8 @@ button {
   gap: 1.5rem;
 }
 .box {
-  padding: 30px 0px 70px 30px;
-  width: 30%;
+  padding: 30px 10px 0 30px;
+  width: 26vw;
   border-radius: 15px;
   box-shadow: 0px 2px 21px -6px rgba(0, 0, 0, 0.25);
  
@@ -167,7 +163,7 @@ button {
  
 }
 .swiperFlexImage {
-  width: 120px;
+  width: 25vw;
 }
 .swiperImagee {
   object-fit: contain;
@@ -199,7 +195,7 @@ button {
     display: flex;
     gap: 1.3rem;
     padding-bottom: 2rem;
-    margin-top: -2rem; 
+    margin: 1rem;
 }
 .swiperArrow{
     width: 30px;
@@ -241,7 +237,7 @@ button {
 }
 
 .contentImage{
- width: 1050px;
+ width: 70vw;
  object-fit: contain;
  border-radius: 20px;
  margin-bottom: 2rem;
@@ -277,16 +273,22 @@ button {
   margin-right: 5px;
   
 }
-.content1Body span a {
+.content1Body span svg {
   font-size: 12px;
-  margin-top: 7px;
+  margin-top: 0.5rem;
 }
+/* .text span {
+  font-size: 12px;
+  margin-top: 2rem;
+  display:  flex;
+  gap: 4rem;
+} */
 
 /* EduData Page */
 .mycarousel{
   display: flex;
   justify-content: center;
-  width: 1000px;
+  width: 70vw;
   align-items: center;
   margin: 3rem 0rem;
 
@@ -319,15 +321,15 @@ color: #555555;
 .grid3Column{
   display: grid;
   gap: 2rem;
-  width: 400px;
+  /* width: 400px; */
   grid-template-columns: repeat(3, 1fr);
 }
 
 .grid3ColumnflowImage{
   margin-bottom: 0.5rem;
   border-radius: 29.6624px;
-  width: 350px;
-  height: 220px;
+  width: 30vw;
+  /* height: 220px; */
 }
 
 .grid3ColumnText{
@@ -365,7 +367,7 @@ color: #555555;
 .grid3ColumnButton {
   margin-left: 6px;
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 
 }
@@ -376,7 +378,7 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 120px;
+  width: 15vw;
   border-radius: 6px;
 }
 
@@ -386,7 +388,7 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 120px;
+  width: 15vw;
   border-radius: 6px;
 }
 .actionBtns{
@@ -474,7 +476,7 @@ color: #555555;
 
 .grid2ColumnflowImage{
   border-radius: 37px;
-  width: 600px;
+  width: 40vw;
 }
 .grid2ColumnText{
   margin-top: 3rem ;
@@ -527,15 +529,18 @@ color: #555555;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 70%;
     gap: 3rem;
     margin: 5rem 6rem;
   }
 
-
+  .asideImage{
+    width: 35vw;
+    height: 18vw;
+    
+}
 
   .overlay{
-    height: 7vh;
+    height: 4vh;
     padding: 10px 13px;
   }
   .sliderContainer{
@@ -551,10 +556,11 @@ color: #555555;
   }
 
   .about{
-    margin-top:14rem ;
+    margin-top:2rem ;
   }
 
   .boxCon{
+    padding: 0 2rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -563,42 +569,159 @@ color: #555555;
   .box{
     width: 42%;
   }
+  .aboutCon {
+    padding: 0 2rem;
+  }
+
+  .grid3Column{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid3ColumnflowImage{
+    width: 30vw;
+    /* height: 220px; */
+  }
+  .grid2ColumnText{
+    margin-top: 0.5rem ;
+  }
+
+  .grid2ColumnflowImage{
+    width: 40vw;
+    height: 25vh;
+  }
+
 
 }
 
 @media (max-width: 768px){
-  .aside{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    gap: 2rem;
-    margin: 5rem 4rem;
+  .overlay{
+    height: 5vh;
   }
+
   .aboutCon {
     grid-template-columns: 1fr ;
+    padding: 0 2rem;
   }
+  .content1Body{
+    margin: 2rem 3rem;
+  }
+
+ 
+.grid2Columnflow{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.grid2ColumnflowImage{
+  width: 60vw;
+}
+
+
 }
 
 @media (max-width: 540px){
   .aside{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
-    width: 70%;
-    margin: 3rem auto;
+    gap: 2rem;
+    margin: 5rem 6rem;
   }
+
+  .asideImage{
+    width: 34vw;
+    height: 18vh;
+  }
+
+  .overlay{
+    height: 7vh;
+  }
+
+  .asideText h4{
+    margin-bottom: .5rem;
+    font-size: 11px;
+  }
+
+  .asideText p{
+    font-size: 8px;
+    font-weight: 700;
+}
 
   .boxCon{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    padding: auto;
     
   } 
   .box{
-    width: 80%;
+    width: 50vh;
   }
+
+  .content1Body{
+    margin: 1rem 2rem;
+  }
+  .aboutTeam,
+  .aboutDetails{
+  margin: 5rem 2rem;
+}
+}
+
+@media (max-width: 420px){
+  .aside{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .asideImage{
+    width: 70vw;
+    height: 20vh;
+    
+  }
+
+  .asideText h4{
+    margin-bottom: .5rem;
+    font-size: 12px;
+  }
+
+  .asideText p{
+    font-size: 9px;
+    font-weight: 700;
+}
+.box{
+  width: 28vh;
+}
+
+.grid3Column{
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid3ColumnflowImage{
+  width: 60vw;
+}
+
+.grid{
+  margin: 4rem 2rem;
+}
+
+.grid3ColumnButton button:first-child{
+  background-color: #fff;
+  color: #FCB900;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 25vw;
+  border-radius: 6px;
+}
+
+.grid3ColumnButton button:last-child{
+  background-color: #FCB900;
+  color:#fff ;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 25vw;
+  border-radius: 6px;
+}
 }
