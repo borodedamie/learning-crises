@@ -14,8 +14,23 @@ import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
 import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
+// jsPDF
+import { jsPDF } from 'jspdf'
 
 const DataPage = ({ data }) => {
+    
+// convert img to PDF
+const imgToPdf = (title, url) => {
+    const doc = new jsPDF('p', 'px', 'letter');
+
+    const image = new Image();
+    image.src = url
+
+    doc.text(`${title}`, 10, 10)
+    doc.addImage(image, 'PNG', 300, 200)
+    doc.save("a4.pdf")
+}
+
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
@@ -61,7 +76,7 @@ const DataPage = ({ data }) => {
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
                             <button>Preview</button> 
-                            <button>Download</button> 
+                            <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
                         </div>
                         </div>   
                     ))}    
