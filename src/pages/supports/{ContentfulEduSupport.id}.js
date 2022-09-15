@@ -27,12 +27,17 @@ const options = {
 const EduSupportPostPage = (props) => {
     return (
         <Layout>
-            <section style={{ padding: '2rem' }} >
-              <div >
-              <img src={ props.data.contentfulEduSupport.image.url } />
-                <h4>{ props.data.contentfulEduSupport.title }</h4>
-                <p>Posted { convertDate(props.data.contentfulEduSupport.createdAt) }</p>
-                <div>{ renderRichText(props.data.contentfulEduSupport.post, options) }</div>
+            <section className = {supportPageStyles.container1} >
+              <div className = {supportPageStyles.view}>
+                <div className = {supportPageStyles.viewImg}>
+                  <img src={ props.data.contentfulEduSupport.image.url } className = {supportPageStyles.viewImage} />
+                </div>
+                <div className = {supportPageStyles.viewText}>
+                    <h4>{ props.data.contentfulEduSupport.title }</h4>
+                    <h6>Posted { convertDate(props.data.contentfulEduSupport.createdAt) }</h6>
+                    <p>{ renderRichText(props.data.contentfulEduSupport.post, options) }</p>
+                </div>
+                 
               </div>
                 
             </section>

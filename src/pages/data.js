@@ -48,10 +48,13 @@ const DataPage = ({ data }) => {
 
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                         <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
-                            <img 
-                                src={ node?.infographics.url } 
-                                className={dataStyles.grid3ColumnflowImage} 
-                            />
+                            <div className= {dataStyles.grid3ColumnflowImg}>
+                                <img 
+                                    src={ node?.infographics.url } 
+                                    className={dataStyles.grid3ColumnflowImage} 
+                                />
+                            </div>
+                            
                         <div className= {dataStyles.grid3ColumnText}>
                             <h4>{ node?.title }</h4>
                             <p>Posted { convertDate( node?.createdAt) }</p>

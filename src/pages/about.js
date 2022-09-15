@@ -28,10 +28,13 @@ const AboutPage = ({ data }) => {
                     <div className= {aboutStyles.aboutTeamBody}>
                         { data?.contentfulAbout.team.map((item, i) => (
                             <div key={ item?.id } className= {aboutStyles.grid2Columnflow}>
-                                <img 
-                                    src={ item?.avatar.url }
-                                    className={ aboutStyles.grid2ColumnflowImage }
-                                />
+                                <div className= {aboutStyles.grid2ColumnflowImg}>
+                                    <img 
+                                        src={ item?.avatar.url }
+                                        className={ aboutStyles.grid2ColumnflowImage }
+                                    />
+                                </div>
+                               
                                 <div className= {aboutStyles.grid2ColumnText}>
                                     <h4>{ item?.name }</h4>
                                     <h6>{ item?.position }</h6>

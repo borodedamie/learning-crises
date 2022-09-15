@@ -1,16 +1,17 @@
 /* styling For Caurosel Section */
 .container {
   /* padding: 3rem; */
-  margin: 3rem ;
+  margin-left: 2rem ;
+  margin-top: 3rem;
   display: flex;
-  gap: 1rem;
-  justify-content: space-around;
-}
+  gap: 3rem;
+  /* justify-content: space-between;*/
+} 
 button {
     cursor: pointer;
 }
 .sliderContainer {
-  width: 60vw;
+  width: 62vw;
 }
 
 .swiperImage {
@@ -328,7 +329,7 @@ color: #555555;
 .grid3ColumnflowImage{
   margin-bottom: 0.5rem;
   border-radius: 29.6624px;
-  width: 30vw;
+  width: 25vw;
   /* height: 220px; */
 }
 
@@ -378,8 +379,11 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 15vw;
+  width: 10vw;
   border-radius: 6px;
+}
+.grid3ColumnButton button a{
+  color: #ffff;
 }
 
 .grid3ColumnButton button:last-child{
@@ -388,7 +392,7 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 15vw;
+  width: 10vw;
   border-radius: 6px;
 }
 .actionBtns{
@@ -519,6 +523,47 @@ color: #555555;
   font-family: 'League Spartan';
 }
 
+/* Edu Support View Page */
+.view{
+  margin: 3rem 0;
+}
+.viewImage{
+  width: 80vw;
+  border-radius: 37px;
+}
+
+.viewImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewText {
+  margin: 2rem 8rem 2rem 8rem;
+}
+
+.viewText h4{
+  margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555555;
+}
+
+.viewText h6{
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555;
+}
+
+.viewText p{
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555;
+  line-height: 22px;
+  font-family: 'League Spartan';
+}
+
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -590,6 +635,10 @@ color: #555555;
     height: 25vh;
   }
 
+  .viewText {
+    margin: 2rem 5rem 2rem 5rem;
+  }
+
 
 }
 
@@ -611,6 +660,7 @@ color: #555555;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  
 }
 .grid2ColumnflowImage{
   width: 60vw;
@@ -663,6 +713,10 @@ color: #555555;
   .aboutDetails{
   margin: 5rem 2rem;
 }
+
+.viewText {
+  margin: 2rem 3rem 2rem 3rem;
+}
 }
 
 @media (max-width: 420px){
@@ -695,10 +749,34 @@ color: #555555;
 
 .grid3Column{
   grid-template-columns: repeat(1, 1fr);
+ 
+
 }
+
+.grid2ColumnflowImg,
+.grid3ColumnflowImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid3ColumnText{
+  text-align: center;
+}
+
+
 
 .grid3ColumnflowImage{
   width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid3ColumnButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid{

@@ -20,10 +20,12 @@ const SupportPage = ({ data }) => {
                     <div className= {supportStyles.grid3Column }>
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
                         <div key={ node?.id } className= {supportStyles.grid3Columnflow}>
-                           <img 
+                          <div className= {supportStyles.grid3ColumnflowImg}>
+                          <img 
                            src={ node?.image.url } 
                            className={supportStyles.grid3ColumnflowImage}
-                           /> 
+                           />
+                          </div> 
                                 <div className= {supportStyles.grid3ColumnText}>
                                     <h4>{ node?.title }</h4>
                                     <h6>Category: Texts </h6>
