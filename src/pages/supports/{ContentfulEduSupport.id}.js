@@ -26,11 +26,14 @@ const options = {
 const EduSupportPostPage = (props) => {
     return (
         <Layout>
-            <section style={{ padding: '2rem' }}>
-                <img src={ props.data.contentfulEduSupport.image.url } />
+            <section style={{ padding: '2rem' }} >
+              <div >
+              <img src={ props.data.contentfulEduSupport.image.url } />
                 <h4>{ props.data.contentfulEduSupport.title }</h4>
                 <p>Posted { convertDate(props.data.contentfulEduSupport.createdAt) }</p>
                 <div>{ renderRichText(props.data.contentfulEduSupport.post, options) }</div>
+              </div>
+                
             </section>
         </Layout>
     )
