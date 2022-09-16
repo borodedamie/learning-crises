@@ -26,8 +26,8 @@ const imgToPdf = (title, url) => {
     const image = new Image();
     image.src = url
 
-    doc.text(`${title}`, 10, 10)
-    doc.addImage(image, 'PNG', 300, 200)
+    doc.text(`${title}`, 90, 30)
+    doc.addImage(image, 'PNG', 55, 50, 340, 250)
     doc.save("a4.pdf")
 }
 
