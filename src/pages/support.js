@@ -32,7 +32,7 @@ const SupportPage = ({ data }) => {
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= {supportStyles.grid3ColumnButton}>
-                                    <button><Link to={`/supports/${node.id}`}>View</Link></button>
+                                <Link to={`/supports/${node.id}`}> <button>View</button></Link>
                                 </div>
                         </div>
                     ))}    

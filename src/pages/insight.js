@@ -82,16 +82,17 @@ const share = async (id) => {
                         { node?.introduction.introduction }
                     </p>
                     <div className= { insightStyles.content1Button}>
-                        { !newItems[i] ? <button onClick={ () => toggleHandler(i) }><Link>Show More <span><AiOutlineArrowRight/></span></Link></button> : '' }
+                        { !newItems [i] ? <button onClick={ () => toggleHandler(i) }><Link>Show More <p><AiOutlineArrowRight/></p> </Link></button> : '' }
+                        
                     </div>
                     { newItems[i] && 
                       <>
                         <div>
                           { renderRichText(node?.article, options)}
                         </div>  
-                        <div className='text share'>
-                          <span>Share <FaShareAlt /></span>
-                          <span onClick={ () => toggleHandler(i) } >Show Less <GrClose /></span>
+                        <div className= {insightStyles.share}>
+                          <h6>Share <p><FaShareAlt /></p></h6>
+                          <h6 onClick={ () => toggleHandler(i) } className = {insightStyles.less} >Show Less <p > <GrClose style={{color: "#EE0000"}}/></p> </h6>
                         </div>
                       </>
                     }                

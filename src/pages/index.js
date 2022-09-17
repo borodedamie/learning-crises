@@ -131,9 +131,9 @@ const IndexPage = ({ data }) => {
             <div className={ indexStyles.box }  >
                 <h3>EduInsight</h3>
                 <Swiper                 
+                    // navigation
+                    // loop= {"true"}
                     navigation
-                    loop= {"true"}
-                    // navigation={true}
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}                  
                 >
@@ -174,7 +174,7 @@ const IndexPage = ({ data }) => {
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
                 <Swiper                 
-                    navigation={true}
+                    navigation
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}              
                     >
@@ -190,9 +190,8 @@ const IndexPage = ({ data }) => {
                           </div>
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ node?.title }</h4>
-                            <p className={ indexStyles.author }>  By { node?.author }</p>
                             <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                            <button><Link>Read More</Link></button>                             
+                            <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link>Read More</Link></button>                             
                           </div>
                       </div>            
                     </SwiperSlide> 
@@ -214,7 +213,7 @@ const IndexPage = ({ data }) => {
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
                 <Swiper                 
-                    navigation={true}
+                    navigation
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}         
                     >
@@ -233,7 +232,7 @@ const IndexPage = ({ data }) => {
                               <h4>{ node?.title }</h4>
                               <p className={ indexStyles.author }></p>
                               <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                              <button><Link>Read More</Link></button>                             
+                              <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link>Read More</Link></button>                             
                             </div>
                         </div>                         
                       </SwiperSlide> 
