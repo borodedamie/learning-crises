@@ -58,15 +58,15 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className={ indexStyles.asideBox }>
                     <img
-                        src={ data.allContentfulEduInsight.nodes[0].coverImage.url }
+                        src={ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage.url }
                         className={indexStyles.asideImage}
                         alt="index-page-image"
                       /> 
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
-                          <h4>{ data.allContentfulEduInsight.nodes[0].title }</h4>
-                          <p className={ indexStyles.author }>By { data.allContentfulEduInsight.nodes[0].author }</p>
-                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[0].createdAt) }</p>
+                          <h4>{ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].title }</h4>
+                          <p className={ indexStyles.author }>By { data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].author }</p>
+                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].createdAt) }</p>
                         </div>
                       </div>  
                   </div>
@@ -79,15 +79,15 @@ const IndexPage = ({ data }) => {
                   </div>                    
                   <div className={ indexStyles.asideBox }>
                     <img
-                        src={  data.allContentfulEduInsight.nodes[1].coverImage.url }
+                        src={  data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage.url }
                         className={indexStyles.asideImage}
                         alt="index-page-image2"
                       /> 
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
-                          <h4>{ data.allContentfulEduInsight.nodes[1].title }</h4>
-                          <p className={ indexStyles.author }> By { data.allContentfulEduInsight.nodes[1].author }</p>
-                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[1].createdAt) }</p>
+                          <h4>{ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].title }</h4>
+                          <p className={ indexStyles.author }> By { data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].author }</p>
+                          <p className={ indexStyles.date }>{ convertDate(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].createdAt) }</p>
                         </div>
                       </div>  
                   </div>
