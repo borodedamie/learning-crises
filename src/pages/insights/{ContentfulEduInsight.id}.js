@@ -5,6 +5,7 @@ import Seo from '../../components/seo'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { convertDate } from '../../utils/convertDate'
+import * as insightPageStyles from '../../styling/style.module.css'
 
 const options = {
     renderMark: {
@@ -27,23 +28,24 @@ const options = {
 const EduInsightSharePage = (props) => {
     return (
         <Layout>
-            <section>
-                <div>
+            <section className= {insightPageStyles.container1}>
+                <div  className= {insightPageStyles.shareHeader} >
                     <h4>{ props.data.contentfulEduInsight.title }</h4>
                 </div>
-                <div>
+                <div className= {insightPageStyles.shareAuthor}>
                     <p>By { props.data.contentfulEduInsight.author }, { convertDate(props.data.contentfulEduInsight.createdAt) }</p>
                 </div>
-                <div>
+                <div className= {insightPageStyles.shareImage}>
                     <img 
                         alt='cover-image'
                         src={ props.data.contentfulEduInsight.coverImage.url }
+                        className = {insightPageStyles.shareImagee}
                     />
                 </div>
-                <div>
+                <div className={insightPageStyles.shareText}>
                     <p>{ props.data.contentfulEduInsight.introduction.introduction }</p>
                 </div>
-                <div>{ renderRichText( props.data.contentfulEduInsight.article, options ) }</div>
+                <div className={insightPageStyles.shareText}>{ renderRichText( props.data.contentfulEduInsight.article, options ) }</div>
             </section>
         </Layout>
     )
