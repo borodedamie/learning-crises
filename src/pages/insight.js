@@ -32,13 +32,28 @@ const options = {
 
 const InsightPage = ({ data }) => {
 const [ newItems, setNewItems ] = useState({})
-  
+
+// toggle function for show more/less 
 const toggleHandler = (id) => {
   setNewItems((txt) => ({
     ...txt,
     [id]: !txt[id],
   }));
 };
+
+// share functionality
+const share = async (id) => {
+  const shareData = {
+    title: document.title,
+    url: window.location.href
+  }
+
+  try {
+    await navigator.share( shareData )
+  } catch (err) {
+    console.log(`Error: ${err}`)
+  }
+}
 
     return (
     <Layout>
@@ -76,7 +91,7 @@ const toggleHandler = (id) => {
                         </div>  
                         <div className='text share'>
                           <span>Share <FaShareAlt /></span>
-                          <span onClick={ () => toggleHandler(i) } >Close <GrClose /></span>
+                          <span onClick={ () => toggleHandler(i) } >Show Less <GrClose /></span>
                         </div>
                       </>
                     }                
