@@ -45,7 +45,7 @@ const toggleHandler = (id) => {
 const share = async (id) => {
   const shareData = {
     title: document.title,
-    url: window.location.href
+    url: window.location.origin + `/insights/${id}`
   }
 
   try {

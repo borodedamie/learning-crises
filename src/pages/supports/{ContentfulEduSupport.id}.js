@@ -5,6 +5,7 @@ import { convertDate } from "../../utils/convertDate"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import * as supportPageStyles from '../../styling/style.module.css'
+import Seo from '../../components/seo'
 
 const options = {
   renderMark: {
@@ -63,3 +64,5 @@ query($id: String) {
 `;
 
 export default EduSupportPostPage
+
+export const Head = () => <Seo title="EduSupport Data Page" />
