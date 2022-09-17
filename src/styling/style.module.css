@@ -47,7 +47,7 @@ button {
     background-color: rgba(0, 0, 0, 0.813);
     bottom: 0;
     left: 0;
-    height: 10vh;
+    height: 50px;
     width: 100%;
     z-index: 1;
     padding: 14px 20px;
@@ -222,7 +222,7 @@ button {
   font-family: League Spartan;  
 }
 .content1Paragraph p{
-  margin-right: 3rem;
+  /* margin-right: 2rem; */
   font-weight: 600;
   font-size: 12px;
   color: #555555;
@@ -245,7 +245,7 @@ button {
 }
 
 .content1Body{
-  margin: 2rem 6rem;
+  margin: 2rem 3rem;
 }
 
 .content1Body p{
@@ -585,7 +585,7 @@ color: #555555;
 }
 
   .overlay{
-    height: 4vh;
+    height: 4rem;
     padding: 10px 13px;
   }
   .sliderContainer{
@@ -639,12 +639,16 @@ color: #555555;
     margin: 2rem 5rem 2rem 5rem;
   }
 
+  .content1Body{
+    margin: 2rem 4.5rem;
+  }
+
 
 }
 
 @media (max-width: 768px){
   .overlay{
-    height: 5vh;
+    height: 3.5rem;
   }
 
   .aboutCon {
@@ -666,6 +670,10 @@ color: #555555;
   width: 60vw;
 }
 
+.content1Body{
+  margin: 2rem 4rem;
+}
+
 
 }
 
@@ -684,7 +692,7 @@ color: #555555;
   }
 
   .overlay{
-    height: 7vh;
+    height: 3rem;
   }
 
   .asideText h4{
@@ -706,6 +714,11 @@ color: #555555;
     width: 50vh;
   }
 
+  .boxSection {
+    padding: 2rem;
+    
+  }
+
   .content1Body{
     margin: 1rem 2rem;
   }
@@ -716,6 +729,10 @@ color: #555555;
 
 .viewText {
   margin: 2rem 3rem 2rem 3rem;
+}
+
+.content1Body{
+  margin: 2rem 4rem;
 }
 }
 
@@ -744,7 +761,7 @@ color: #555555;
     font-weight: 700;
 }
 .box{
-  width: 28vh;
+  width: 60vw;
 }
 
 .grid3Column{
@@ -802,4 +819,22 @@ color: #555555;
   width: 25vw;
   border-radius: 6px;
 }
+
+.about {
+  padding: 3rem 1.5rem;
+}
+
+.boxSection {
+  padding: 1.5rem;
+  
+}
+
+.swiperFlexImage {
+  width: 60vw;
+}
+
+.content1Body{
+  margin: 2rem 3.5rem;
+}
+
 }

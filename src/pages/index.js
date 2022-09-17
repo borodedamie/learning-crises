@@ -131,9 +131,9 @@ const IndexPage = ({ data }) => {
             <div className={ indexStyles.box }  >
                 <h3>EduInsight</h3>
                 <Swiper                 
+                    // navigation
+                    // loop= {"true"}
                     navigation
-                    loop= {"true"}
-                    // navigation={true}
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}                  
                 >
@@ -174,7 +174,7 @@ const IndexPage = ({ data }) => {
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
                 <Swiper                 
-                    navigation={true}
+                    navigation
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}              
                     >
@@ -214,7 +214,7 @@ const IndexPage = ({ data }) => {
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
                 <Swiper                 
-                    navigation={true}
+                    navigation
                     modules={[Pagination , Navigation]}                    
                     className={indexStyles.mySwiper}         
                     >
