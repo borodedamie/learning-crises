@@ -1,4 +1,4 @@
-import * as React from "react"
+import { React, useState } from "react"
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
 // import { StaticImage } from 'gatsby-plugin-image'
@@ -7,6 +7,8 @@ import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
 
 const SupportPage = ({ data }) => {
+const [ category, setCategory ] = useState('')
+
     return(
         <Layout>
             <section className= {supportStyles.container1}>
@@ -14,8 +16,9 @@ const SupportPage = ({ data }) => {
             <h2>Sort List</h2>
                     <div className= {supportStyles.selectButton}>
                         <button>All</button> 
-                        <button >Videos</button>
-                        <button>Texts Only</button>
+                        { data?.allContentfulCategory.nodes.map((node, i) => (
+                          <button onClick={ () => setCategory( node?.name ) }>{ node?.name }</button>
+                        ))}
                     </div>
                     <div className= {supportStyles.grid3Column }>
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
@@ -48,16 +51,26 @@ export const query = graphql`
 query EduSupport {
   allContentfulEduSupport(limit: 10) {
     nodes {
+      category {
+        name
+      }
       contentful_id
       id
       createdAt
       title
       image {
         url
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }
+  allContentfulCategory(limit: 10) {
+    nodes {
+      name
+    }
+  }
 }
+
 `;
 
 export default SupportPage
