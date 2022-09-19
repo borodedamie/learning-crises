@@ -224,7 +224,6 @@ button {
   font-family: League Spartan;  
 }
 .content1Paragraph p{
-  /* margin-right: 2rem; */
   font-weight: 600;
   font-size: 12px;
   color: #555555;
@@ -254,24 +253,35 @@ button {
   color: #555555;
   font-size: 14px;
   line-height: 22px;
-  /* line-height: 1rem; */
   margin-bottom: 8px;
   font-weight: 500;
   font-family: 'League Spartan';
 
 
 }
-.content1Body button a{
-  background-color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  display: flex;
-  gap: 0.3rem;
 
+
+.grid3ColumnShowButton button{
+  background-color: #FCB900;
+  color:#fff ;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 10vw;
+  border-radius: 6px;
 }
+
+.grid3ColumnShowButton{
+  margin-left: 3rem;
+  display: flex;
+  margin-top: 1rem;
+}
+
 .share{
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
 }
 
 .share h6{
@@ -281,14 +291,6 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
-
-
-
-.less{
-  color: #EE0000;
-}
-
-
 
 
 
