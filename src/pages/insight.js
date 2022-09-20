@@ -81,37 +81,35 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                                 </div>
                                 <div className= { insightStyles.grid3ColumnShowButton}>
                                <Link><button onClick={() => setModalIsOpen(true)}>Show More</button></Link>
-                               <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
-                               <div className={ insightStyles.content1Header } >
-                                      <h4>
-                                      { node?.title }
-                                      </h4>
-                                  </div>
-                                  <div className={ insightStyles.content1Paragraph } >
-                                      <p> By { node?.author }, { convertDate(node?.createdAt) }</p>
-                                  </div>
-                                  <div className={ insightStyles.content1Image } >
-                                  <img
-                                      alt='carousel-image'
-                                      src={node?.coverImage.url}
-                                      className={insightStyles.contentImage }
-                                  />
-                                </div>
-                              
-                              <div className={ insightStyles.content1Body }>
-                              <p>{ node?.introduction.introduction }</p>
-                                <p> { renderRichText(node?.article, options)}</p> 
-                              </div> 
-                              <div className= {insightStyles.share}>
-                                <h6 onClick={ () => share(node.id) }>Share <p><FaShareAlt /></p></h6>
                               </div>
-                                <div className= { insightStyles.grid3ColumnShowButton}>
-                                  <button onClick={() => setModalIsOpen(false)} >Close</button>
-                                </div>
-                               </Modal>
-                                </div>
                           </div>
                     ))}    
+                    <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
+                      <div className={ insightStyles.content1Header } >
+                        <h4>Demo Title</h4>
+                      </div>
+                      <div className={ insightStyles.content1Paragraph } >
+                        <p> By date</p>
+                      </div>
+                      <div className={ insightStyles.content1Image } >
+                        <img
+                          alt='carousel-image'
+                          src=''
+                          className={insightStyles.contentImage }
+                        />
+                      </div>
+                              
+                      <div className={ insightStyles.content1Body }>
+                        <p>Introduction</p>
+                        <p>RichText</p> 
+                      </div> 
+                      <div className= {insightStyles.share}>
+                        <h6>Share <p><FaShareAlt /></p></h6>
+                      </div>
+                      <div className= { insightStyles.grid3ColumnShowButton}>
+                      <button onClick={() => setModalIsOpen(false)} >Close</button>
+                      </div>
+                    </Modal>
                        </div>                   
                     </div> 
         </section>

@@ -1,4 +1,4 @@
-import { React, useState } from "react"
+import React, { useState } from 'react';
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
 // import { StaticImage } from 'gatsby-plugin-image'
@@ -15,13 +15,19 @@ const [ category, setCategory ] = useState('')
             <div className= {supportStyles.grid}>
             <h2>Sort List</h2>
                     <div className= {supportStyles.selectButton}>
-                        <button>All</button> 
+                        <button onClick={ () => setCategory('All') }>All</button> 
                         { data?.allContentfulCategory.nodes.map((node, i) => (
-                          <button onClick={ () => setCategory( node?.name ) }>{ node?.name }</button>
+                          <button key={ node?.id } onClick={ () => setCategory(node?.name) }>{ node?.name }</button>
                         ))}
                     </div>
                     <div className= {supportStyles.grid3Column }>
-                    { data?.allContentfulEduSupport.nodes.map((node, i) => (
+                    { data?.allContentfulEduSupport.nodes.filter((node) => {
+                      if(category === '' || category === 'All') {
+                        return node
+                      } else if( node?.category[0].name.toLowerCase().includes(category.toLowerCase())) {
+                        return node
+                      } return false
+                    }).map((node, i) => (
                         <div key={ node?.id } className= {supportStyles.grid3Columnflow}>
                           <div className= {supportStyles.grid3ColumnflowImg}>
                           <img 
@@ -31,7 +37,7 @@ const [ category, setCategory ] = useState('')
                           </div> 
                                 <div className= {supportStyles.grid3ColumnText}>
                                     <h4>{ node?.title }</h4>
-                                    <h6>Category: Texts </h6>
+                                    <h6>Category: { node?.category[0].name } </h6>
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= {supportStyles.grid3ColumnButton}>
