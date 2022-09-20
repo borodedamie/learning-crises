@@ -68,14 +68,6 @@
   padding-bottom: 3px;
 }
 
-.active{
-  color: #0000;
-  font-size: 16px;
-  font-weight: 600;
-  background:#fcb900;
-  padding: 3px;
-}
-
 /* Footer CSS Styling */
 .footer {
   display: flex;

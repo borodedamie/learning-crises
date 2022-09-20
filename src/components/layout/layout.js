@@ -25,6 +25,14 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 
+const styleActive = {
+    color: '#fcb900', 
+    fontSize: '16px', 
+    fontWeight: '600', 
+    borderBottom: '2px solid #fcb900', 
+    paddingBottom: '3px',
+}
+
 const Layout = ({ children }) => {
     return (
       <div>
@@ -44,11 +52,11 @@ const Layout = ({ children }) => {
             <div className={ menuList }>
                 <nav className={ menuListNav }>
                     <ul className={ menuItems }>
-                        <li><Link to='/' className={ navLinks } activeClassName="active">Home</Link></li>
-                        <li><Link to='/insight' className={ navLinks }>EduInsight</Link></li>
-                        <li><Link to='/data' className={ navLinks } activeClassName="active">EduData</Link></li>
-                        <li><Link to='/support' className={ navLinks }>EduSupport</Link></li>
-                        <li><Link to='/about' className={ navLinks }>About Us</Link></li>
+                        <li><Link to='/' className={ navLinks } activeStyle={ styleActive }>Home</Link></li>
+                        <li><Link to='/insight' className={ navLinks } activeStyle={ styleActive }>EduInsight</Link></li>
+                        <li><Link to='/data' className={ navLinks } activeStyle={ styleActive }>EduData</Link></li>
+                        <li><Link to='/support' className={ navLinks } activeStyle={ styleActive }>EduSupport</Link></li>
+                        <li><Link to='/about' className={ navLinks } activeStyle={ styleActive }>About Us</Link></li>
                         <li><Link to = "" className= {menuButton}><BiMenu /></Link></li>
                     </ul>
                 </nav>
