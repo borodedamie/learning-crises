@@ -13,7 +13,6 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 
-
 const options = {
   renderMark: {
     [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
@@ -34,7 +33,16 @@ const options = {
 
 
 const InsightPage = ({ data }) => {
+// states
 const [ newItems, setNewItems ] = useState({})
+const [modalIsOpen, setModalIsOpen] = useState(false)
+const [ modalData, setModalData ] = useState({
+  title: '',
+  date: '',
+  coverImage: '',
+  introduction: '',
+  article: '',
+})
 
 // toggle function for show more/less 
 const toggleHandler = (id) => {
@@ -58,7 +66,6 @@ const share = async (id) => {
   }
 }
 
-const [modalIsOpen, setModalIsOpen] = useState(false)
 // Modal.setAppElement('#root')
     return (
 
@@ -80,27 +87,41 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= { insightStyles.grid3ColumnShowButton}>
-                               <Link><button onClick={() => setModalIsOpen(true)}>Show More</button></Link>
+                               <Link>
+                               <button onClick={
+                                () => {
+                                    setModalIsOpen(true)
+                                    setModalData({
+                                      title: node?.title,
+                                      date: convertDate(node?.createdAt),
+                                      coverImage: node?.coverImage.url,
+                                      introduction: node?.introduction.introduction,
+                                    }
+                                    )
+                                  }
+                                }
+                               >Show More</button>
+                               </Link>
                               </div>
                           </div>
                     ))}    
                     <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
                       <div className={ insightStyles.content1Header } >
-                        <h4>Demo Title</h4>
+                        <h4>{ modalData.title }</h4>
                       </div>
                       <div className={ insightStyles.content1Paragraph } >
-                        <p> By date</p>
+                        <p> By { modalData.date }</p>
                       </div>
                       <div className={ insightStyles.content1Image } >
                         <img
                           alt='carousel-image'
-                          src=''
+                          src={ modalData.coverImage }
                           className={insightStyles.contentImage }
                         />
                       </div>
                               
                       <div className={ insightStyles.content1Body }>
-                        <p>Introduction</p>
+                        <p>{ modalData.introduction }</p>
                         <p>RichText</p> 
                       </div> 
                       <div className= {insightStyles.share}>
