@@ -106,30 +106,30 @@ const share = async (id) => {
                           </div>
                     ))}    
                     <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
-                      <div className={ insightStyles.content1Header } >
-                        <h4>{ modalData.title }</h4>
-                      </div>
-                      <div className={ insightStyles.content1Paragraph } >
-                        <p> By { modalData.date }</p>
-                      </div>
-                      <div className={ insightStyles.content1Image } >
-                        <img
-                          alt='carousel-image'
-                          src={ modalData.coverImage }
-                          className={insightStyles.contentImage }
-                        />
-                      </div>
-                              
-                      <div className={ insightStyles.content1Body }>
-                        <p>{ modalData.introduction }</p>
-                        <p>RichText</p> 
-                      </div> 
-                      <div className= {insightStyles.share}>
-                        <h6>Share <p><FaShareAlt /></p></h6>
-                      </div>
-                      <div className= { insightStyles.grid3ColumnShowButton}>
-                      <button onClick={() => setModalIsOpen(false)} >Close</button>
-                      </div>
+                        <div className={ insightStyles.content1Header } >
+                          <h4>{ modalData.title }</h4>
+                        </div>
+                        <div className={ insightStyles.content1Paragraph } >
+                          <p> By { modalData.date }</p>
+                        </div>
+                        <div className={ insightStyles.content1Image } >
+                          <img
+                            alt='carousel-image'
+                            src={ modalData.coverImage }
+                            className={insightStyles.contentImage }
+                          />
+                        </div>
+                                
+                        <div className={ insightStyles.content1Body }>
+                          <p>{ modalData.introduction }</p>
+                          <p>RichText</p> 
+                        </div> 
+                        <div className= {insightStyles.share}>
+                          <h6>Share <p><FaShareAlt /></p></h6>
+                        </div>
+                        <div className= { insightStyles.grid3ColumnShowButton}>
+                        <button onClick={() => setModalIsOpen(false)} >Close</button>
+                        </div>
                     </Modal>
                        </div>                   
                     </div> 

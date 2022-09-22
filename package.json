@@ -17,6 +17,7 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@contentful/rich-text-types": "^15.12.1",
+    "@formspree/react": "^2.4.0",
     "@react-icons/all-files": "^4.1.0",
     "gatsby": "^4.21.1",
     "gatsby-plugin-apollo": "^4.0.2",

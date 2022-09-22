@@ -24,6 +24,7 @@ import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
+import { useForm, ValidationError } from '@formspree/react'
 
 const styleActive = {
     color: '#fcb900', 
@@ -34,6 +35,13 @@ const styleActive = {
 }
 
 const Layout = ({ children }) => {
+    const [ state, handleSubmit ] = useForm('xeqdgqvr')
+
+    if(state.succeeded) {
+        console.log('it worked!')
+        document.querySelector('#email').value = ''
+    }
+
     return (
       <div>
         <header>
@@ -94,16 +102,25 @@ const Layout = ({ children }) => {
                 <h3>Contact Us</h3>
                 <p>adedejimgt@gmail.com</p>
             </div>
-            <div className={ footerSubscription }>
-                <h3>Subscribe to our Newsletters</h3>
-                <input 
-                    type="text" 
-                    placeholder="Email Address" 
-                />
-            <div className={ submitButton }>
-                <button>Submit</button>
-            </div>           
-            </div>
+            <form onSubmit={ handleSubmit }>
+                <div className={ footerSubscription }>
+                    <h3>Subscribe to our Newsletters</h3>
+                    <input 
+                        type="text"
+                        id="email"
+                        name="email" 
+                        placeholder="Email Address" 
+                    />
+                    <ValidationError 
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                    />
+                <div className={ submitButton }>
+                    <button type='submit' disabled={state.submitting}>Submit</button>
+                </div>           
+                </div>
+            </form>
         </footer>
       </div>  
     )
