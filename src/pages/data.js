@@ -28,7 +28,7 @@ const imgToPdf = (title, url) => {
 
     doc.text(`${title}`, 90, 30)
     doc.addImage(image, 'PNG', 55, 50, 340, 250)
-    doc.save("a4.pdf")
+    doc.save(`${title}.pdf`)
 }
 
     return (
@@ -42,7 +42,7 @@ const imgToPdf = (title, url) => {
                         modules={[Pagination]}
                         className={dataStyles.mycarousel}
                         >
-                        { data?.allContentfulEduData.nodes.slice(0, 2).map((node, i) => (
+                        { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
                                 <img 
                                 alt='carousel-image'

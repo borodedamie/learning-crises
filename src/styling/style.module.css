@@ -47,7 +47,7 @@ button {
     background-color: rgba(0, 0, 0, 0.813);
     bottom: 0;
     left: 0;
-    height: 10vh;
+    height: 50px;
     width: 100%;
     z-index: 1;
     padding: 14px 20px;
@@ -173,6 +173,7 @@ button {
   border-radius: 15.9629px;
 }
 
+
 .author,
 .date {
   font-family: League Spartan;
@@ -206,6 +207,7 @@ button {
 
 
 /* Insight Page */
+
 .content1Paragraph,
 .content1Header{
   display: flex;
@@ -223,7 +225,6 @@ button {
   font-family: League Spartan;  
 }
 .content1Paragraph p{
-  margin-right: 3rem;
   font-weight: 600;
   font-size: 12px;
   color: #555555;
@@ -246,14 +247,13 @@ button {
 }
 
 .content1Body{
-  margin: 2rem 6rem;
+  margin: 2rem 3rem;
 }
 
 .content1Body p{
   color: #555555;
   font-size: 14px;
   line-height: 22px;
-  /* line-height: 1rem; */
   margin-bottom: 8px;
   font-weight: 500;
   font-family: 'League Spartan';
@@ -261,30 +261,41 @@ button {
 
 }
 
-.content1Button{
-  display: flex;
+
+.grid3ColumnShowButton button{
+  background-color: #FCB900;
+  color:#fff ;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 10vw;
+  border-radius: 6px;
 }
-.content1Body button{
-  background-color: #fff;
-  /* color: #555555; */
+
+.grid3ColumnShowButton{
+  margin-left: 3rem;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.share{
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+
+.share h6{
+  display: flex;
+  gap: 0.2rem;
   font-weight: 700;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  margin-right: 5px;
-  
+  cursor: pointer;
 }
-.content1Body span svg {
-  font-size: 12px;
-  margin-top: 0.5rem;
-}
-/* .text span {
-  font-size: 12px;
-  margin-top: 2rem;
-  display:  flex;
-  gap: 4rem;
-} */
+
+
+
+
 
 /* EduData Page */
 .mycarousel{
@@ -565,6 +576,59 @@ color: #555555;
   font-family: 'League Spartan';
 }
 
+/* Insight share Page Styling */
+.shareAuthor,
+.shareHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shareHeader h4{
+  font-weight: 700;
+  font-size: 20px;
+  width: 350px;
+  color: #555555;
+  margin: 2rem 0 0rem 0;
+  font-family: League Spartan;
+}
+
+.shareAuthor p{
+  font-weight: 600;
+  font-size: 12px;
+  color: #555555;
+  margin: 2rem 0 2rem 0;
+  font-family: League Spartan;  
+}
+
+.shareImage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shareImagee{
+  width: 70vw;
+  object-fit: contain;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.shareText{
+  margin: 2rem 3rem;
+}
+
+.shareText p{
+  color: #555555;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  font-family: 'League Spartan';
+}
+
+
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -586,7 +650,7 @@ color: #555555;
 }
 
   .overlay{
-    height: 4vh;
+    height: 4rem;
     padding: 10px 13px;
   }
   .sliderContainer{
@@ -640,12 +704,16 @@ color: #555555;
     margin: 2rem 5rem 2rem 5rem;
   }
 
+  .content1Body{
+    margin: 2rem 4.5rem;
+  }
+
 
 }
 
 @media (max-width: 768px){
   .overlay{
-    height: 5vh;
+    height: 3.5rem;
   }
 
   .aboutCon {
@@ -667,6 +735,10 @@ color: #555555;
   width: 60vw;
 }
 
+.content1Body{
+  margin: 2rem 4rem;
+}
+
 
 }
 
@@ -685,7 +757,7 @@ color: #555555;
   }
 
   .overlay{
-    height: 7vh;
+    height: 3rem;
   }
 
   .asideText h4{
@@ -707,6 +779,11 @@ color: #555555;
     width: 50vh;
   }
 
+  .boxSection {
+    padding: 2rem;
+    
+  }
+
   .content1Body{
     margin: 1rem 2rem;
   }
@@ -717,6 +794,10 @@ color: #555555;
 
 .viewText {
   margin: 2rem 3rem 2rem 3rem;
+}
+
+.content1Body{
+  margin: 2rem 4rem;
 }
 }
 
@@ -745,7 +826,7 @@ color: #555555;
     font-weight: 700;
 }
 .box{
-  width: 28vh;
+  width: 60vw;
 }
 
 .grid3Column{
@@ -803,4 +884,22 @@ color: #555555;
   width: 25vw;
   border-radius: 6px;
 }
+
+.about {
+  padding: 3rem 1.5rem;
+}
+
+.boxSection {
+  padding: 1.5rem;
+  
+}
+
+.swiperFlexImage {
+  width: 60vw;
+}
+
+.content1Body{
+  margin: 2rem 3.5rem;
+}
+
 }

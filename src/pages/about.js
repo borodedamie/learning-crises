@@ -12,7 +12,7 @@ import Seo from '../components/seo'
 const AboutPage = ({ data }) => {
     return(
         <Layout>
-            <section className= {aboutStyles.container1} >
+            <section>
                 <div className= {aboutStyles.aboutDetails}>
                     <div className= {aboutStyles.aboutDetailsHeader}>
                         <h3>About Learning Rises</h3>

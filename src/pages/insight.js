@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Modal from 'react-modal'
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby"
 import * as insightStyles from '../styling/style.module.css'
@@ -10,6 +11,7 @@ import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+
 
 const options = {
   renderMark: {
@@ -31,8 +33,18 @@ const options = {
 
 
 const InsightPage = ({ data }) => {
+// states
 const [ newItems, setNewItems ] = useState({})
-  
+const [modalIsOpen, setModalIsOpen] = useState(false)
+const [ modalData, setModalData ] = useState({
+  title: '',
+  date: '',
+  coverImage: '',
+  introduction: '',
+  article: '',
+})
+
+// toggle function for show more/less 
 const toggleHandler = (id) => {
   setNewItems((txt) => ({
     ...txt,
@@ -40,49 +52,87 @@ const toggleHandler = (id) => {
   }));
 };
 
+// share functionality
+const share = async (id) => {
+  const shareData = {
+    title: document.title,
+    url: window.location.origin + `/insights/${id}`
+  }
+
+  try {
+    await navigator.share( shareData )
+  } catch (err) {
+    console.log(`Error: ${err}`)
+  }
+}
+
+// Modal.setAppElement('#root')
     return (
+
     <Layout>
         <section className={ insightStyles.container1 }>
-            { data?.allContentfulEduInsight.nodes.map((node, i) => (
-            <div key={ node?.id }>
-                <div className={ insightStyles.content1Header } >
-                    <h4>
-                    { node?.title }
-                    </h4>
-                </div>
-                <div className={ insightStyles.content1Paragraph } >
-                    <p>
-                    By { node?.author }, { convertDate(node?.createdAt) }
-                    </p>
-                </div>
-                <div className={ insightStyles.content1Image } >
-                <img
-                    alt='carousel-image'
-                    src={node?.coverImage.url}
-                    className={insightStyles.contentImage }
-                />
-                </div>
-                <div className= { insightStyles.content1Body}>
-                    <p>
-                        { node?.introduction.introduction }
-                    </p>
-                    <div className= { insightStyles.content1Button}>
-                        { !newItems[i] ? <button onClick={ () => toggleHandler(i) }><Link>Show More <span><AiOutlineArrowRight/></span></Link></button> : '' }
-                    </div>
-                    { newItems[i] && 
-                      <>
-                        <div>
-                          { renderRichText(node?.article, options)}
-                        </div>  
-                        <div className='text share'>
-                          <span>Share <FaShareAlt /></span>
-                          <span onClick={ () => toggleHandler(i) } >Close <GrClose /></span>
+        <div className= { insightStyles.grid}>
+         
+                    <div className= { insightStyles.grid3Column }>
+                    { data?.allContentfulEduInsight.nodes.map((node, i) => (
+                        <div key={ node?.id } className= { insightStyles.grid3Columnflow}>
+                          <div className= { insightStyles.grid3ColumnflowImg}>
+                          <img 
+                           src={node?.coverImage.url} 
+                           className={ insightStyles.grid3ColumnflowImage}
+                           />
+                          </div> 
+                                <div className= { insightStyles.grid3ColumnText}>
+                                    <h4>{ node?.title }</h4>
+                                    <p>Posted { convertDate(node?.createdAt) }</p>
+                                </div>
+                                <div className= { insightStyles.grid3ColumnShowButton}>
+                               <Link>
+                               <button onClick={
+                                () => {
+                                    setModalIsOpen(true)
+                                    setModalData({
+                                      title: node?.title,
+                                      date: convertDate(node?.createdAt),
+                                      coverImage: node?.coverImage.url,
+                                      introduction: node?.introduction.introduction,
+                                    }
+                                    )
+                                  }
+                                }
+                               >Show More</button>
+                               </Link>
+                              </div>
+                          </div>
+                    ))}    
+                    <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
+                        <div className={ insightStyles.content1Header } >
+                          <h4>{ modalData.title }</h4>
                         </div>
-                      </>
-                    }                
-                </div>
-            </div>
-            ))}
+                        <div className={ insightStyles.content1Paragraph } >
+                          <p> By { modalData.date }</p>
+                        </div>
+                        <div className={ insightStyles.content1Image } >
+                          <img
+                            alt='carousel-image'
+                            src={ modalData.coverImage }
+                            className={insightStyles.contentImage }
+                          />
+                        </div>
+                                
+                        <div className={ insightStyles.content1Body }>
+                          <p>{ modalData.introduction }</p>
+                          <p>RichText</p> 
+                        </div> 
+                        <div className= {insightStyles.share}>
+                          <h6>Share <p><FaShareAlt /></p></h6>
+                        </div>
+                        <div className= { insightStyles.grid3ColumnShowButton}>
+                        <button onClick={() => setModalIsOpen(false)} >Close</button>
+                        </div>
+                    </Modal>
+                       </div>                   
+                    </div> 
         </section>
     </Layout>
     )
