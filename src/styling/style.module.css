@@ -199,8 +199,9 @@ button {
     margin: 1rem;
 }
 .swiperArrow{
-    width: 30px;
-    cursor: pointer;
+   color: #FCB900;
+   font-size: 2rem;
+   cursor: pointer;
 }
 
 
