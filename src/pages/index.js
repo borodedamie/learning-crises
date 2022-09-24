@@ -5,6 +5,8 @@ import {RiArrowLeftCircleFill} from "@react-icons/all-files/ri/RiArrowLeftCircle
 import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
+import '../../src/styling/style.css'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper} from "swiper/react";
 // Import Swiper styles
@@ -29,9 +31,12 @@ const IndexPage = ({ data }) => {
                     pagination={{
                       dynamicBullets: true,
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination , Navigation]} 
                     className={indexStyles.mySwiper}
+                    navigation
+                    id='main-swiper'
                     >
+                      
                       <SwiperSlide >
                           <StaticImage 
                           alt='carousel-image'
@@ -54,6 +59,7 @@ const IndexPage = ({ data }) => {
                               />
                       </SwiperSlide>               
                   </Swiper>
+                  
               </div>    
               <div className={ indexStyles.aside }>
                 <div className= {indexStyles.asideCol}>
@@ -140,7 +146,8 @@ const IndexPage = ({ data }) => {
                     loop= {"true"}
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}                  
+                    className={indexStyles.mySwiper}
+                    id='box-swiper'                  
                 >
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
               <SwiperSlide key={ node?.id }>
@@ -150,6 +157,7 @@ const IndexPage = ({ data }) => {
                       alt='carousel-image'
                       src={ node?.coverImage.url }
                       className={indexStyles.swiperImagee }
+                      
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
@@ -163,18 +171,20 @@ const IndexPage = ({ data }) => {
               ))
             }
             </Swiper>
-              <div className={indexStyles.navigationBtns }>
+            
+              {/* <div className={indexStyles.navigationBtns }>
                <RiArrowLeftCircleFill className={indexStyles.swiperArrow }/>
                <RiArrowRightCircleFill className={indexStyles.swiperArrow }/>
                 
-              </div>
+              </div> */}
             </div>
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
                 <Swiper                 
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}              
+                    className={indexStyles.mySwiper}  
+                    id='box-swiper'              
                     >
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
@@ -195,18 +205,15 @@ const IndexPage = ({ data }) => {
                     </SwiperSlide> 
                     ))}                                     
                   </Swiper>
-                  <div className={indexStyles.navigationBtns }>
-                   <RiArrowLeftCircleFill className={indexStyles.swiperArrow }/>
-                   <RiArrowRightCircleFill className={indexStyles.swiperArrow }/>
-                    
-                  </div>
+                  
               </div>
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
                 <Swiper                 
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}         
+                    className={indexStyles.mySwiper}   
+                    id='box-swiper'        
                     >
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
@@ -229,10 +236,14 @@ const IndexPage = ({ data }) => {
                       </SwiperSlide> 
                     ))}                     
                   </Swiper>
-                  <div className={indexStyles.navigationBtns }>
-                  <RiArrowLeftCircleFill className={indexStyles.swiperArrow }/>
-                  <RiArrowRightCircleFill className={indexStyles.swiperArrow } onClick={() => swiper.slideNext() }/>
-                  </div>
+
+                    
+
+
+                 
+
+
+                  
               </div>
           </div>
       </section>

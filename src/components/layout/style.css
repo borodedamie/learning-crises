@@ -1,0 +1,33 @@
+.navbarr {
+  position: static;
+  background-color: #fff;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+}
+.navbarr.activee {
+  left: 0;
+  transition: 350ms;
+}
+@media (max-width: 992px) {
+  .navbarr {
+    display: block;
+    position: fixed;
+    background-color: rgb(249, 247, 247);
+    height: 100%;
+    width: 150px;
+    left: 0;
+    z-index: 200;
+    transition: 850ms;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: #fff;
+    top: 0;
+    left: -100%;
+  }
+  .menu-btn,
+  .navbarr {
+    display: block;
+  }
+}
