@@ -36,7 +36,7 @@ const imgToPdf = (title, url) => {
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
-                <div className={dataStyles.carouselContainer}>
+            <div className={dataStyles.carouselContainer}>
                     <Swiper
                         pagination={{
                         dynamicBullets: true,
@@ -54,7 +54,7 @@ const imgToPdf = (title, url) => {
                             </SwiperSlide> 
                         ))}                       
                     </Swiper>
-                </div>
+            </div>
                 <div className= {dataStyles.grid}>
                     <div className= {dataStyles.gridHeader}>
                         <h4>
@@ -62,7 +62,6 @@ const imgToPdf = (title, url) => {
                         </h4>
                     </div> 
                     <div className= {dataStyles.grid3Column }>
-
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                         <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
                             <div className= {dataStyles.grid3ColumnflowImg}>
@@ -77,48 +76,32 @@ const imgToPdf = (title, url) => {
                             <p>Posted { convertDate( node?.createdAt) }</p>
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
-                            <button onClick={
-                                () => {
-                                    setModalIsOpen(true)
-                                        }
-                                }
-                                >Preview</button>
-                            <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button>
-                            <Modal 
-                                isOpen = {modalIsOpen} 
-                                onRequestClose = {() => setModalIsOpen(false)} 
-                                style={{
-                                    overlay: {
-                                    backgroundColor: 'grey'
-                                    },
-                                    content: {
-                                    position: 'absolute',
-                                    left: '160px',
-                                    right: '160px',
-                                    }}}
-                                    className= {dataStyles.showSmallerModal}
-                            >
-                                <div className={dataStyles.content1Close } >
-                                <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
-                                </div>
-                                <div className= {dataStyles.ModalContentImg}>
-                                        <img 
-                                            src={ node?.infographics.url }
-                                            className={dataStyles.ModalContentImage } 
-                                        />
-                                </div>
-                                <div className= {dataStyles.ModalContent}>
-                                    <h4>{ node?.title }</h4>
-                                    <p>Posted { convertDate( node?.createdAt) }</p>
-                                </div>
-                            </Modal>  
+                            <button onClick={ () => {
+                                setModalIsOpen(true)
+                            }}>Preview</button> 
+                            <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
                         </div>
                         </div>   
-                    ))}  
-                     
-
+                    ))}    
                     </div> 
                 </div>
+            <div>
+            <Modal 
+                isOpen = {modalIsOpen} 
+                onRequestClose = {() => setModalIsOpen(false)} 
+                style={{
+                    overlay: {
+                    backgroundColor: 'grey'
+                    },
+                    content: {
+                    position: 'absolute',
+                    left: '160px',
+                    right: '160px',
+                    }}}
+                    className= {dataStyles.showSmallerModal}
+            >
+            </Modal> 
+            </div>
             </section>
         </Layout>
     )
