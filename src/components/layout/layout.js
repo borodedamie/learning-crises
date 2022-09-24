@@ -3,10 +3,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Link } from 'gatsby';
 import './style.css'
-import * as React from 'react'
 // import { useRef, useState } from "react";
 // import Modal from 'react-modal'
-import { Link } from 'gatsby'
 import { navbar, 
         logo, 
         searchBox,

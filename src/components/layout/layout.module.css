@@ -157,6 +157,10 @@
     width: 35vw;
     margin: 30px auto;
   }
+  .logoCon {
+
+    padding-left: 0rem;
+  }
   .menu-list {
     padding: 20px 150px;
   }
