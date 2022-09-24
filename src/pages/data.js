@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
+import Modal from 'react-modal'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -16,9 +17,10 @@ import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
 // jsPDF
 import { jsPDF } from 'jspdf'
+import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 
 const DataPage = ({ data }) => {
-    
+const [modalIsOpen, setModalIsOpen] = useState(false)   
 // convert img to PDF
 const imgToPdf = (title, url) => {
     const doc = new jsPDF('p', 'px', 'letter');
@@ -75,11 +77,45 @@ const imgToPdf = (title, url) => {
                             <p>Posted { convertDate( node?.createdAt) }</p>
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
-                            <button>Preview</button> 
-                            <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
+                            <button onClick={
+                                () => {
+                                    setModalIsOpen(true)
+                                        }
+                                }
+                                >Preview</button>
+                            <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button>
+                            <Modal 
+                                isOpen = {modalIsOpen} 
+                                onRequestClose = {() => setModalIsOpen(false)} 
+                                style={{
+                                    overlay: {
+                                    backgroundColor: 'grey'
+                                    },
+                                    content: {
+                                    position: 'absolute',
+                                    left: '160px',
+                                    right: '160px',
+                                    }}}
+                                    className= {dataStyles.showSmallerModal}
+                            >
+                                <div className={dataStyles.content1Close } >
+                                <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
+                                </div>
+                                <div className= {dataStyles.ModalContentImg}>
+                                        <img 
+                                            src={ node?.infographics.url }
+                                            className={dataStyles.ModalContentImage } 
+                                        />
+                                </div>
+                                <div className= {dataStyles.ModalContent}>
+                                    <h4>{ node?.title }</h4>
+                                    <p>Posted { convertDate( node?.createdAt) }</p>
+                                </div>
+                            </Modal>  
                         </div>
                         </div>   
-                    ))}    
+                    ))}  
+                     
 
                     </div> 
                 </div>
