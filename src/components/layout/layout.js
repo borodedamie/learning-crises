@@ -1,4 +1,6 @@
 import * as React from 'react'
+// import { useRef, useState } from "react";
+// import Modal from 'react-modal'
 import { Link } from 'gatsby'
 import { navbar, 
         logo, 
@@ -25,6 +27,8 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
+
+// const [modalIsOpen, setModalIsOpen] = useState(false)  
 
 const styleActive = {
     color: '#fcb900', 
@@ -54,7 +58,8 @@ const Layout = ({ children }) => {
                     />
                 </div>
                 <div className={ searchBox }>
-                    <FiSearch className={ searchBoxIcon } />
+                {/* <button onClick={() => {setModalIsOpen(true)}}><FiSearch className={ searchBoxIcon } /></button> */}
+                <FiSearch className={ searchBoxIcon } />  
                 </div>
             </div>
             <div className={ menuList }>

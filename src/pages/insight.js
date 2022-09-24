@@ -6,6 +6,7 @@ import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { FaShareAlt } from '@react-icons/all-files/fa/FaShareAlt'
+import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 import { GrClose } from '@react-icons/all-files/gr/GrClose'
 import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
@@ -105,7 +106,23 @@ const share = async (id) => {
                               </div>
                           </div>
                     ))}    
-                    <Modal isOpen = {modalIsOpen} onRequestClose = {() => setModalIsOpen(false)} className= {insightStyles.showModal}>
+                    <Modal 
+                      isOpen = {modalIsOpen} 
+                      onRequestClose = {() => setModalIsOpen(false)} 
+                      style={{
+                        overlay: {
+                          backgroundColor: 'grey'
+                        },
+                        content: {
+                          position: 'absolute',
+                          left: '160px',
+                          right: '160px',
+                        }}}
+                      className= {insightStyles.showModal}
+                      >
+                        <div className={ insightStyles.content1Close } >
+                          <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
+                        </div>
                         <div className={ insightStyles.content1Header } >
                           <h4>{ modalData.title }</h4>
                         </div>
@@ -126,9 +143,6 @@ const share = async (id) => {
                         </div> 
                         <div className= {insightStyles.share}>
                           <h6>Share <p><FaShareAlt /></p></h6>
-                        </div>
-                        <div className= { insightStyles.grid3ColumnShowButton}>
-                        <button onClick={() => setModalIsOpen(false)} >Close</button>
                         </div>
                     </Modal>
                        </div>                   
