@@ -164,7 +164,7 @@ const IndexPage = ({ data }) => {
                     <h4>{ node?.title }</h4>
                     <p className={ indexStyles.author }> By { node?.author }</p>
                     <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                    <button><Link>Read More</Link></button>                             
+                    <button  style={{marginTop : "34px"}}><Link>Read More</Link></button>                             
                   </div>
                 </div>                    
               </SwiperSlide>

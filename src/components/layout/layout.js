@@ -1,7 +1,12 @@
+
 import * as React from 'react';
 import { useState } from 'react';
 import { Link } from 'gatsby';
 import './style.css'
+import * as React from 'react'
+// import { useRef, useState } from "react";
+// import Modal from 'react-modal'
+import { Link } from 'gatsby'
 import { navbar, 
         logo, 
         searchBox,
@@ -33,6 +38,8 @@ import { RiMenu3Fill} from '@react-icons/all-files/ri/RiMenu3Fill'
 import { RiCloseFill} from '@react-icons/all-files/ri/RiCloseFill'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
+
+// const [modalIsOpen, setModalIsOpen] = useState(false)  
 
 const styleActive = {
     color: '#fcb900', 
@@ -66,11 +73,14 @@ const Layout = ({ children }) => {
                         src='../../images/logo.png'
                         className={ logo }
                     />
+                </div>
+                <div className={ searchBox }>
+                {/* <button onClick={() => {setModalIsOpen(true)}}><FiSearch className={ searchBoxIcon } /></button> */}
+                <FiSearch className={ searchBoxIcon } />  
+                </div>
             </div>
-            <div className={ searchBox }>
-                    <FiSearch className={ searchBoxIcon } />
-            </div>
-            </div>
+         
+           
             <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
                 <nav className={ menuListNav }>
                     <div className="menu-bars">

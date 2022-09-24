@@ -168,10 +168,17 @@ button {
  
 }
 
-.swiperImagee {
+/* .swiperImagee {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 100%; */
+/* .swiperFlexImage {
+  width: 25vw;
+} */
+.swiperImagee {
+  object-fit: contain;
+  width: 13vw;
+  height: 18vh;
   border-radius: 15.9629px;
 }
 
@@ -275,8 +282,9 @@ button {
 }
 
 .grid3ColumnShowButton{
-  margin-left: 3rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -295,6 +303,28 @@ button {
   cursor: pointer;
 }
 
+.content1Close{
+  display: flex;
+  justify-content: end;
+  /* position: fixed; */
+}
+.ModalContentImage{
+  width: 50vw;
+  
+}
+.ModalContentImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalContent p,
+.ModalContent h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
 
 
 
@@ -348,7 +378,7 @@ color: #555555;
   margin-bottom: 0.5rem;
   border-radius: 29.6624px;
   width: 25vw;
-  /* height: 220px; */
+  height: 220px;
 }
 
 .grid3ColumnText{
@@ -452,6 +482,8 @@ color: #555555;
     padding: 10px 15px;
     border: 1px solid #FCB900;
 }
+
+
 
 /* About Us Page */
 .aboutTeam,
@@ -651,7 +683,7 @@ color: #555555;
 
   .asideImage{
     width: 35vw;
-    height: 18vw;
+    /* height: 18px; */
     
 }
 
@@ -695,7 +727,7 @@ color: #555555;
 
   .grid3ColumnflowImage{
     width: 30vw;
-    /* height: 220px; */
+    /* height: 100px; */
   }
   .grid2ColumnText{
     margin-top: 0.5rem ;

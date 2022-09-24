@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
+import Modal from 'react-modal'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -17,9 +18,10 @@ import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
 // jsPDF
 import { jsPDF } from 'jspdf'
+import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 
 const DataPage = ({ data }) => {
-    
+const [modalIsOpen, setModalIsOpen] = useState(false)   
 // convert img to PDF
 const imgToPdf = (title, url) => {
     const doc = new jsPDF('p', 'px', 'letter');
@@ -35,7 +37,7 @@ const imgToPdf = (title, url) => {
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
-                <div className={dataStyles.carouselContainer}>
+            <div className={dataStyles.carouselContainer}>
                     <Swiper
                         pagination={{
                         dynamicBullets: true,
@@ -56,7 +58,7 @@ const imgToPdf = (title, url) => {
                             </SwiperSlide> 
                         ))}                       
                     </Swiper>
-                </div>
+            </div>
                 <div className= {dataStyles.grid}>
                     <div className= {dataStyles.gridHeader}>
                         <h4>
@@ -64,7 +66,6 @@ const imgToPdf = (title, url) => {
                         </h4>
                     </div> 
                     <div className= {dataStyles.grid3Column }>
-
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                         <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
                             <div className= {dataStyles.grid3ColumnflowImg}>
@@ -79,14 +80,32 @@ const imgToPdf = (title, url) => {
                             <p>Posted { convertDate( node?.createdAt) }</p>
                         </div>
                         <div className= {dataStyles.grid3ColumnButton}>
-                            <button>Preview</button> 
+                            <button onClick={ () => {
+                                setModalIsOpen(true)
+                            }}>Preview</button> 
                             <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
                         </div>
                         </div>   
                     ))}    
-
                     </div> 
                 </div>
+            <div>
+            <Modal 
+                isOpen = {modalIsOpen} 
+                onRequestClose = {() => setModalIsOpen(false)} 
+                style={{
+                    overlay: {
+                    backgroundColor: 'grey'
+                    },
+                    content: {
+                    position: 'absolute',
+                    left: '160px',
+                    right: '160px',
+                    }}}
+                    className= {dataStyles.showSmallerModal}
+            >
+            </Modal> 
+            </div>
             </section>
         </Layout>
     )
