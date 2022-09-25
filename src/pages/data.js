@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
 import Modal from 'react-modal'
+import '../../src/styling/style.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -47,9 +48,10 @@ const imgToPdf = (title, url) => {
                         dynamicBullets: true,
                         }}
                         modules={[Pagination , Navigation]} 
-                        // className={dataStyles.mySwiper}
-                        id='main-swiper'
-                        className={dataStyles.mycarousel}
+                        navigation
+                        className={dataStyles.mySwiper}
+                        id='data-swiper'
+                        // className={dataStyles.mycarousel}
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>

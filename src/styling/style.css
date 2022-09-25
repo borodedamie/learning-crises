@@ -1,52 +1,71 @@
- #box-swiper .swiper-button-prev  {
-    background-image: url(../images/Vector.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    /* transform: rotate(90deg);
+#box-swiper .swiper-button-prev {
+  background-image: url(../images/Vector.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  /* transform: rotate(90deg);
     transform-origin: left center; */
-      /* top: 0 !important; */
-       top: 90% !important;
-       z-index: 100;
-       /* left: 50% !important; */
-  }
-  #box-swiper .swiper-button-next{
-    background-image: url(../images/Vectorr.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    /* transform: rotate(90deg);
-      transform-origin: left center; */
-      /*  bottom: -50% !important; */
-      /* top: 0 !important; */
-      right: 80% !important;
-      z-index: 100;
-       top: 90% !important;
-  }
-  #box-swiper .swiper-button-next::after ,  #box-swiper .swiper-button-prev::after {
-    display: none;
-  }
-   #main-swiper .swiper-button-prev  {
-    background-image: url(../images/VectorLeft.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    /* transform: rotate(90deg);
-    transform-origin: left center; */
-      /* top: 0 !important; */
-       /* top: 90% !important; */
-       z-index: 100;
-       /* left: 50% !important; */
-  }
-   #main-swiper .swiper-button-next{
-    background-image: url(../images/VectorRight.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-      /* right: 80% !important; */
-      z-index: 100;
-       /* top: 90% !important; */
-  }
-  #main-swiper .swiper-button-next::after ,  #main-swiper .swiper-button-prev::after {
-    display: none;
-  }
+  /* top: 0 !important; */
+  top: 90% !important;
+  z-index: 100;
+  /* left: 50% !important; */
+}
+#box-swiper .swiper-button-next {
+  background-image: url(../images/Vectorr.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  right: 80% !important;
+  z-index: 100;
+  top: 90% !important;
+}
+#box-swiper .swiper-button-next::after,
+#box-swiper .swiper-button-prev::after {
+  display: none;
+}
+
+/* box swiper */
+#main-swiper .swiper-button-prev {
+  background-image: url(../images/VectorRight.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 100;
+  transform: rotate(180deg);
+  transform: origin left center;
+
+}
+#main-swiper .swiper-button-next {
+  background-image: url(../images/VectorRight.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 100;
+}
+#main-swiper .swiper-button-next::after,
+#main-swiper .swiper-button-prev::after {
+  display: none;
+}
+
+/* data swiper */
+#data-swiper .swiper-button-prev {
+  background-image: url(../images/data2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 1000;
+  transform: rotate(180deg);
+  transform: origin left center;
+}
+#data-swiper .swiper-button-next {
+  background-image: url(../images/data2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  z-index: 1000;
+  
+}
+#data-swiper .swiper-button-next::after,
+#data-swiper .swiper-button-prev::after {
+  display: none;
+}
