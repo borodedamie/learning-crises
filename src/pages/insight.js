@@ -42,8 +42,10 @@ const [ modalData, setModalData ] = useState({
   date: '',
   coverImage: '',
   introduction: '',
-  article: '',
+  article: {},
 })
+
+console.log(modalData)
 
 // toggle function for show more/less 
 const toggleHandler = (id) => {
@@ -73,30 +75,30 @@ const share = async (id) => {
     <Layout>
         <section className={ insightStyles.container1 }>
         <div className= { insightStyles.grid}>
-         
-                    <div className= { insightStyles.grid3Column }>
-                    { data?.allContentfulEduInsight.nodes.map((node, i) => (
-                        <div key={ node?.id } className= { insightStyles.grid3Columnflow}>
-                          <div className= { insightStyles.grid3ColumnflowImg}>
-                          <img 
-                           src={node?.coverImage.url} 
-                           className={ insightStyles.grid3ColumnflowImage}
-                           />
-                          </div> 
-                                <div className= { insightStyles.grid3ColumnText}>
-                                    <h4>{ node?.title }</h4>
-                                    <p>Posted { convertDate(node?.createdAt) }</p>
-                                </div>
-                                <div className= { insightStyles.grid3ColumnShowButton}>
-                               <Link>
-                               <button onClick={
-                                () => {
+          <div className= { insightStyles.grid3Column }>
+            { data?.allContentfulEduInsight.nodes.map((node, i) => (
+              <div key={ node?.id } className= { insightStyles.grid3Columnflow}>
+                <div className= { insightStyles.grid3ColumnflowImg}>
+                  <img 
+                    src={node?.coverImage.url} 
+                    className={ insightStyles.grid3ColumnflowImage}
+                  />
+                </div> 
+                <div className= { insightStyles.grid3ColumnText}>
+                  <h4>{ node?.title }</h4>
+                  <p>Posted { convertDate(node?.createdAt) }</p>
+                </div>
+              <div className= { insightStyles.grid3ColumnShowButton}>
+                <Link>
+                  <button onClick={
+                              () => {
                                     setModalIsOpen(true)
                                     setModalData({
                                       title: node?.title,
                                       date: convertDate(node?.createdAt),
                                       coverImage: node?.coverImage.url,
                                       introduction: node?.introduction.introduction,
+                                      article: node?.article
                                     }
                                     )
                                   }
@@ -108,6 +110,7 @@ const share = async (id) => {
                     ))}    
                     <Modal 
                       isOpen = {modalIsOpen} 
+                      ariaHideApp={false}
                       onRequestClose = {() => setModalIsOpen(false)} 
                       style={{
                         overlay: {
@@ -139,7 +142,7 @@ const share = async (id) => {
                                 
                         <div className={ insightStyles.content1Body }>
                           <p>{ modalData.introduction }</p>
-                          <p>RichText</p> 
+                          { modalIsOpen && <p>{ renderRichText(modalData.article, options)}</p> }
                         </div> 
                         <div className= {insightStyles.share}>
                           <h6>Share <p><FaShareAlt /></p></h6>
