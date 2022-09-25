@@ -36,28 +36,16 @@ const IndexPage = ({ data }) => {
                     navigation
                     id='main-swiper'
                     >
-                      
-                      <SwiperSlide >
-                          <StaticImage 
+                    { data?.allContentfulEduSupport.nodes.map((node, i) => (
+                      <SwiperSlide key={ node?.id } >
+                        <img 
                           alt='carousel-image'
-                          src='../images/Rectangle 3.png'
+                          src={ node?.image.url }
                           className={indexStyles.swiperImage }
                         />
                       </SwiperSlide>
-                      <SwiperSlide>
-                        <StaticImage 
-                            alt='carousel-image'
-                            src='../images/Rectangle 3.png'
-                            className={indexStyles.swiperImage }
-                          />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                          <StaticImage 
-                                alt='carousel-image'
-                                src='../images/Rectangle 3.png'
-                                className={indexStyles.swiperImage }
-                              />
-                      </SwiperSlide>               
+                    ))
+                    }                                     
                   </Swiper>
                   
               </div>    
@@ -164,7 +152,7 @@ const IndexPage = ({ data }) => {
                     <h4>{ node?.title }</h4>
                     <p className={ indexStyles.author }> By { node?.author }</p>
                     <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                    <button  style={{marginTop : "34px"}}><Link>Read More</Link></button>                             
+                    <button  style={{marginTop : "34px"}}><Link to={`/insights/${node.id}`}>Read More</Link></button>                             
                   </div>
                 </div>                    
               </SwiperSlide>
@@ -199,7 +187,7 @@ const IndexPage = ({ data }) => {
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ node?.title }</h4>
                             <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                            <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link>Read More</Link></button>                             
+                            <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link to={`/datas/${node.id}`}>Read More</Link></button>                             
                           </div>
                       </div>            
                     </SwiperSlide> 
@@ -230,20 +218,13 @@ const IndexPage = ({ data }) => {
                               <h4>{ node?.title }</h4>
                               <p className={ indexStyles.author }></p>
                               <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                              <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link>Read More</Link></button>                             
+                              <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link to={`/supports/${node.id}`}>Read More</Link></button>                             
                             </div>
                         </div>                         
                       </SwiperSlide> 
                     ))}                     
                   </Swiper>
-
-                    
-
-
-                 
-
-
-                  
+ 
               </div>
           </div>
       </section>

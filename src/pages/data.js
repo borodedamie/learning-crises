@@ -21,7 +21,11 @@ import { jsPDF } from 'jspdf'
 import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 
 const DataPage = ({ data }) => {
-const [modalIsOpen, setModalIsOpen] = useState(false)   
+const [modalIsOpen, setModalIsOpen] = useState(false)  
+const [ modalData, setModalData ] = useState({
+    title: '',
+    image: ''
+}) 
 // convert img to PDF
 const imgToPdf = (title, url) => {
     const doc = new jsPDF('p', 'px', 'letter');
@@ -37,28 +41,27 @@ const imgToPdf = (title, url) => {
     return (
         <Layout>
             <section className= { dataStyles.container1 }>
-            <div className={dataStyles.carouselContainer}>
+            { !modalIsOpen && <div className={dataStyles.carouselContainer}>
                     <Swiper
                         pagination={{
                         dynamicBullets: true,
                         }}
                         modules={[Pagination , Navigation]} 
-                        className={dataStyles.mySwiper}
+                        // className={dataStyles.mySwiper}
                         id='main-swiper'
-                        // className={dataStyles.mycarousel}
+                        className={dataStyles.mycarousel}
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
-                                <StaticImage
+                                <img
                                     alt='carousel-image'
                                     src={ node?.infographics.url }
                                     className={dataStyles.mycarouselimage }
                                 />
-                              
                             </SwiperSlide> 
                         ))}                       
                     </Swiper>
-            </div>
+            </div> }
                 <div className= {dataStyles.grid}>
                     <div className= {dataStyles.gridHeader}>
                         <h4>
@@ -82,6 +85,10 @@ const imgToPdf = (title, url) => {
                         <div className= {dataStyles.grid3ColumnButton}>
                             <button onClick={ () => {
                                 setModalIsOpen(true)
+                                setModalData({
+                                    title: node.title,
+                                    image: node.infographics.url
+                                })
                             }}>Preview</button> 
                             <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
                         </div>
@@ -92,6 +99,7 @@ const imgToPdf = (title, url) => {
             <div>
             <Modal 
                 isOpen = {modalIsOpen} 
+                ariaHideApp={false}
                 onRequestClose = {() => setModalIsOpen(false)} 
                 style={{
                     overlay: {
@@ -104,6 +112,13 @@ const imgToPdf = (title, url) => {
                     }}}
                     className= {dataStyles.showSmallerModal}
             >
+                <div>
+                    <h4>{ modalData.title }</h4>
+                    <img 
+                        alt="infographics image"
+                        src={ modalData.image }
+                    />
+                </div>
             </Modal> 
             </div>
             </section>

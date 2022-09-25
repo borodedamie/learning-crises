@@ -1,6 +1,5 @@
 
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from "react"
 import { Link } from 'gatsby';
 import './style.css'
 // import { useRef, useState } from "react";
@@ -36,6 +35,8 @@ import { RiMenu3Fill} from '@react-icons/all-files/ri/RiMenu3Fill'
 import { RiCloseFill} from '@react-icons/all-files/ri/RiCloseFill'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // const [modalIsOpen, setModalIsOpen] = useState(false)  
 
@@ -55,7 +56,15 @@ const Layout = ({ children }) => {
   const toggleSidebar = () => setShowSidebar(!showSidebar)
 
     if(state.succeeded) {
-        console.log('it worked!')
+        toast.success('Thank you for subscribing!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         document.querySelector('#email').value = ''
     }
 
@@ -145,6 +154,17 @@ const Layout = ({ children }) => {
                 </div>
             </form>
         </footer>
+        <ToastContainer 
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+        />
       </div>  
     )
 }

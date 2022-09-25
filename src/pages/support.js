@@ -17,7 +17,12 @@ const [ category, setCategory ] = useState('')
                     <div className= {supportStyles.selectButton}>
                         <button onClick={ () => setCategory('All') }>All</button> 
                         { data?.allContentfulCategory.nodes.map((node, i) => (
-                          <button key={ node?.id } onClick={ () => setCategory(node?.name) }>{ node?.name }</button>
+                          <button 
+                            key={ node?.id } 
+                            onClick={ () => setCategory(node?.name) }
+                          >
+                            { node?.name }
+                          </button>
                         ))}
                     </div>
                     <div className= {supportStyles.grid3Column }>
