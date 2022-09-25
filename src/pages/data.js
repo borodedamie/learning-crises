@@ -43,13 +43,13 @@ const imgToPdf = (title, url) => {
                         dynamicBullets: true,
                         }}
                         modules={[Pagination , Navigation]} 
-                        className={dataStyles.mySwiper}
+                        // className={dataStyles.mySwiper}
                         id='main-swiper'
-                        // className={dataStyles.mycarousel}
+                        className={dataStyles.mycarousel}
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
-                                <StaticImage
+                                <img
                                     alt='carousel-image'
                                     src={ node?.infographics.url }
                                     className={dataStyles.mycarouselimage }
