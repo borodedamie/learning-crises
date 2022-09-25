@@ -25,8 +25,10 @@ import { FiSearch } from '@react-icons/all-files/fi/FiSearch'
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
-import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
+import { BiMenu} from "@react-icons/all-files/bi/BiMenu"
 import { useForm, ValidationError } from '@formspree/react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // const [modalIsOpen, setModalIsOpen] = useState(false)  
 
@@ -42,7 +44,6 @@ const Layout = ({ children }) => {
     const [ state, handleSubmit ] = useForm('xeqdgqvr')
 
     if(state.succeeded) {
-        console.log('it worked!')
         document.querySelector('#email').value = ''
     }
 
@@ -127,6 +128,7 @@ const Layout = ({ children }) => {
                 </div>
             </form>
         </footer>
+        <ToastContainer />
       </div>  
     )
 }
