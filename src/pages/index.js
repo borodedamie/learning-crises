@@ -1,20 +1,28 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
+import {RiArrowRightCircleFill} from "@react-icons/all-files/ri/RiArrowRightCircleFill";
+import {RiArrowLeftCircleFill} from "@react-icons/all-files/ri/RiArrowLeftCircleFill";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
+import '../../src/styling/style.css'
+
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper} from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import 'swiper/css/navigation';
 // import required modules
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
+// import { useSwiper } from 'swiper/react';
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
 
 const IndexPage = ({ data }) => {
+  const swiper = useSwiper();
+  console.log(swiper)
   return (
     <Layout>
       <section className={ indexStyles.container }>    
@@ -23,9 +31,12 @@ const IndexPage = ({ data }) => {
                     pagination={{
                       dynamicBullets: true,
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination , Navigation]} 
                     className={indexStyles.mySwiper}
+                    navigation
+                    id='main-swiper'
                     >
+                      
                       <SwiperSlide >
                           <StaticImage 
                           alt='carousel-image'
@@ -48,6 +59,7 @@ const IndexPage = ({ data }) => {
                               />
                       </SwiperSlide>               
                   </Swiper>
+                  
               </div>    
               <div className={ indexStyles.aside }>
                 <div className= {indexStyles.asideCol}>
@@ -131,11 +143,11 @@ const IndexPage = ({ data }) => {
             <div className={ indexStyles.box }  >
                 <h3>EduInsight</h3>
                 <Swiper                 
-                    // navigation
-                    // loop= {"true"}
+                    loop= {"true"}
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}                  
+                    className={indexStyles.mySwiper}
+                    id='box-swiper'                  
                 >
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
               <SwiperSlide key={ node?.id }>
@@ -145,6 +157,7 @@ const IndexPage = ({ data }) => {
                       alt='carousel-image'
                       src={ node?.coverImage.url }
                       className={indexStyles.swiperImagee }
+                      
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
@@ -158,25 +171,20 @@ const IndexPage = ({ data }) => {
               ))
             }
             </Swiper>
-              <div className={indexStyles.navigationBtns }>
-                <StaticImage
-                  alt='carousel-arrow'
-                  src='../images/Vector.png'
-                  className={indexStyles.swiperArrow }
-                />
-                <StaticImage
-                  alt='carousel-arrow'
-                  src='../images/Vector (1).png'
-                  className={indexStyles.swiperArrow }
-                />
-              </div>
+            
+              {/* <div className={indexStyles.navigationBtns }>
+               <RiArrowLeftCircleFill className={indexStyles.swiperArrow }/>
+               <RiArrowRightCircleFill className={indexStyles.swiperArrow }/>
+                
+              </div> */}
             </div>
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
                 <Swiper                 
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}              
+                    className={indexStyles.mySwiper}  
+                    id='box-swiper'              
                     >
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
@@ -197,25 +205,15 @@ const IndexPage = ({ data }) => {
                     </SwiperSlide> 
                     ))}                                     
                   </Swiper>
-                  <div className={indexStyles.navigationBtns }>
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector.png'
-                      className={indexStyles.swiperArrow }
-                    />
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector (1).png'
-                      className={indexStyles.swiperArrow }
-                    />
-                  </div>
+                  
               </div>
               <div className={ indexStyles.box }  >
                 <h3>EduSupport</h3>
                 <Swiper                 
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}         
+                    className={indexStyles.mySwiper}   
+                    id='box-swiper'        
                     >
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
@@ -238,18 +236,14 @@ const IndexPage = ({ data }) => {
                       </SwiperSlide> 
                     ))}                     
                   </Swiper>
-                  <div className={indexStyles.navigationBtns }>
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector.png'
-                      className={indexStyles.swiperArrow }
-                    />
-                    <StaticImage
-                      alt='carousel-arrow'
-                      src='../images/Vector (1).png'
-                      className={indexStyles.swiperArrow }
-                    />
-                  </div>
+
+                    
+
+
+                 
+
+
+                  
               </div>
           </div>
       </section>

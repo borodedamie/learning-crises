@@ -1,6 +1,7 @@
 // import * as React from "react"
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
+import { StaticImage } from 'gatsby-plugin-image'
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
 import Modal from 'react-modal'
@@ -41,16 +42,19 @@ const imgToPdf = (title, url) => {
                         pagination={{
                         dynamicBullets: true,
                         }}
-                        modules={[Pagination]}
-                        className={dataStyles.mycarousel}
+                        modules={[Pagination , Navigation]} 
+                        className={dataStyles.mySwiper}
+                        id='main-swiper'
+                        // className={dataStyles.mycarousel}
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
-                                <img 
-                                alt='carousel-image'
-                                src={ node?.infographics.url }
-                                className={dataStyles.mycarouselimage }
-                            />
+                                <StaticImage
+                                    alt='carousel-image'
+                                    src={ node?.infographics.url }
+                                    className={dataStyles.mycarouselimage }
+                                />
+                              
                             </SwiperSlide> 
                         ))}                       
                     </Swiper>

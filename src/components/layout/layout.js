@@ -1,3 +1,8 @@
+
+import * as React from 'react';
+import { useState } from 'react';
+import { Link } from 'gatsby';
+import './style.css'
 import * as React from 'react'
 // import { useRef, useState } from "react";
 // import Modal from 'react-modal'
@@ -18,6 +23,10 @@ import { navbar,
         footerContact,
         footerSubscription,
         logoCon,
+        navbarr,
+        menuBtn,
+        closeeBtn,
+        activee,
         submitButton } from './layout.module.css'
 // Serve images from filesystem
 import { StaticImage } from 'gatsby-plugin-image'
@@ -26,6 +35,9 @@ import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { BiMenu} from "@react-icons/all-files/bi/BiMenu"
+import { RiMenu3Fill} from '@react-icons/all-files/ri/RiMenu3Fill'
+import { RiCloseFill} from '@react-icons/all-files/ri/RiCloseFill'
+import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -42,6 +54,10 @@ const styleActive = {
 
 const Layout = ({ children }) => {
     const [ state, handleSubmit ] = useForm('xeqdgqvr')
+    
+  // Function to toggle sidebar
+  const [showSidebar, setShowSidebar] = useState(false)
+  const toggleSidebar = () => setShowSidebar(!showSidebar)
 
     if(state.succeeded) {
         document.querySelector('#email').value = ''
@@ -51,7 +67,9 @@ const Layout = ({ children }) => {
       <div>
         <header>
             <div className={ navbar }>
-                <div className={ logoCon }>
+            <div className={ logoCon }>
+            < RiMenu3Fill className={menuBtn} style={{ color: 'white', zIndex: '3000000', fontSize: '2rem' ,paddingLeft:'2rem' ,cursor:'pointer'  }} onClick={toggleSidebar} />
+                
                     <StaticImage 
                         alt='logo'
                         src='../../images/logo.png'
@@ -63,18 +81,21 @@ const Layout = ({ children }) => {
                 <FiSearch className={ searchBoxIcon } />  
                 </div>
             </div>
-            <div className={ menuList }>
+         
+           
+            <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
                 <nav className={ menuListNav }>
-                    <ul className={ menuItems }>
+                    <div className="menu-bars">
+                        <RiCloseFill className={closeeBtn} onClick={toggleSidebar}  style={{color:'#000' , cursor:'pointer' , display:'none'}}/>
+                    </div>
                         <li><Link to='/' className={ navLinks } activeStyle={ styleActive }>Home</Link></li>
                         <li><Link to='/insight' className={ navLinks } activeStyle={ styleActive }>EduInsight</Link></li>
                         <li><Link to='/data' className={ navLinks } activeStyle={ styleActive }>EduData</Link></li>
                         <li><Link to='/support' className={ navLinks } activeStyle={ styleActive }>EduSupport</Link></li>
                         <li><Link to='/about' className={ navLinks } activeStyle={ styleActive }>About Us</Link></li>
-                        <li><Link to = "" className= {menuButton}><BiMenu /></Link></li>
-                    </ul>
                 </nav>
             </div>
+           
         </header>
         <main>
             { children }
