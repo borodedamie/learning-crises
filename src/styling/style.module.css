@@ -277,14 +277,14 @@ button {
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 10vw;
+  width: 100px;
   border-radius: 6px;
 }
 
 .grid3ColumnShowButton{
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -751,6 +751,12 @@ color: #555555;
     margin: 2rem 4.5rem;
   }
 
+  .swiperImagee {
+    object-fit: contain;
+    width: 20vw;
+    height: 18vh;
+    border-radius: 15.9629px;
+  }
 
 }
 
@@ -780,6 +786,13 @@ color: #555555;
 
 .content1Body{
   margin: 2rem 4rem;
+}
+
+.swiperImagee {
+  object-fit: contain;
+  width: 18vw;
+  height: 18vh;
+  border-radius: 15.9629px;
 }
 
 
@@ -827,12 +840,20 @@ color: #555555;
     
   }
 
+  .swiperImagee {
+    object-fit: contain;
+    width: 30vw;
+    height: 18vh;
+    border-radius: 15.9629px;
+  }
+
   .content1Body{
     margin: 1rem 2rem;
   }
   .aboutTeam,
   .aboutDetails{
   margin: 5rem 2rem;
+  /* text-align: center; */
 }
 
 .viewText {
@@ -848,15 +869,23 @@ color: #555555;
   .aside{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    /* margin:  2rem 1.5rem; */
     justify-content: center;
     align-items: center;
   }
 
+  .sliderContainer {
+    width: 87vw;
+    padding:  0 1.5rem;
+  }
+
   .asideImage{
-    width: 70vw;
+    width: 87vw;
     height: 20vh;
     
+  }
+  .overlay{
+    width: 95%;
   }
 
   .asideText h4{
@@ -869,7 +898,16 @@ color: #555555;
     font-weight: 700;
 }
 .box{
-  width: 60vw;
+  width: 70vw;
+}
+
+.swiperFlex {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 20%;
+ 
 }
 
 .grid3Column{
@@ -929,18 +967,20 @@ color: #555555;
 }
 
 .about {
-  padding: 3rem 1.5rem;
+  padding: 3rem 0.5rem;
+  justify-content: center;
 }
 
 .boxSection {
-  padding: 1.5rem;
+  padding: 0.5rem;
   
 }
 
-.swiperFlexImage {
-  width: 60vw;
+.swiperImagee {
+  object-fit: contain;
+  width: 35vw;
+  height: 15vh;
 }
-
 .content1Body{
   margin: 2rem 3.5rem;
 }
