@@ -20,6 +20,7 @@ import Seo from "../components/seo";
 // jsPDF
 import { jsPDF } from 'jspdf'
 import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
+import { GrClose } from '@react-icons/all-files/gr/GrClose'
 
 const DataPage = ({ data }) => {
 const [modalIsOpen, setModalIsOpen] = useState(false)  
@@ -116,7 +117,7 @@ const imgToPdf = (title, url) => {
             >
                 <div className= {dataStyles.ModalContent} >
                     <div className={ dataStyles.content1Close } >
-                        <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
+                        <button onClick={() => setModalIsOpen(false)} ><GrClose/></button>
                     </div>
                     <h4>{ modalData.title }</h4>
                     <div className= {dataStyles.ModalContentImg}>
