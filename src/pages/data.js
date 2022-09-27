@@ -114,12 +114,18 @@ const imgToPdf = (title, url) => {
                     }}}
                     className= {dataStyles.showSmallerModal}
             >
-                <div>
+                <div className= {dataStyles.ModalContent} >
+                    <div className={ dataStyles.content1Close } >
+                        <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
+                    </div>
                     <h4>{ modalData.title }</h4>
-                    <img 
-                        alt="infographics image"
-                        src={ modalData.image }
-                    />
+                    <div className= {dataStyles.ModalContentImg}>
+                        <img 
+                            alt="infographics image"
+                            src={ modalData.image }
+                            className = {dataStyles.ModalContentImage}
+                        />
+                    </div>
                 </div>
             </Modal> 
             </div>
