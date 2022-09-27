@@ -24,31 +24,28 @@ button {
 .aside{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
 }
-.asideCol{
-  /* position: relative; */
-    height: 100%;
-}
+
 .asideBox{
     position: relative;
     height: 80%;
 }
 .asideImage{
     width: 23vw;
-    height: 12vw;
+    height: 15vw;
     object-fit: cover;
     border-radius: 20px;
 }
 .overlay{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.813);
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     height: 50px;
     width: 100%;
     z-index: 1;
-    padding: 14px 20px;
+    padding: 20px 20px;
     border-radius: 0 0 20px 20px;
 }
 .asideText{
@@ -72,8 +69,8 @@ button {
   padding: 10px 0;
   font-size: 16px;
   font-weight: 600;
-  /* margin-bottom: 15px;
-  margin-top: 20px; */
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -202,6 +199,9 @@ button {
   margin-top: 15px;
 
 }
+.swiperText button a{
+  color: #fff;
+}
 .navigationBtns{
     display: flex;
     gap: 1.3rem;
@@ -282,9 +282,9 @@ button {
 }
 
 .grid3ColumnShowButton{
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin-top: 1rem;
 }
 
@@ -323,7 +323,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 
@@ -333,6 +334,7 @@ button {
 .carouselContainer{
   width: 75%;
   margin: 3rem auto;
+  
 }
 .mycarousel{
   display: flex;
@@ -345,7 +347,7 @@ button {
 
 .mycarouselimage{
   width: 100%;
-  border-radius: 37px;
+  border-radius: 50px;
 }
 
 .grid{
@@ -379,6 +381,7 @@ color: #555555;
   border-radius: 29.6624px;
   width: 25vw;
   height: 220px;
+  object-fit: contain;
 }
 
 .grid3ColumnText{
@@ -727,6 +730,7 @@ color: #555555;
 
   .grid3ColumnflowImage{
     width: 30vw;
+    object-fit: contain;
     /* height: 100px; */
   }
   .grid2ColumnText{
@@ -735,6 +739,7 @@ color: #555555;
 
   .grid2ColumnflowImage{
     width: 40vw;
+    object-fit: contain;
     height: 25vh;
   }
 
