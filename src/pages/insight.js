@@ -38,6 +38,7 @@ const InsightPage = ({ data }) => {
 const [ newItems, setNewItems ] = useState({})
 const [modalIsOpen, setModalIsOpen] = useState(false)
 const [ modalData, setModalData ] = useState({
+  id: '',
   title: '',
   date: '',
   coverImage: '',
@@ -94,6 +95,7 @@ const share = async (id) => {
                               () => {
                                     setModalIsOpen(true)
                                     setModalData({
+                                      id: node?.id,
                                       title: node?.title,
                                       date: convertDate(node?.createdAt),
                                       coverImage: node?.coverImage.url,
@@ -144,7 +146,7 @@ const share = async (id) => {
                           <p>{ modalData.introduction }</p>
                           { modalIsOpen && <p>{ renderRichText(modalData.article, options)}</p> }
                         </div> 
-                        <div className= {insightStyles.share}>
+                        <div className= {insightStyles.share} onClick={ () => share(modalData.id) }>
                           <h6>Share <p><FaShareAlt /></p></h6>
                         </div>
                     </Modal>

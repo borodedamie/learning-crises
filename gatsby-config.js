@@ -25,6 +25,7 @@ module.exports = {
     "gatsby-plugin-apollo",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
