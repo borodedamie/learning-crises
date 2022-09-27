@@ -6,7 +6,6 @@ import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { FaShareAlt } from '@react-icons/all-files/fa/FaShareAlt'
-import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 import { GrClose } from '@react-icons/all-files/gr/GrClose'
 import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
@@ -124,7 +123,7 @@ const share = async (id) => {
                       className= {insightStyles.showModal}
                       >
                         <div className={ insightStyles.content1Close } >
-                          <button onClick={() => setModalIsOpen(false)} ><AiOutlineCloseCircle/></button>
+                          <button onClick={() => setModalIsOpen(false)} ><GrClose/></button>
                         </div>
                         <div className={ insightStyles.content1Header } >
                           <h4>{ modalData.title }</h4>
