@@ -471,7 +471,7 @@ color: #555555;
   font-weight: 600;
   margin-left: 0.5rem;
 }
-.selectButton button:first-child{
+.select-button-clicked {
   background-color: #FCB900;
   color:#fff ;
   font-size: 14px;

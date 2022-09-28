@@ -37,8 +37,9 @@ import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Search from "../search/index"
+import Modal from 'react-modal'
 
-// const [modalIsOpen, setModalIsOpen] = useState(false)  
 
 const styleActive = {
     color: '#fcb900', 
@@ -49,7 +50,9 @@ const styleActive = {
 }
 
 const Layout = ({ children }) => {
-    const [ state, handleSubmit ] = useForm('xeqdgqvr')
+const [ state, handleSubmit ] = useForm('xeqdgqvr')
+const [modalIsOpen, setModalIsOpen] = useState(false)  
+
     
   // Function to toggle sidebar
   const [showSidebar, setShowSidebar] = useState(false)
@@ -81,7 +84,7 @@ const Layout = ({ children }) => {
                         className={ logo }
                     />
                 </div>
-                <div className={ searchBox }>
+                <div className={ searchBox } onClick={ () => setModalIsOpen(true) }>
                 {/* <button onClick={() => {setModalIsOpen(true)}}><FiSearch className={ searchBoxIcon } /></button> */}
                 <FiSearch className={ searchBoxIcon } />  
                 </div>
@@ -104,7 +107,15 @@ const Layout = ({ children }) => {
         </header>
         <main>
             { children }
-        </main>
+        </main> 
+        {/* Search Modal */}
+        <Modal
+            isOpen={modalIsOpen}
+            ariaHideApp={false}
+            onRequestClose={ () => setModalIsOpen(false) }
+            >
+            <Search />
+        </Modal>
         <footer className={ footer }>
             <div className={ footerLogo }>
                 <div>
@@ -153,6 +164,12 @@ const Layout = ({ children }) => {
                 </div>           
                 </div>
             </form>
+            <div>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com" target="_blank">Gatsby</a> x 
+             <a href="https://www.contentful.com" target="_blank">Contentful</a>
+            </div>
         </footer>
         <ToastContainer 
             position="bottom-right"

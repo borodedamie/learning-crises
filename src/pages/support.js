@@ -9,6 +9,12 @@ import Seo from "../components/seo";
 const SupportPage = ({ data }) => {
 const [ category, setCategory ] = useState('')
 
+// const styleCategoryButton = (string) => {
+//   const elem = document.querySelector('.category-button')
+//   elem.style.backgroundColor = "#FCB900"
+//   setCategory(string)
+// }
+
     return(
         <Layout>
             <section className= {supportStyles.container1}>
@@ -17,7 +23,7 @@ const [ category, setCategory ] = useState('')
                     <div className= {supportStyles.selectButton}>
                         <button onClick={ () => setCategory('All') }>All</button> 
                         { data?.allContentfulCategory.nodes.map((node, i) => (
-                          <button 
+                          <button
                             key={ node?.id } 
                             onClick={ () => setCategory(node?.name) }
                           >
