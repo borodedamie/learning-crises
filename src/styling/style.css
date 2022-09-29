@@ -6,7 +6,7 @@
   /* transform: rotate(90deg);
     transform-origin: left center; */
   /* top: 0 !important; */
-  top: 90% !important;
+  top: 80% !important;
   z-index: 100;
   /* left: 50% !important; */
 }
@@ -17,7 +17,7 @@
   background-position: center;
   right: 80% !important;
   z-index: 100;
-  top: 90% !important;
+  top: 80% !important;
 }
 #box-swiper .swiper-button-next::after,
 #box-swiper .swiper-button-prev::after {
@@ -33,6 +33,7 @@
   z-index: 100;
   transform: rotate(180deg);
   transform: origin left center;
+  
 
 }
 #main-swiper .swiper-button-next {

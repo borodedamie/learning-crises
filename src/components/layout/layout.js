@@ -24,6 +24,7 @@ import { navbar,
         menuBtn,
         closeeBtn,
         activee,
+        builtBy,
         submitButton } from './layout.module.css'
 // Serve images from filesystem
 import { StaticImage } from 'gatsby-plugin-image'
@@ -113,6 +114,17 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
             isOpen={modalIsOpen}
             ariaHideApp={false}
             onRequestClose={ () => setModalIsOpen(false) }
+            style={{
+                overlay: {
+                backgroundColor: 'transparent'
+                },
+                content: {
+                position: 'absolute',
+                left: '300px',
+                right: '160px',
+                top:'50px',
+                bottom:'500px',
+                }}}
             >
             <Search />
         </Modal>
@@ -165,12 +177,15 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                 </div>
             </form>
             <div>
+            </div>
+            
+        </footer>
+        <div className={builtBy}>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.com" target="_blank">Gatsby</a> x 
              <a href="https://www.contentful.com" target="_blank">Contentful</a>
-            </div>
-        </footer>
+        </div>
         <ToastContainer 
             position="bottom-right"
             autoClose={5000}

@@ -97,6 +97,15 @@
 }
 
 /* Footer CSS Styling */
+.built-by{
+  text-align: center;
+  background-color: #555555;
+  color: #ffff;
+  padding-bottom: 2rem;
+}
+.built-by a{
+  color: #ffff;
+}
 .footer {
   display: flex;
   justify-content: space-between;
