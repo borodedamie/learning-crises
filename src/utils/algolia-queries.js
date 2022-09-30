@@ -5,6 +5,9 @@ const pageQuery = `{
           createdAt
           title
           author
+          coverImage {
+            url
+          }
         }
     }
 }`
@@ -12,9 +15,9 @@ const pageQuery = `{
 function pageToAlgoliaRecord({ id, createdAt, title, author, ...rest }) {
     return {
         objectID: id,
-        ...createdAt,
-        ...title,
-        ...author,
+        createdAt,
+        title,
+        author,
         ...rest,
     }
 }

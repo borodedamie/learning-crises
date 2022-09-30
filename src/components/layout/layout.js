@@ -108,8 +108,6 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
         </header>
         <main>
             { children }
-        </main> 
-        {/* Search Modal */}
         <Modal
             isOpen={modalIsOpen}
             ariaHideApp={false}
@@ -128,6 +126,7 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
             >
             <Search />
         </Modal>
+        </main> 
         <footer className={ footer }>
             <div className={ footerLogo }>
                 <div>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web'
+import { InstantSearch, SearchBox, Hits, Configure } from 'react-instantsearch-hooks-web'
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -10,16 +10,23 @@ const searchClient = algoliasearch(
 function Hit({ hit }) {
   return (
     <article>
-      <p>{ hit }</p>
+      <img src={ hit.coverImage.url }  style={{ width: '12vw' }}/>
+      <p>{ hit.title }</p>
+      <p>{ hit.author }</p>
     </article>
   )
 }
 
-export default function Search() {
+function Search() {
   return (
-    <InstantSearch searchClient={searchClient} indexName='undefined'>
-      <SearchBox />
-      {/* <Hits hitComponent={Hit} /> */}
-    </InstantSearch>
+    <>
+      <InstantSearch searchClient={searchClient} indexName='undefined'>
+        <Configure hitsPerPage={3} />
+        <SearchBox />
+        <Hits hitComponent={Hit} />
+      </InstantSearch>
+    </>
   );
 }
+
+export default Search;
