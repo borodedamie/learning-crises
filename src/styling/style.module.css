@@ -430,7 +430,7 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 10vw;
+  width: 120px;
   border-radius: 6px;
 }
 .grid3ColumnButton button a{
@@ -443,7 +443,7 @@ color: #555555;
   font-size: 14px;
   padding: 10px 15px;
   border: 2px solid #FCB900;
-  width: 10vw;
+  width: 120px;
   border-radius: 6px;
 }
 .actionBtns{
@@ -757,6 +757,8 @@ color: #555555;
     height: 18vh;
     border-radius: 15.9629px;
   }
+
+  
 
 }
 

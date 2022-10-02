@@ -39,7 +39,6 @@ import { useForm, ValidationError } from '@formspree/react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Search from "../search/index"
-import Modal from 'react-modal'
 
 
 const styleActive = {
@@ -52,8 +51,8 @@ const styleActive = {
 
 const Layout = ({ children }) => {
 const [ state, handleSubmit ] = useForm('xeqdgqvr')
-const [modalIsOpen, setModalIsOpen] = useState(false)  
 
+const [ search, setSearch ] = useState(false)
     
   // Function to toggle sidebar
   const [showSidebar, setShowSidebar] = useState(false)
@@ -85,10 +84,12 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                         className={ logo }
                     />
                 </div>
-                <div className={ searchBox } onClick={ () => setModalIsOpen(true) }>
-                {/* <button onClick={() => {setModalIsOpen(true)}}><FiSearch className={ searchBoxIcon } /></button> */}
-                <FiSearch className={ searchBoxIcon } />  
-                </div>
+                { !search && <div onClick={ () => setSearch(true)} className={ searchBox } >
+                <FiSearch className={ searchBoxIcon }  />  
+                </div> }
+                { search && <div>
+                    <Search />
+                </div> }
             </div>
          
            
@@ -108,24 +109,6 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
         </header>
         <main>
             { children }
-        <Modal
-            isOpen={modalIsOpen}
-            ariaHideApp={false}
-            onRequestClose={ () => setModalIsOpen(false) }
-            style={{
-                overlay: {
-                backgroundColor: 'transparent'
-                },
-                content: {
-                position: 'absolute',
-                left: '300px',
-                right: '160px',
-                top:'50px',
-                bottom:'500px',
-                }}}
-            >
-            <Search />
-        </Modal>
         </main> 
         <footer className={ footer }>
             <div className={ footerLogo }>
@@ -182,8 +165,13 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
         <div className={builtBy}>
             © {new Date().getFullYear()}, Built with
             {` `}
-            <a href="https://www.gatsbyjs.com" target="_blank">Gatsby</a> x 
-             <a href="https://www.contentful.com" target="_blank">Contentful</a>
+            <a href="https://www.gatsbyjs.com" target="_blank ">Gatsby</a> x 
+             <a href="https://www.contentful.com" target="_blank">
+                <StaticImage 
+                        alt='logo'
+                        src='../../images/contentful.png'
+                        style={{ width: '90px', marginLeft: "0.5rem", marginTop: "-0.1rem" }}
+                    /></a>
         </div>
         <ToastContainer 
             position="bottom-right"

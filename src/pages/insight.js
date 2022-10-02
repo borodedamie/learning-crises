@@ -119,8 +119,8 @@ const share = async (id) => {
                         },
                         content: {
                           position: 'absolute',
-                          left: '160px',
-                          right: '160px',
+                          left: '50px',
+                          right: '50px',
                         }}}
                       className= {insightStyles.showModal}
                       >

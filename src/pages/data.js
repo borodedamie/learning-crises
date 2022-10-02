@@ -110,8 +110,8 @@ const imgToPdf = (title, url) => {
                     },
                     content: {
                     position: 'absolute',
-                    left: '160px',
-                    right: '160px',
+                    left: '80px',
+                    right: '80px',
                     }}}
                     className= {dataStyles.showSmallerModal}
             >
