@@ -96,7 +96,49 @@
   padding-bottom: 3px;
 }
 
+.modalArticle{
+  display: flex;
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 0.2px solid #555555;
+}
+.modalImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.modalImage{
+  width: 12vw;
+  height: 5vw;
+  object-fit: contain;
+}
+
+.modalParagraph{
+  margin-top: 2rem;
+}
+.modalParagraph h6{
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.modalParagraph p{
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+
 /* Footer CSS Styling */
+.built-by{
+  text-align: center;
+  background-color: #555555;
+  color: #ffff;
+  padding: 2rem 0;
+}
+.built-by a{
+  color: #ffff;
+}
 .footer {
   display: flex;
   justify-content: space-between;
