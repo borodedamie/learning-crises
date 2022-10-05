@@ -306,7 +306,11 @@ button {
 .content1Close{
   display: flex;
   justify-content: end;
+ 
   /* position: fixed; */
+}
+.content1Close button{
+  background-color: #fff;
 }
 .ModalContentImage{
   width: 50vw;
