@@ -88,7 +88,10 @@ const [ search, setSearch ] = useState(false)
                 <FiSearch className={ searchBoxIcon }  />  
                 </div> }
                 { search && <div>
-                    <Search />
+                    <Search 
+                     classNames={{
+                        input: 'searchInput'
+                     }}/>
                 </div> }
             </div>
          
