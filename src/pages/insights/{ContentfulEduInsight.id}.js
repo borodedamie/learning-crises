@@ -28,7 +28,7 @@ const options = {
 const EduInsightSharePage = (props) => {
     return (
         <Layout>
-            <section className= {insightPageStyles.container1}>
+            <section>
                 <div  className= {insightPageStyles.shareHeader} >
                     <h4>{ props.data.contentfulEduInsight.title }</h4>
                 </div>
@@ -37,7 +37,7 @@ const EduInsightSharePage = (props) => {
                 </div>
                 <div className= {insightPageStyles.shareImage}>
                     <img 
-                        alt='cover-image'
+                        alt='cover'
                         src={ props.data.contentfulEduInsight.coverImage.url }
                         className = {insightPageStyles.shareImagee}
                     />

@@ -1,7 +1,6 @@
 // import * as React from "react"
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
 import * as dataStyles from '../styling/style.module.css'
 import React, { useRef, useState } from "react";
 import Modal from 'react-modal'
@@ -19,7 +18,6 @@ import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
 // jsPDF
 import { jsPDF } from 'jspdf'
-import {AiOutlineCloseCircle} from '@react-icons/all-files/ai/AiOutlineCloseCircle'
 import { GrClose } from '@react-icons/all-files/gr/GrClose'
 
 const DataPage = ({ data }) => {
@@ -42,7 +40,7 @@ const imgToPdf = (title, url) => {
 
     return (
         <Layout>
-            <section className= { dataStyles.container1 }>
+            <section>
             { !modalIsOpen && <div className={dataStyles.carouselContainer}>
                     <Swiper
                         pagination={{
@@ -50,7 +48,6 @@ const imgToPdf = (title, url) => {
                         }}
                         modules={[Pagination , Navigation]} 
                         navigation
-                        className={dataStyles.mySwiper}
                         id='data-swiper'
                         // className={dataStyles.mycarousel}
                         >
@@ -76,6 +73,7 @@ const imgToPdf = (title, url) => {
                         <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
                             <div className= {dataStyles.grid3ColumnflowImg}>
                                 <img 
+                                    alt="infographics"
                                     src={ node?.infographics.url } 
                                     className={dataStyles.grid3ColumnflowImage} 
                                 />

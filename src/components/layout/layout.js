@@ -1,17 +1,11 @@
-
 import React, { useState } from "react"
 import { Link } from 'gatsby';
 import './style.css'
-// import { useRef, useState } from "react";
-// import Modal from 'react-modal'
 import { navbar, 
         logo, 
         searchBox,
         searchBoxIcon,
-        menuList,
         menuListNav,
-        menuItems,
-        menuButton,
         navLinks,
         footer,
         footerLogo,
@@ -20,10 +14,8 @@ import { navbar,
         footerContact,
         footerSubscription,
         logoCon,
-        navbarr,
         menuBtn,
         closeeBtn,
-        activee,
         builtBy,
         submitButton } from './layout.module.css'
 // Serve images from filesystem
@@ -34,7 +26,6 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { RiMenu3Fill} from '@react-icons/all-files/ri/RiMenu3Fill'
 import { RiCloseFill} from '@react-icons/all-files/ri/RiCloseFill'
-import { BiMenu} from "@react-icons/all-files/bi/BiMenu";
 import { useForm, ValidationError } from '@formspree/react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -93,9 +84,7 @@ const [ search, setSearch ] = useState(false)
                         input: 'searchInput'
                      }}/>
                 </div> }
-            </div>
-         
-           
+            </div>        
             <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
                 <nav className={ menuListNav }>
                     <div className="menu-bars">
@@ -168,8 +157,8 @@ const [ search, setSearch ] = useState(false)
         <div className={builtBy}>
             © {new Date().getFullYear()}, Built with
             {` `}
-            <a href="https://www.gatsbyjs.com" target="_blank ">Gatsby</a> x 
-             <a href="https://www.contentful.com" target="_blank">
+            <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a> x 
+             <a href="https://www.contentful.com" target="_blank" rel="noreferrer">
                 <StaticImage 
                         alt='logo'
                         src='../../images/contentful.png'

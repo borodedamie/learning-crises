@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
-// import { StaticImage } from 'gatsby-plugin-image'
 import * as supportStyles from '../styling/style.module.css'
 import { convertDate } from "../utils/convertDate";
 import Seo from "../components/seo";
@@ -9,15 +8,9 @@ import Seo from "../components/seo";
 const SupportPage = ({ data }) => {
 const [ category, setCategory ] = useState('')
 
-// const styleCategoryButton = (string) => {
-//   const elem = document.querySelector('.category-button')
-//   elem.style.backgroundColor = "#FCB900"
-//   setCategory(string)
-// }
-
     return(
         <Layout>
-            <section className= {supportStyles.container1}>
+            <section>
             <div className= {supportStyles.grid}>
             <h2>Sort List</h2>
                     <div className= {supportStyles.selectButton}>
@@ -39,10 +32,11 @@ const [ category, setCategory ] = useState('')
                         return node
                       } return false
                     }).map((node, i) => (
-                        <div key={ node?.id } className= {supportStyles.grid3Columnflow}>
+                        <div key={ node?.id } >
                           <div className= {supportStyles.grid3ColumnflowImg}>
                           <img 
                            src={ node?.image.url } 
+                           alt="edusupport"
                            className={supportStyles.grid3ColumnflowImage}
                            />
                           </div> 
