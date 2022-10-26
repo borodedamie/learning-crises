@@ -44,16 +44,6 @@ const [ modalData, setModalData ] = useState({
   article: {},
 })
 
-console.log(modalData)
-
-// toggle function for show more/less 
-const toggleHandler = (id) => {
-  setNewItems((txt) => ({
-    ...txt,
-    [id]: !txt[id],
-  }));
-};
-
 // share functionality
 const share = async (id) => {
   const shareData = {
@@ -72,11 +62,11 @@ const share = async (id) => {
     return (
 
     <Layout>
-        <section className={ insightStyles.container1 }>
+        <section >
         <div className= { insightStyles.grid}>
           <div className= { insightStyles.grid3Column }>
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
-              <div key={ node?.id } className= { insightStyles.grid3Columnflow}>
+              <div key={ node?.id } >
                 <div className= { insightStyles.grid3ColumnflowImg}>
                   <img 
                     src={node?.coverImage.url} 

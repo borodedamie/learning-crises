@@ -28,7 +28,6 @@ const IndexPage = ({ data }) => {
                       dynamicBullets: true,
                     }}
                     modules={[Pagination , Navigation]} 
-                    className={indexStyles.mySwiper}
                     navigation
                     id='main-swiper'
                     >
@@ -130,7 +129,6 @@ const IndexPage = ({ data }) => {
                     loop= {"true"}
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}
                     id='box-swiper'                  
                 >
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
@@ -139,9 +137,7 @@ const IndexPage = ({ data }) => {
                   <div className={ indexStyles.swiperFlexImage }  >
                     <img 
                       alt='carousel'
-                      src={ node?.coverImage.url }
-                      className={indexStyles.swiperImagee }
-                      
+                      src={ node?.coverImage.url }                      
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
@@ -167,7 +163,7 @@ const IndexPage = ({ data }) => {
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
                       <div className={ indexStyles.swiperFlex}>
-                          <div className={ indexStyles.swiperFlexImage }  >
+                          <div >
                             <img 
                               alt='carousel'
                               src={ node?.infographics.url }
@@ -177,7 +173,7 @@ const IndexPage = ({ data }) => {
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ node?.title }</h4>
                             <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                            <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link to={`/datas/${node.id}`}>Read More</Link></button>                             
+                            <button  style={{marginTop : "40px"}}><Link to={`/datas/${node.id}`}>Read More</Link></button>                             
                           </div>
                       </div>            
                     </SwiperSlide> 

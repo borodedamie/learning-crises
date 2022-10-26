@@ -1,8 +1,8 @@
 // import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import * as dataStyles from '../styling/style.module.css'
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Modal from 'react-modal'
 import '../../src/styling/style.css'
 // Import Swiper React components
@@ -54,7 +54,7 @@ const imgToPdf = (title, url) => {
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
                                 <img
-                                    alt='carousel-image'
+                                    alt='carousel'
                                     src={ node?.infographics.url }
                                     className={dataStyles.mycarouselimage }
                                 />
@@ -120,7 +120,7 @@ const imgToPdf = (title, url) => {
                     <h4>{ modalData.title }</h4>
                     <div className= {dataStyles.ModalContentImg}>
                         <img 
-                            alt="infographics image"
+                            alt="infographics"
                             src={ modalData.image }
                             className = {dataStyles.ModalContentImage}
                         />

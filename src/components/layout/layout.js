@@ -68,7 +68,6 @@ const [ search, setSearch ] = useState(false)
             <div className={ navbar }>
             <div className={ logoCon }>
             < RiMenu3Fill className={menuBtn} style={{ color: 'white', zIndex: '3000000', fontSize: '2rem' ,paddingLeft:'2rem' ,cursor:'pointer'  }} onClick={toggleSidebar} />
-                
                     <StaticImage 
                         alt='logo'
                         src='../../images/logo.png'
@@ -96,6 +95,7 @@ const [ search, setSearch ] = useState(false)
                         <li><Link to='/support' className={ navLinks } activeStyle={ styleActive }>EduSupport</Link></li>
                         <li><Link to='/about' className={ navLinks } activeStyle={ styleActive }>About Us</Link></li>
                 </nav>
+                {/* <Search classNames={{ input: 'searchInput'}}/> */}
             </div>
            
         </header>
