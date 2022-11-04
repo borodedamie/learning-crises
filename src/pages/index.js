@@ -32,7 +32,6 @@ const IndexPage = ({ data }) => {
                       dynamicBullets: true,
                     }}
                     modules={[Pagination , Navigation]} 
-                    className={indexStyles.mySwiper}
                     navigation
                     id='main-swiper'
                     >
@@ -50,7 +49,7 @@ const IndexPage = ({ data }) => {
                   
               </div>    
               <div className={ indexStyles.aside }>
-                <div className= {indexStyles.asideCol}>
+                <div>
                   <div className={ indexStyles.asideHeader}>
                       <h4>
                       Latest Article
@@ -187,7 +186,7 @@ const IndexPage = ({ data }) => {
                           <div className={ indexStyles.swiperText }  >
                             <h4>{ node?.title }</h4>
                             <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                            <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link to={`/datas/${node.id}`}>Read More</Link></button>                             
+                            <button style={{marginTop : "40px"}}><Link to={`/datas/${node.id}`}>Read More</Link></button>                             
                           </div>
                       </div>            
                     </SwiperSlide> 
