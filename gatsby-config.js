@@ -9,6 +9,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Learning Crises`,
+        short_name: `Learning Crises`,
+        start_url: `/`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/images/icon.png`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         footnotes: true,

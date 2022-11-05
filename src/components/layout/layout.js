@@ -74,15 +74,15 @@ const [ search, setSearch ] = useState(false)
                         className={ logo }
                     />
                 </div>
-                { !search && <div onClick={ () => setSearch(true)} className={ searchBox } >
+                <div onClick={ () => setSearch(true)} className={ searchBox } >
                 <FiSearch className={ searchBoxIcon }  />  
-                </div> }
-                { search && <div>
+                </div> 
+                {/* { search && <div>
                     <Search 
                      classNames={{
                         input: 'searchInput'
                      }}/>
-                </div> }
+                </div> } */}
             </div>        
             <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
                 <nav className={ menuListNav }>
