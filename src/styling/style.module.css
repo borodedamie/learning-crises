@@ -30,9 +30,10 @@ button {
 .asideBox{
     position: relative;
     height: 80%;
+    width: 28vw;
 }
 .asideImage{
-    width: 23vw;
+    width: 100%;
     height: 15vw;
     object-fit: cover;
     border-radius: 20px;
@@ -43,7 +44,7 @@ button {
     bottom: -5px;
     left: 0;
     height: 50px;
-    width: 100%;
+    width: 90%;
     z-index: 1;
     padding: 20px 20px;
     border-radius: 0 0 20px 20px;
@@ -336,14 +337,14 @@ button {
 
 /* EduData Page */
 .carouselContainer{
-  width: 75%;
+  width: 75vw;
   margin: 3rem auto;
-  
 }
 .mycarousel{
   display: flex;
   justify-content: center;
-  width: 70vw;
+  width: 100%;
+  height: 100%;
   align-items: center;
   margin: 3rem 0rem;
 
@@ -351,7 +352,9 @@ button {
 
 .mycarouselimage{
   width: 100%;
+  height: 50vw;
   border-radius: 50px;
+  object-fit: contain;
 }
 
 .grid{

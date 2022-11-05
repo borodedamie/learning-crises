@@ -24,7 +24,7 @@ const AboutPage = ({ data }) => {
                     <div className= {aboutStyles.aboutTeamHeader}>
                         <h3>Meet The Team</h3>
                     </div>
-                    <div className= {aboutStyles.aboutTeamBody}>
+                    <div>
                         { data?.contentfulAbout.team.map((item, i) => (
                             <div key={ item?.id } className= {aboutStyles.grid2Columnflow}>
                                 <div className= {aboutStyles.grid2ColumnflowImg}>
