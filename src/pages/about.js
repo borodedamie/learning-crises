@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Layout from "../components/layout/layout"
 import { Link , graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import * as aboutStyles from '../styling/style.module.css'
 // Serve images from filesystem
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
@@ -30,6 +29,7 @@ const AboutPage = ({ data }) => {
                             <div key={ item?.id } className= {aboutStyles.grid2Columnflow}>
                                 <div className= {aboutStyles.grid2ColumnflowImg}>
                                     <img 
+                                        alt="profile"
                                         src={ item?.avatar.url }
                                         className={ aboutStyles.grid2ColumnflowImage }
                                     />

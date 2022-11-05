@@ -4,7 +4,6 @@ import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby"
 import * as insightStyles from '../styling/style.module.css'
 // Serve images from filesystem
-import {AiOutlineArrowRight} from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { FaShareAlt } from '@react-icons/all-files/fa/FaShareAlt'
 import { GrClose } from '@react-icons/all-files/gr/GrClose'
 import { convertDate } from "../utils/convertDate"
@@ -45,16 +44,6 @@ const [ modalData, setModalData ] = useState({
   article: {},
 })
 
-console.log(modalData)
-
-// toggle function for show more/less 
-const toggleHandler = (id) => {
-  setNewItems((txt) => ({
-    ...txt,
-    [id]: !txt[id],
-  }));
-};
-
 // share functionality
 const share = async (id) => {
   const shareData = {
@@ -73,14 +62,15 @@ const share = async (id) => {
     return (
 
     <Layout>
-        <section className={ insightStyles.container1 }>
+        <section >
         <div className= { insightStyles.grid}>
           <div className= { insightStyles.grid3Column }>
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
-              <div key={ node?.id } className= { insightStyles.grid3Columnflow}>
+              <div key={ node?.id } >
                 <div className= { insightStyles.grid3ColumnflowImg}>
                   <img 
                     src={node?.coverImage.url} 
+                    alt="eduinsight"
                     className={ insightStyles.grid3ColumnflowImage}
                   />
                 </div> 
@@ -122,7 +112,6 @@ const share = async (id) => {
                           left: '50px',
                           right: '50px',
                         }}}
-                      className= {insightStyles.showModal}
                       >
                         <div className={ insightStyles.content1Close } >
                           <button onClick={() => setModalIsOpen(false)} ><GrClose/></button>
@@ -135,7 +124,7 @@ const share = async (id) => {
                         </div>
                         <div className={ insightStyles.content1Image } >
                           <img
-                            alt='carousel-image'
+                            alt='carousel'
                             src={ modalData.coverImage }
                             className={insightStyles.contentImage }
                           />

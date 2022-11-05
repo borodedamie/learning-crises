@@ -1,9 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import {RiArrowRightCircleFill} from "@react-icons/all-files/ri/RiArrowRightCircleFill";
-import {RiArrowLeftCircleFill} from "@react-icons/all-files/ri/RiArrowLeftCircleFill";
 import { Link, graphql } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
 import * as indexStyles from '../styling/style.module.css'
 import '../../src/styling/style.css'
 
@@ -16,7 +13,6 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination } from "swiper";
 import { Navigation } from "swiper";
-// import { useSwiper } from 'swiper/react';
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
 
@@ -38,7 +34,7 @@ const IndexPage = ({ data }) => {
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id } >
                         <img 
-                          alt='carousel-image'
+                          alt='carousel'
                           src={ node?.image.url }
                           className={indexStyles.swiperImage }
                         />
@@ -59,7 +55,7 @@ const IndexPage = ({ data }) => {
                     <img
                         src={ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage.url }
                         className={indexStyles.asideImage}
-                        alt="index-page-image"
+                        alt="index-page"
                       /> 
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
@@ -80,7 +76,7 @@ const IndexPage = ({ data }) => {
                     <img
                         src={  data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage.url }
                         className={indexStyles.asideImage}
-                        alt="index-page-image2"
+                        alt="index-page"
                       /> 
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
@@ -133,7 +129,6 @@ const IndexPage = ({ data }) => {
                     loop= {"true"}
                     navigation
                     modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}
                     id='box-swiper'                  
                 >
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
@@ -141,10 +136,8 @@ const IndexPage = ({ data }) => {
                 <div className={ indexStyles.swiperFlex}>
                   <div className={ indexStyles.swiperFlexImage }  >
                     <img 
-                      alt='carousel-image'
-                      src={ node?.coverImage.url }
-                      className={indexStyles.swiperImagee }
-                      
+                      alt='carousel'
+                      src={ node?.coverImage.url }                      
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
@@ -158,12 +151,6 @@ const IndexPage = ({ data }) => {
               ))
             }
             </Swiper>
-            
-              {/* <div className={indexStyles.navigationBtns }>
-               <RiArrowLeftCircleFill className={indexStyles.swiperArrow }/>
-               <RiArrowRightCircleFill className={indexStyles.swiperArrow }/>
-                
-              </div> */}
             </div>
               <div className={ indexStyles.box }  >
                 <h3>EduData</h3>
@@ -176,9 +163,9 @@ const IndexPage = ({ data }) => {
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                       <SwiperSlide key={ node?.id }>
                       <div className={ indexStyles.swiperFlex}>
-                          <div className={ indexStyles.swiperFlexImage }  >
+                          <div >
                             <img 
-                              alt='carousel-image'
+                              alt='carousel'
                               src={ node?.infographics.url }
                               className={indexStyles.swiperImagee }
                             />
@@ -207,7 +194,7 @@ const IndexPage = ({ data }) => {
                         <div className={ indexStyles.swiperFlex}>
                             <div className={ indexStyles.swiperFlexImage }  >
                               <img 
-                                alt='carousel-image'
+                                alt='carousel'
                                 src={ node?.image.url }
                                 className={indexStyles.swiperImagee }
                               />

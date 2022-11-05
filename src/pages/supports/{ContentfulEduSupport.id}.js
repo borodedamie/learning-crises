@@ -28,10 +28,10 @@ const options = {
 const EduSupportPostPage = (props) => {
     return (
         <Layout>
-            <section className = {supportPageStyles.container1} >
+            <section>
               <div className = {supportPageStyles.view}>
                 <div className = {supportPageStyles.viewImg}>
-                  <img src={ props.data.contentfulEduSupport.image.url } className = {supportPageStyles.viewImage} />
+                  <img src={ props.data.contentfulEduSupport.image.url } alt="support-post" className = {supportPageStyles.viewImage} />
                 </div>
                 <div className = {supportPageStyles.viewText}>
                     <h4>{ props.data.contentfulEduSupport.title }</h4>
