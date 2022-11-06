@@ -44,7 +44,7 @@ button {
     bottom: -5px;
     left: 0;
     height: 50px;
-    width: 90%;
+    width: 25vw;
     z-index: 1;
     padding: 20px 20px;
     border-radius: 0 0 20px 20px;
@@ -170,6 +170,7 @@ button {
   object-fit: cover;
   width: 100%;
   height: 100%; */
+
 /* .swiperFlexImage {
   width: 25vw;
 } */
@@ -684,20 +685,20 @@ color: #555555;
     margin: 3rem 0;
   }
   .aside{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 3rem;
-    margin: 5rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin: 6rem ;
   }
 
   .asideImage{
     width: 35vw;
-    /* height: 18px; */
+    height: 12vh;
     
 }
 
   .overlay{
+    width: 32vw;
     height: 4rem;
     padding: 10px 13px;
   }
@@ -770,6 +771,18 @@ color: #555555;
 }
 
 @media (max-width: 768px){
+  .aside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin: 6rem ;
+  }
+
+  .asideImage{
+    width: 35vw;
+    height: 13vh;
+    
+}
   .overlay{
     height: 3.5rem;
   }
@@ -809,20 +822,21 @@ color: #555555;
 
 @media (max-width: 540px){
   .aside{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2rem;
-    margin: 5rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 4rem;
   }
 
   .asideImage{
-    width: 34vw;
+    width: 37vw;
     height: 18vh;
-  }
+    
+}
 
   .overlay{
     height: 3rem;
+    top: 4rem;
   }
 
   .asideText h4{
@@ -876,11 +890,22 @@ color: #555555;
 
 @media (max-width: 420px){
   .aside{
-    display: flex;
-    flex-direction: column;
-    /* margin:  2rem 1.5rem; */
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 2.5rem;
+    margin: 1.5rem;
+  }
+
+  .asideImage{
+    width: 30vw;
+    height: 18vh;
+    
+}
+
+  .overlay{
+    width: 80.5vw;
+    height: 3.5rem;
+    top: 7rem;
   }
 
   .sliderContainer {
@@ -893,9 +918,7 @@ color: #555555;
     height: 20vh;
     
   }
-  .overlay{
-    width: 95%;
-  }
+
 
   .asideText h4{
     margin-bottom: .5rem;
@@ -993,5 +1016,51 @@ color: #555555;
 .content1Body{
   margin: 2rem 3.5rem;
 }
+
+}
+
+@media (max-width: 360px){
+  .overlay{
+    width: 80vw;
+    height: 3.5rem;
+    top: 4.5rem;
+  }
+
+  .aboutBtn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+}
+
+@media (max-width: 280px){
+  .overlay{
+    width: 77.5vw;
+    height: 3.5rem;
+    top: 3.5rem;
+  }
+
+  .swiperImagee {
+    object-fit: contain;
+    width: 30vw;
+    height: 18vh;
+    border-radius: 15.9629px;
+  }
+
+  .swiperText button{
+    width: 80px;
+    margin-top: 9px;
+  
+  }
+
+  .grid3ColumnButton button:first-child{
+    width: 100px;
+  }
+
+  .grid3ColumnButton button:last-child{
+    width: 100px;
+  }
+  
 
 }

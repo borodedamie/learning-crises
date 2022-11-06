@@ -128,7 +128,8 @@ const IndexPage = ({ data }) => {
                 <Swiper                 
                     loop= {"true"}
                     navigation
-                    modules={[Pagination , Navigation]}                    
+                    modules={[Pagination , Navigation]} 
+                    className={indexStyles.mySwiper}                  
                     id='box-swiper'                  
                 >
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
@@ -137,7 +138,8 @@ const IndexPage = ({ data }) => {
                   <div className={ indexStyles.swiperFlexImage }  >
                     <img 
                       alt='carousel'
-                      src={ node?.coverImage.url }                      
+                      src={ node?.coverImage.url } 
+                      className={indexStyles.swiperImagee }                     
                     />
                   </div>
                   <div className={ indexStyles.swiperText }  >
