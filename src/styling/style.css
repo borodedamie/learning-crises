@@ -70,3 +70,9 @@
 #data-swiper .swiper-button-prev::after {
   display: none;
 }
+
+@media (max-width: 280px){
+  #box-swiper .swiper-button-next {
+    right: 60% !important;
+  }
+}
