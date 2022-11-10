@@ -27,7 +27,14 @@ const options = {
   },
     [ BLOCKS.HEADING_2 ]: ( node, children ) => {
       return <h2>{ children }</h2>
-  }
+  },
+  [BLOCKS.TABLE]: (node, children) => (
+    <table>
+      <tbody>{children}</tbody>
+    </table>
+  ),
+  [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
+  [BLOCKS.TABLE_CELL]: (node, children) => <td>{children}</td>,
 }
 
 
