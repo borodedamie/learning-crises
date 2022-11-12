@@ -12,32 +12,6 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 
-const options = {
-  renderMark: {
-    [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
-  },
-  renderNode: {
-    [ BLOCKS.PARAGRAPH ]: (node, children) => <p>{ children }</p>,
-    [ INLINES.HYPERLINK ]: ( node, children ) => {
-      const { uri } = node.data
-      return (
-        <a href={ uri }>{ children }</a>
-      )
-    }
-  },
-    [ BLOCKS.HEADING_2 ]: ( node, children ) => {
-      return <h2>{ children }</h2>
-  },
-  [BLOCKS.TABLE]: (node, children) => (
-    <table>
-      <tbody>{children}</tbody>
-    </table>
-  ),
-  [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
-  [BLOCKS.TABLE_CELL]: (node, children) => <td>{children}</td>,
-}
-
-
 const InsightPage = ({ data }) => {
 // states
 const [ newItems, setNewItems ] = useState({})
