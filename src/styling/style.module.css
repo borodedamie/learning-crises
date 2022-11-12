@@ -676,7 +676,23 @@ color: #555555;
   font-weight: 500;
   font-family: 'League Spartan';
 }
+table{
+  margin-bottom: 1rem;
+}
+th, th p b{
+  background-color: #555555;
+  color: #fff;
+}
 
+table, td, th {
+  border: 1px solid;
+  padding: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
 @media (max-width: 992px) {
   .container{
