@@ -15,7 +15,6 @@ import { Pagination } from "swiper";
 import { Navigation , Autoplay } from "swiper";
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
-import { GatsbyImage } from "gatsby-plugin-image"
 
 
 const IndexPage = ({ data }) => {
