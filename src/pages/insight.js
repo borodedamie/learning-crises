@@ -92,7 +92,7 @@ const share = async (id) => {
                 </div> 
                 <div className= { insightStyles.grid3ColumnText}>
                   <h4>{ node?.title }</h4>
-                  <p>Posted { convertDate(node?.createdAt) }</p>
+                  <p>Posted { node?.date }</p>
                 </div>
               <div className= { insightStyles.grid3ColumnShowButton}>
                 <Link>
@@ -102,7 +102,7 @@ const share = async (id) => {
                                     setModalData({
                                       id: node?.id,
                                       title: node?.title,
-                                      date: convertDate(node?.createdAt),
+                                      date: node?.date,
                                       coverImage: node?.coverImage.url,
                                       article: node?.article
                                     }
@@ -181,6 +181,7 @@ query EduInsights {
           }
         }
       }
+      date
     }
   }
 }
