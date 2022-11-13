@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
-import { Pagination } from "swiper";
+import { Pagination , Autoplay} from "swiper";
 import { Navigation } from "swiper";
 // apollo client useQuery and gql hooks
 import { convertDate } from "../utils/convertDate";
@@ -46,7 +46,11 @@ const imgToPdf = (title, url) => {
                         pagination={{
                         dynamicBullets: true,
                         }}
-                        modules={[Pagination , Navigation]} 
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: true,
+                          }}
+                        modules={[Pagination , Navigation , Autoplay]} 
                         navigation
                         id='data-swiper'
                         // className={dataStyles.mycarousel}

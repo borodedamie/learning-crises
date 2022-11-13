@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import 'swiper/css/navigation';
 // import required modules
 import { Pagination } from "swiper";
-import { Navigation } from "swiper";
+import { Navigation , Autoplay } from "swiper";
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -29,7 +29,11 @@ const IndexPage = ({ data }) => {
                     pagination={{
                       dynamicBullets: true,
                     }}
-                    modules={[Pagination , Navigation]} 
+                    autoplay={{
+                      delay: 30000,
+                      disableOnInteraction: true,
+                    }}
+                    modules={[Pagination , Navigation, Autoplay]} 
                     navigation
                     id='main-swiper'
                     >
