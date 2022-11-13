@@ -33,10 +33,10 @@ module.exports = {
         accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_ACCESS_TOKEN
       }
     },
-    "gatsby-plugin-apollo",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-apollo",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

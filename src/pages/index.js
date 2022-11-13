@@ -15,6 +15,8 @@ import { Pagination } from "swiper";
 import { Navigation } from "swiper";
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
+import { GatsbyImage } from "gatsby-plugin-image"
+
 
 const IndexPage = ({ data }) => {
   const swiper = useSwiper();
@@ -31,11 +33,11 @@ const IndexPage = ({ data }) => {
                     navigation
                     id='main-swiper'
                     >
-                    { data?.allContentfulEduSupport.nodes.map((node, i) => (
-                      <SwiperSlide key={ node?.id } >
+                    { data?.contentfulFrontpageCarousel.images.map((image, i) => (
+                      <SwiperSlide key={ image?.id } >
                         <img 
                           alt='carousel'
-                          src={ node?.image.url }
+                          src={ image?.url }
                           className={indexStyles.swiperImage }
                         />
                       </SwiperSlide>
@@ -222,6 +224,13 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query EduInsightsDataSupport {
+  contentfulFrontpageCarousel(id: {eq: "4d013eb2-a5e9-5cc5-a306-1d692bc76cbe"}) {
+    images {
+      id
+      url
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
   allContentfulEduInsight(limit: 3) {
     nodes {
       id

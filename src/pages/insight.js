@@ -10,7 +10,43 @@ import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { GatsbyImage } from "gatsby-plugin-image"
 
+// set render options for the JSON file fetched from Contentful 
+const options = {
+  renderMark: {
+    [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
+  },
+  renderNode: {
+    "embedded-asset-block": node => {
+      const { gatsbyImageData } = node.data.target
+      if (!gatsbyImageData) {
+        // asset is not an image
+        return null
+      }
+      return <GatsbyImage image={gatsbyImageData} />
+    },
+    [ BLOCKS.PARAGRAPH ]: (node, children) => <p>{ children }</p>,
+    [ INLINES.HYPERLINK ]: ( node, children ) => {
+      const { uri } = node.data
+      return (
+        <a href={ uri }>{ children }</a>
+      )
+    }
+  },
+    [ BLOCKS.HEADING_2 ]: ( node, children ) => {
+      return <h2>{ children }</h2>
+  },
+
+  [BLOCKS.TABLE]: (node, children) => (
+    <table>
+      <tbody>{children}</tbody>
+    </table>
+  ),
+  [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
+  [BLOCKS.TABLE_CELL]: (node, children) => <td>{children}</td>,
+
+}
 
 const InsightPage = ({ data }) => {
 // states
@@ -21,7 +57,6 @@ const [ modalData, setModalData ] = useState({
   title: '',
   date: '',
   coverImage: '',
-  introduction: '',
   article: {},
 })
 
@@ -69,7 +104,6 @@ const share = async (id) => {
                                       title: node?.title,
                                       date: convertDate(node?.createdAt),
                                       coverImage: node?.coverImage.url,
-                                      introduction: node?.introduction.introduction,
                                       article: node?.article
                                     }
                                     )
@@ -112,7 +146,6 @@ const share = async (id) => {
                         </div>
                                 
                         <div className={ insightStyles.content1Body }>
-                          <p>{ modalData.introduction }</p>
                           { modalIsOpen && <p>{ renderRichText(modalData.article, options)}</p> }
                         </div> 
                         <div className= {insightStyles.share} onClick={ () => share(modalData.id) }>
@@ -135,17 +168,18 @@ query EduInsights {
       title
       author
       coverImage {
-        url
+	      url
         gatsbyImageData(layout: FULL_WIDTH)
-      }
-      introduction {
-        introduction
-        childMarkdownRemark {
-          html
-        }
       }
       article {
         raw
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }

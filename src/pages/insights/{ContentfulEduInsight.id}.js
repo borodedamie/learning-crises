@@ -42,9 +42,6 @@ const EduInsightSharePage = (props) => {
                         className = {insightPageStyles.shareImagee}
                     />
                 </div>
-                <div className={insightPageStyles.shareText}>
-                    <p>{ props.data.contentfulEduInsight.introduction.introduction }</p>
-                </div>
                 <div className={insightPageStyles.shareText}>{ renderRichText( props.data.contentfulEduInsight.article, options ) }</div>
             </section>
         </Layout>
@@ -62,14 +59,15 @@ query($id: String) {
         url
         gatsbyImageData(layout: FULL_WIDTH)
       }
-      introduction {
-        introduction
-        childrenMarkdownRemark {
-          html
-        }
-      }
       article {
-        raw
+          raw
+          references {
+            ... on ContentfulAsset {
+              contentful_id
+              __typename
+              gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }  
