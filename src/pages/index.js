@@ -1,6 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
-import { Link, graphql } from "gatsby";
+import { Link, graphql, navigate } from "gatsby";
 import * as indexStyles from '../styling/style.module.css'
 import '../../src/styling/style.css'
 
@@ -56,7 +56,8 @@ const IndexPage = ({ data }) => {
                       Latest Article
                       </h4>
                   </div>
-                  <div className={ indexStyles.asideBox }>
+                  <div className={ indexStyles.asideBox } 
+                    onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].id}`) }>
                     <img
                         src={ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage.url }
                         className={indexStyles.asideImage}
@@ -77,7 +78,8 @@ const IndexPage = ({ data }) => {
                       Incase You Missed It
                       </h4>
                   </div>                    
-                  <div className={ indexStyles.asideBox }>
+                  <div className={ indexStyles.asideBox } 
+                    onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].id}`) }>
                     <img
                         src={  data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage.url }
                         className={indexStyles.asideImage}
@@ -211,7 +213,7 @@ const IndexPage = ({ data }) => {
                               <h4>{ node?.title }</h4>
                               <p className={ indexStyles.author }></p>
                               <p className={ indexStyles.date }>{ convertDate(node?.createdAt) }</p>
-                              <button className= {indexStyles.buttons}  style={{marginTop : "40px"}}><Link to={`/supports/${node.id}`}>Read More</Link></button>                             
+                              <button  style={{marginTop : "40px"}}><Link to={`/supports/${node.id}`}>Read More</Link></button>                             
                             </div>
                         </div>                         
                       </SwiperSlide> 
