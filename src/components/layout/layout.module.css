@@ -224,6 +224,18 @@
   .menu-btn , .closee-btn {
     display: block;
   }
+  .navbar{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 93%;
+    z-index: 900000000;
+  }
+  .menu-list-nav{
+    padding-top: 5rem;
+  }
 }
 
 @media (max-width: 768px) {

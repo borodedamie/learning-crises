@@ -67,7 +67,10 @@ const [ search, setSearch ] = useState(false)
         <header>
             <div className={ navbar }>
             <div className={ logoCon }>
-            < RiMenu3Fill className={menuBtn} style={{ color: 'white', zIndex: '3000000', fontSize: '2rem' ,paddingLeft:'2rem' ,cursor:'pointer'  }} onClick={toggleSidebar} />
+            {/* < RiMenu3Fill className={menuBtn} style={{ color: '#fcb900', zIndex: '3000000', fontSize: '2rem' ,paddingLeft:'2rem' ,cursor:'pointer'  }} onClick={toggleSidebar} /> */}
+           <div className="menu-icon" onClick={toggleSidebar}>
+           {showSidebar ? <RiCloseFill className="menuBtn" style={{ color: '#fcb900',  fontSize: '2rem' ,cursor:'pointer'  }} /> : <RiMenu3Fill className="menuBtn" style={{ color: '#fcb900', fontSize: '2rem' ,cursor:'pointer'  }} />}
+           </div>
                     <StaticImage 
                         alt='logo'
                         src='../../images/logo.png'
@@ -87,7 +90,8 @@ const [ search, setSearch ] = useState(false)
             <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
                 <nav className={ menuListNav }>
                     <div className="menu-bars">
-                        <RiCloseFill className={closeeBtn} onClick={toggleSidebar}  style={{color:'#000' , cursor:'pointer' , display:'none'}}/>
+                         {/* {showSidebar ? <RiCloseFill /> : <RiMenu3Fill />} */}
+                        {/* <RiCloseFill className={closeeBtn} onClick={toggleSidebar}  style={{color:'#000' , cursor:'pointer' , display:'none'}}/> */}
                     </div>
                         <li><Link to='/' className={ navLinks } activeStyle={ styleActive }>Home</Link></li>
                         <li><Link to='/insight' className={ navLinks } activeStyle={ styleActive }>EduInsight</Link></li>

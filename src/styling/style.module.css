@@ -721,8 +721,12 @@ table {
   .container{
     display:block;
     width: 100%;
-    margin: 3rem 0;
+    margin: 7rem 0 3rem 0;
   }
+  /* .carouselContainer {
+    margin-top: 7rem;
+    
+  } */
   .aside{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -734,6 +738,13 @@ table {
     width: 35vw;
     height: 12vh;
     
+}
+/* .container {
+  margin-top: 7rem;
+  
+} */
+main{
+  margin-top: 7rem;
 }
 
   .overlay{

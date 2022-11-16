@@ -135,7 +135,11 @@ const IndexPage = ({ data }) => {
                 <Swiper                 
                     loop= {"true"}
                     navigation
-                    modules={[Pagination , Navigation]} 
+                    modules={[Pagination , Navigation, Autoplay]} 
+                    autoplay={{
+                      delay: 30000,
+                      disableOnInteraction: true,
+                    }}
                     className={indexStyles.mySwiper}                  
                     id='box-swiper'                  
                 >
@@ -165,7 +169,11 @@ const IndexPage = ({ data }) => {
                 <h3>EduData</h3>
                 <Swiper                 
                     navigation
-                    modules={[Pagination , Navigation]}                    
+                    modules={[Pagination , Navigation , Autoplay]}
+                    autoplay={{
+                      delay: 30000,
+                      disableOnInteraction: true,
+                    }}                    
                     className={indexStyles.mySwiper}  
                     id='box-swiper'              
                     >
@@ -194,8 +202,12 @@ const IndexPage = ({ data }) => {
                 <h3>EduSupport</h3>
                 <Swiper                 
                     navigation
-                    modules={[Pagination , Navigation]}                    
-                    className={indexStyles.mySwiper}   
+                    modules={[Pagination , Navigation, Autoplay]}                    
+                    className={indexStyles.mySwiper}  
+                    autoplay={{
+                      delay: 30000,
+                      disableOnInteraction: true,
+                    }} 
                     id='box-swiper'        
                     >
                     { data?.allContentfulEduSupport.nodes.map((node, i) => (
