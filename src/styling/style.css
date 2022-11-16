@@ -70,9 +70,15 @@
 #data-swiper .swiper-button-prev::after {
   display: none;
 }
+.menu-icon{
+  position: absolute;
+  left: 1.5rem;
+  z-index: 300000;
+}
 
-@media (max-width: 280px){
+@media (max-width: 768px){
   #box-swiper .swiper-button-next {
-    right: 60% !important;
+    right: 73% !important;
   }
+  
 }

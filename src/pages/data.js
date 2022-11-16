@@ -47,7 +47,7 @@ const imgToPdf = (title, url) => {
                         dynamicBullets: true,
                         }}
                         autoplay={{
-                            delay: 3000,
+                            delay: 30000,
                             disableOnInteraction: true,
                           }}
                         modules={[Pagination , Navigation , Autoplay]} 
