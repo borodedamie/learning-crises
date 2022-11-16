@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
@@ -22,6 +22,12 @@ const EduDataPage = (props) => {
                         src={ props.data.contentfulEduData.infographics.url }
                         className = {dataPageStyles.shareImagee}
                     />
+                </div>
+                <div>
+                  <button  
+                    style={{margin : "40px"}}
+                    onClick={ () => navigate(-1) }
+                  >Go Back</button>                             
                 </div>
             </section>
         </Layout>

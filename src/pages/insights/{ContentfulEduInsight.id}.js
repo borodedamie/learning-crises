@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
@@ -43,6 +43,12 @@ const EduInsightSharePage = (props) => {
                     />
                 </div>
                 <div className={insightPageStyles.shareText}>{ renderRichText( props.data.contentfulEduInsight.article, options ) }</div>
+                <div>
+                  <button  
+                    style={{margin : "40px"}}
+                    onClick={ () => navigate(-1) }
+                  >Go Back</button>                             
+                </div>
             </section>
         </Layout>
     )

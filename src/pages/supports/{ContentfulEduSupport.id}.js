@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import Layout from '../../components/layout/layout'
 import { convertDate } from "../../utils/convertDate"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
@@ -37,10 +37,14 @@ const EduSupportPostPage = (props) => {
                     <h4>{ props.data.contentfulEduSupport.title }</h4>
                     <h6>Posted { convertDate(props.data.contentfulEduSupport.createdAt) }</h6>
                     <p>{ renderRichText(props.data.contentfulEduSupport.post, options) }</p>
-                </div>
-                 
+                </div>  
               </div>
-                
+              <div>
+                  <button  
+                    style={{margin : "40px"}}
+                    onClick={ () => navigate(-1) }
+                  >Go Back</button>                             
+              </div>
             </section>
         </Layout>
     )
