@@ -989,10 +989,6 @@ main{
 .box{
   width: 70vw;
 }
-/* .content1Modal{
-  inset: 5px 1px;
-} */
-
 .swiperFlex {
   display: grid;
   grid-template-columns: 0.75fr 1fr;
@@ -1091,6 +1087,8 @@ main{
    justify-content: center;
    align-items: center;
   }
+
+
 
 }
 
