@@ -308,6 +308,7 @@ button {
 .content1Close{
   display: flex;
   justify-content: end;
+  margin-top: 2rem;
  
   /* position: fixed; */
 }
@@ -467,6 +468,7 @@ color: #555555;
   color: #EE0000;
 
 }
+
 
 /* Edusupport Page */
 .selectButton{
@@ -694,6 +696,27 @@ table {
   border-collapse: collapse;
 }
 
+.goButton {
+  background: rgb(252, 185, 0);
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(252 185 0 / 25%) 0px 4px 23px 1px;
+  border-radius: 6px;
+  border: none;
+  width: 100px;
+  padding: 10px;
+  margin: 15px 0px;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.goButtonCon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -735,10 +758,11 @@ table {
   }
 
   .boxCon{
-    padding: 0 2rem;
+    padding: 0 0  0 2rem;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     
   } 
   .box{
@@ -764,7 +788,7 @@ table {
   .grid2ColumnflowImage{
     width: 40vw;
     object-fit: contain;
-    height: 25vh;
+
   }
 
   .viewText {
@@ -886,6 +910,10 @@ table {
     border-radius: 15.9629px;
   }
 
+  .grid2ColumnflowImage{
+    width: 80vw;
+  }
+
   .content1Body{
     margin: 1rem 2rem;
   }
@@ -934,7 +962,9 @@ table {
     height: 20vh;
     
   }
-
+  .grid2ColumnflowImage{
+    width: 80vw;
+  }
 
   .asideText h4{
     margin-bottom: .5rem;
@@ -948,6 +978,9 @@ table {
 .box{
   width: 70vw;
 }
+/* .content1Modal{
+  inset: 5px 1px;
+} */
 
 .swiperFlex {
   display: grid;
@@ -978,7 +1011,7 @@ table {
 
 
 .grid3ColumnflowImage{
-  width: 60vw;
+  width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1080,3 +1113,4 @@ table {
   
 
 }
+
