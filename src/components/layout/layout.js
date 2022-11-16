@@ -88,7 +88,7 @@ const [ search, setSearch ] = useState(false)
                 </div> } */}
             </div>        
             <div className={showSidebar ? 'navbarr activee' : 'navbarr'}>
-                <nav className={ menuListNav }>
+                <nav className={ menuListNav } onClick={toggleSidebar}>
                     <div className="menu-bars">
                          {/* {showSidebar ? <RiCloseFill /> : <RiMenu3Fill />} */}
                         {/* <RiCloseFill className={closeeBtn} onClick={toggleSidebar}  style={{color:'#000' , cursor:'pointer' , display:'none'}}/> */}

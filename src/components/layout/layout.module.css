@@ -205,7 +205,7 @@
   }
   .logoCon {
 
-    padding-left: 0rem;
+    padding-left: 5rem;
   }
   .menu-list {
     padding: 20px 150px;
@@ -224,7 +224,7 @@
   .menu-btn , .closee-btn {
     display: block;
   }
-  .navbar{
+  /* .navbar{
     display: block;
     position: fixed;
     top: 0;
@@ -232,7 +232,7 @@
     right: 0;
     bottom: 93%;
     z-index: 900000000;
-  }
+  } */
   .menu-list-nav{
     padding-top: 5rem;
   }
