@@ -23,10 +23,10 @@ const EduDataPage = (props) => {
                         className = {dataPageStyles.shareImagee}
                     />
                 </div>
-                <div>
+                <div className = {dataPageStyles.goButtonCon}>
                   <button  
-                    style={{margin : "40px"}}
                     onClick={ () => navigate(-1) }
+                    className = {dataPageStyles.goButton}
                   >Go Back</button>                             
                 </div>
             </section>

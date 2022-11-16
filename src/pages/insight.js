@@ -117,7 +117,9 @@ const share = async (id) => {
                     <Modal 
                       isOpen = {modalIsOpen} 
                       ariaHideApp={false}
-                      onRequestClose = {() => setModalIsOpen(false)} 
+                      onRequestClose = {() => setModalIsOpen(false)}
+                      className = { insightStyles.content1Modal} 
+                      overlayClassName = {insightStyles.content1ModalOverlay}
                       style={{
                         overlay: {
                           backgroundColor: 'grey'
@@ -126,6 +128,7 @@ const share = async (id) => {
                           position: 'absolute',
                           left: '50px',
                           right: '50px',
+                          padding: '20px',
                         }}}
                       >
                         <div className={ insightStyles.content1Close } >

@@ -39,10 +39,10 @@ const EduSupportPostPage = (props) => {
                     <p>{ renderRichText(props.data.contentfulEduSupport.post, options) }</p>
                 </div>  
               </div>
-              <div>
+              <div className = {supportPageStyles.goButtonCon} >
                   <button  
-                    style={{margin : "40px"}}
                     onClick={ () => navigate(-1) }
+                    className = {supportPageStyles.goButton}
                   >Go Back</button>                             
               </div>
             </section>
