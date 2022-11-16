@@ -717,6 +717,30 @@ table {
   margin-bottom: 3rem;
 }
 
+.content1Modal{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  right: 50px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  /* Webkit-OverflowScrolling: 'touch'; */
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.content1ModalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: grey; 
+}
+
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -745,7 +769,7 @@ table {
 } */
 /* main{
   margin-top: 7rem;
-} */
+}*/
 
   .overlay{
     width: 32vw;
@@ -773,7 +797,6 @@ table {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     
   } 
   .box{
@@ -806,9 +829,7 @@ table {
     margin: 2rem 5rem 2rem 5rem;
   }
 
-  .content1Body{
-    margin: 2rem 4.5rem;
-  }
+  
 
   .swiperImagee {
     object-fit: contain;
@@ -842,9 +863,7 @@ table {
     grid-template-columns: 1fr ;
     padding: 0 2rem;
   }
-  .content1Body{
-    margin: 2rem 3rem;
-  }
+ 
 
  
 .grid2Columnflow{
@@ -857,9 +876,6 @@ table {
   width: 60vw;
 }
 
-.content1Body{
-  margin: 2rem 4rem;
-}
 
 .swiperImagee {
   object-fit: contain;
@@ -867,6 +883,7 @@ table {
   height: 18vh;
   border-radius: 15.9629px;
 }
+
 
 
 }
@@ -903,6 +920,8 @@ table {
   .boxCon{
     width: 100%;
     padding: auto;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
     
   } 
   .box{
@@ -925,9 +944,7 @@ table {
     width: 80vw;
   }
 
-  .content1Body{
-    margin: 1rem 2rem;
-  }
+
   .aboutTeam,
   .aboutDetails{
   margin: 5rem 2rem;
@@ -938,8 +955,33 @@ table {
   margin: 2rem 3rem 2rem 3rem;
 }
 
-.content1Body{
-  margin: 2rem 4rem;
+
+.content1Modal{
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  bottom: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  /* Webkit-OverflowScrolling: 'touch'; */
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.content1ModalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:grey; 
+}
+
+.share{
+  margin-left: 1rem;
 }
 }
 
@@ -1070,7 +1112,7 @@ table {
   height: 15vh;
 }
 .content1Body{
-  margin: 2rem 3.5rem;
+  margin: 0;
 }
 
 }
