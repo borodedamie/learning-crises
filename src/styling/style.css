@@ -71,14 +71,19 @@
   display: none;
 }
 .menu-icon{
-  position: absolute;
-  left: 1.5rem;
-  z-index: 300000;
-}
+  display: none;
+ }
 
 @media (max-width: 768px){
   #box-swiper .swiper-button-next {
     right: 73% !important;
+  }
+ 
+  .menu-icon{
+    display: block;
+    position: absolute;
+    left: 1.5rem;
+    z-index: 300000;
   }
   
 }
