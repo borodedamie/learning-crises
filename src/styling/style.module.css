@@ -308,6 +308,7 @@ button {
 .content1Close{
   display: flex;
   justify-content: end;
+  margin-top: 2rem;
  
   /* position: fixed; */
 }
@@ -467,6 +468,7 @@ color: #555555;
   color: #EE0000;
 
 }
+
 
 /* Edusupport Page */
 .selectButton{
@@ -694,6 +696,51 @@ table {
   border-collapse: collapse;
 }
 
+.goButton {
+  background: rgb(252, 185, 0);
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(252 185 0 / 25%) 0px 4px 23px 1px;
+  border-radius: 6px;
+  border: none;
+  width: 100px;
+  padding: 10px;
+  margin: 15px 0px;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.goButtonCon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.content1Modal{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  right: 50px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  /* Webkit-OverflowScrolling: 'touch'; */
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.content1ModalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: grey; 
+}
+
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -722,7 +769,7 @@ table {
 } */
 /* main{
   margin-top: 7rem;
-} */
+}*/
 
   .overlay{
     width: 32vw;
@@ -746,10 +793,10 @@ table {
   }
 
   .boxCon{
-    padding: 0 2rem;
+    padding: 0 0  0 2rem;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     
   } 
   .box{
@@ -775,16 +822,14 @@ table {
   .grid2ColumnflowImage{
     width: 40vw;
     object-fit: contain;
-    height: 25vh;
+
   }
 
   .viewText {
     margin: 2rem 5rem 2rem 5rem;
   }
 
-  .content1Body{
-    margin: 2rem 4.5rem;
-  }
+  
 
   .swiperImagee {
     object-fit: contain;
@@ -818,9 +863,7 @@ table {
     grid-template-columns: 1fr ;
     padding: 0 2rem;
   }
-  .content1Body{
-    margin: 2rem 3rem;
-  }
+ 
 
  
 .grid2Columnflow{
@@ -833,9 +876,6 @@ table {
   width: 60vw;
 }
 
-.content1Body{
-  margin: 2rem 4rem;
-}
 
 .swiperImagee {
   object-fit: contain;
@@ -843,6 +883,7 @@ table {
   height: 18vh;
   border-radius: 15.9629px;
 }
+
 
 
 }
@@ -879,6 +920,8 @@ table {
   .boxCon{
     width: 100%;
     padding: auto;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
     
   } 
   .box{
@@ -897,9 +940,11 @@ table {
     border-radius: 15.9629px;
   }
 
-  .content1Body{
-    margin: 1rem 2rem;
+  .grid2ColumnflowImage{
+    width: 80vw;
   }
+
+
   .aboutTeam,
   .aboutDetails{
   margin: 5rem 2rem;
@@ -910,8 +955,33 @@ table {
   margin: 2rem 3rem 2rem 3rem;
 }
 
-.content1Body{
-  margin: 2rem 4rem;
+
+.content1Modal{
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  bottom: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  /* Webkit-OverflowScrolling: 'touch'; */
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.content1ModalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:grey; 
+}
+
+.share{
+  margin-left: 1rem;
 }
 }
 
@@ -945,7 +1015,9 @@ table {
     height: 20vh;
     
   }
-
+  .grid2ColumnflowImage{
+    width: 80vw;
+  }
 
   .asideText h4{
     margin-bottom: .5rem;
@@ -959,7 +1031,6 @@ table {
 .box{
   width: 70vw;
 }
-
 .swiperFlex {
   display: grid;
   grid-template-columns: 0.75fr 1fr;
@@ -989,7 +1060,7 @@ table {
 
 
 .grid3ColumnflowImage{
-  width: 60vw;
+  width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1041,7 +1112,7 @@ table {
   height: 15vh;
 }
 .content1Body{
-  margin: 2rem 3.5rem;
+  margin: 0;
 }
 
 }
@@ -1058,6 +1129,8 @@ table {
    justify-content: center;
    align-items: center;
   }
+
+
 
 }
 
@@ -1091,3 +1164,4 @@ table {
   
 
 }
+

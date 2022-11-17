@@ -43,10 +43,10 @@ const EduInsightSharePage = (props) => {
                     />
                 </div>
                 <div className={insightPageStyles.shareText}>{ renderRichText( props.data.contentfulEduInsight.article, options ) }</div>
-                <div>
-                  <button  
-                    style={{margin : "40px"}}
+                <div className = {insightPageStyles.goButtonCon}>
+                  <button
                     onClick={ () => navigate(-1) }
+                    className = {insightPageStyles.goButton}
                   >Go Back</button>                             
                 </div>
             </section>
