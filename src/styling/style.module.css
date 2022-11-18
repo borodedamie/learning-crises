@@ -111,7 +111,7 @@ button {
 .aboutCon p,
 .aboutCon li {
   font-family: League Spartan;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0.015em;
@@ -143,14 +143,14 @@ button {
 }
 .box h3 {
   margin-bottom: 1.2rem;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #555555;
 }
 .box h4 {
   margin-bottom: 0.7rem;
   font-family: League Spartan;
-  font-size: 12px;
+  font-size: 13px;
   color: #555555;
   font-weight: 700;
 }
@@ -185,7 +185,7 @@ button {
 .author,
 .date {
   font-family: League Spartan;
-  font-size: 10px;
+  font-size: 11px;
   color: #555555;
   font-weight: 600;
   margin-top: 7px;
@@ -237,7 +237,7 @@ button {
 }
 .content1Paragraph p{
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   color: #555555;
   margin: 2rem 0 2rem 0;
   font-family: League Spartan;  
@@ -263,7 +263,7 @@ button {
 
 .content1Body p{
   color: #555555;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 22px;
   margin-bottom: 8px;
   font-weight: 500;
@@ -398,7 +398,7 @@ color: #555555;
 }
 
 .grid3ColumnText h4{
-  font-size: 15px;
+  font-size: 16px;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
@@ -407,7 +407,7 @@ color: #555555;
 }
 
 .grid3ColumnText p{
-  font-size: 12px;
+  font-size: 13px;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 500;
@@ -526,7 +526,7 @@ color: #555555;
 
 .aboutDetailsBody p{
   color: #555555;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   margin-bottom: 8px;
   font-weight: 500;
@@ -552,7 +552,7 @@ color: #555555;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   color: #555555;
   margin-bottom: 0.5rem;
 }
@@ -561,7 +561,7 @@ color: #555555;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(85, 85, 85, 0.6);;
   margin-bottom: 0.5rem;
 }
@@ -579,7 +579,7 @@ color: #555555;
 
 .grid2ColumnText p{
   color: #555555;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   margin-bottom: 8px;
   font-weight: 500;
