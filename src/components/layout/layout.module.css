@@ -84,13 +84,13 @@
 .nav-links {
   color: #555555;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   transition: 0.4s linear;
 }
 .nav-links:active,
 .nav-links:hover {
   color: #fcb900;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   border-bottom: 2px solid #fcb900;
   padding-bottom: 3px;
@@ -165,7 +165,7 @@
   color: #fff;
 }
 .footer h3 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
@@ -176,7 +176,7 @@
 .footer .footer-pages li {
   color: #ffff;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
 }
 .footer-subscription input {
   width: 250px;
