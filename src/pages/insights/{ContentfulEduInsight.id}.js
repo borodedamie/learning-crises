@@ -6,6 +6,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { convertDate } from '../../utils/convertDate'
 import * as insightPageStyles from '../../styling/style.module.css'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const options = {
     renderMark: {
@@ -48,6 +49,44 @@ const EduInsightSharePage = (props) => {
                     onClick={ () => navigate(-1) }
                     className = {insightPageStyles.goButton}
                   >Go Back</button>                             
+                </div>
+                <div className={insightPageStyles.moreSection}>
+                  <h1>You may also be interested in more content on EduInsight</h1>
+                  <div className={insightPageStyles.moreSectionGrids}>
+                      <div className= {insightPageStyles.moreSectionGrid}>
+                        <div className= {insightPageStyles.moreSectionGridImage}>
+                        <StaticImage alt='moreImage' src='../../images/Rectangle 3.png'  className= {insightPageStyles.moreSectionGridImg}/>
+                        </div>
+                        <div>
+                          <h3>Impact of Mother Tongue on Education in Nigeria</h3>
+                          <p>By Jane Doe and Dan Abrov</p>
+                          <p>August 5, 2022</p>
+                          <button>Read More</button>
+                        </div>  
+                      </div>
+                      <div className= {insightPageStyles.moreSectionGrid}>
+                        <div className= {insightPageStyles.moreSectionGridImage}>
+                        <StaticImage alt='moreImage' src='../../images/Rectangle 3.png'  className= {insightPageStyles.moreSectionGridImg}/>
+                        </div>
+                        <div>
+                          <h3>Impact of Mother Tongue on Education in Nigeria</h3>
+                          <p>By Jane Doe and Dan Abrov</p>
+                          <p>August 5, 2022</p>
+                          <button>Read More</button>
+                        </div>  
+                      </div>
+                      <div className= {insightPageStyles.moreSectionGrid}>
+                        <div className= {insightPageStyles.moreSectionGridImage}>
+                        <StaticImage alt='moreImage' src='../../images/Rectangle 3.png'  className= {insightPageStyles.moreSectionGridImg}/>
+                        </div>
+                        <div>
+                          <h3>Impact of Mother Tongue on Education in Nigeria</h3>
+                          <p>By Jane Doe and Dan Abrov</p>
+                          <p>August 5, 2022</p>
+                          <button>Read More</button>
+                        </div>  
+                      </div>
+                  </div>
                 </div>
             </section>
         </Layout>
