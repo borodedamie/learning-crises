@@ -56,22 +56,22 @@ button {
 }
 .asideText p{
     color: #fff;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     padding: 0 5px;
 }
 .asideText h4{
     margin-bottom: .8rem;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
 }
 .asideHeader h4{
   color: #555555;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 2px;
 }
 
 
@@ -111,7 +111,7 @@ button {
 .aboutCon p,
 .aboutCon li {
   font-family: League Spartan;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0.015em;
@@ -143,14 +143,14 @@ button {
 }
 .box h3 {
   margin-bottom: 1.2rem;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   color: #555555;
 }
 .box h4 {
   margin-bottom: 0.7rem;
   font-family: League Spartan;
-  font-size: 13px;
+  font-size: 15px;
   color: #555555;
   font-weight: 700;
 }
@@ -185,7 +185,7 @@ button {
 .author,
 .date {
   font-family: League Spartan;
-  font-size: 11px;
+  font-size: 14px;
   color: #555555;
   font-weight: 600;
   margin-top: 7px;
@@ -398,7 +398,7 @@ color: #555555;
 }
 
 .grid3ColumnText h4{
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
@@ -407,7 +407,7 @@ color: #555555;
 }
 
 .grid3ColumnText p{
-  font-size: 13px;
+  font-size: 15px;
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 500;
@@ -526,7 +526,7 @@ color: #555555;
 
 .aboutDetailsBody p{
   color: #555555;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
   margin-bottom: 8px;
   font-weight: 500;
@@ -579,7 +579,7 @@ color: #555555;
 
 .grid2ColumnText p{
   color: #555555;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
   margin-bottom: 8px;
   font-weight: 500;
@@ -739,6 +739,80 @@ table {
   right: 0;
   bottom: 0;
   background: grey; 
+}
+
+.moreSection{
+  margin: 4rem;
+}
+
+.moreSection h1{
+  margin-bottom: 1rem;
+  font-family: League Spartan;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 22px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: #555555;
+}
+
+.moreSectionGrids{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.moreSectionGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 21px -6px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 2rem 1rem;
+}
+
+.moreSection h3{
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    font-family: League Spartan;
+    font-size: 15px;
+    color: #555555;
+    font-weight: 700
+}
+
+.moreSection p{
+    font-family: "League Spartan";
+    font-size: 14px;
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    margin-top: 7px;
+}
+
+.moreSection button{
+  background: rgb(252, 185, 0);
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(252 185 0 / 25%) 0px 4px 23px 1px;
+    border-radius: 6px;
+    border: none;
+    width: 100px;
+    padding: 10px;
+    margin: 15px 0px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.moreSectionGridImage{
+  width: 180px;
+  margin-top: 1rem;
+  object-fit: cover;
+  
+}
+
+.moreSectionGridImg{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 @media (max-width: 992px) {
@@ -909,11 +983,11 @@ table {
 
   .asideText h4{
     margin-bottom: .5rem;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .asideText p{
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
 }
 
