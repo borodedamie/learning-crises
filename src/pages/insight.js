@@ -86,7 +86,7 @@ const share = async (id) => {
                 <div className= { insightStyles.grid3ColumnflowImg}>
                   <img 
                     src={node?.coverImage.url} 
-                    alt="eduinsight"
+                    alt="eduInsight"
                     className={ insightStyles.grid3ColumnflowImage}
                   />
                 </div> 
