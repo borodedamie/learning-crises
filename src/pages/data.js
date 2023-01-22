@@ -83,7 +83,7 @@ const imgToPdf = (title, url) => {
                                 />
                             </div>
                             
-                        <div className= {dataStyles.grid3ColumnText}>
+                        <div className= {dataStyles.gridColumnText}>
                             <h4>{ node?.title }</h4>
                             <p>Posted { convertDate( node?.createdAt) }</p>
                         </div>

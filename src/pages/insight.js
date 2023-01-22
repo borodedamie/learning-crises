@@ -86,15 +86,15 @@ const share = async (id) => {
                 <div className= { insightStyles.grid3ColumnflowImg}>
                   <img 
                     src={node?.coverImage.url} 
-                    alt="eduinsight"
+                    alt="eduInsight"
                     className={ insightStyles.grid3ColumnflowImage}
                   />
                 </div> 
-                <div className= { insightStyles.grid3ColumnText}>
+                <div className= { insightStyles.gridColumnText}>
                   <h4>{ node?.title }</h4>
                   <p>Posted { node?.date }</p>
                 </div>
-              <div className= { insightStyles.grid3ColumnShowButton}>
+              <div className= { insightStyles.gridColumnButton}>
                 <Link>
                   <button onClick={
                               () => {
