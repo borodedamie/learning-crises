@@ -1307,6 +1307,7 @@ table {
 
 .grid3ColumnflowImage{
   width: 80vw;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
