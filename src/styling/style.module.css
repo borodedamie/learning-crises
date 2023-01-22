@@ -394,7 +394,8 @@ color: #555555;
 }
 
 .grid3ColumnText{
-  margin-left: 6px;
+  margin-top: 1rem;
+  /* margin-left: 6px; */
 }
 
 .grid3ColumnText h4{
@@ -404,6 +405,7 @@ color: #555555;
   font-weight: 700;
   color: #555555;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .grid3ColumnText p{
@@ -413,6 +415,8 @@ color: #555555;
   font-weight: 500;
   color: #555555;
   margin-bottom: 7px;
+  text-align: center;
+  margin-top: 0.85rem;
 }
 
 .grid3ColumnText h6{
@@ -789,6 +793,7 @@ table {
     margin-top: 7px;
 }
 
+
 .moreSection button{
   background: rgb(252, 185, 0);
     color: rgb(255, 255, 255);
@@ -802,6 +807,9 @@ table {
     font-weight: 600;
 }
 
+.moreSection button a {
+  color: rgb(255, 255, 255);
+}
 .moreSectionGridImage{
   width: 180px;
   margin-top: 1rem;
@@ -814,6 +822,80 @@ table {
   object-fit: cover;
   border-radius: 15px;
 }
+
+@media(max-width: 2560px) {
+  .overlay{
+    bottom: -45px;
+    width: 26.5vw;
+}
+.boxSection{
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxCon{
+  display: flex;
+  gap: 4rem;
+}
+
+.moreSectionGrids {
+  gap: 4rem;
+}
+.moreSectionGrid{
+  grid-template-columns: 1fr 0.75fr;
+}
+.moreSectionGridImage{
+  width: 400px;
+}
+
+.moreSection h3{
+  margin-top: 4rem;
+}
+.moreSectionGridImage{
+  width: 250px;
+}
+
+.shareText p {
+  font-size: 22px;
+}
+
+.shareAuthor p {
+  font-size: 22px;
+}
+
+.shareHeader h4 {
+  font-size: 30px;
+  width: 500px;
+} 
+}
+
+@media(max-width: 1920px) {
+  .overlay{
+    bottom: -20px;
+    width: 26vw;
+}
+
+.moreSectionGridImage{
+  width: 250px;
+}
+
+.shareText p {
+  font-size: 20px;
+}
+
+.shareAuthor p {
+  font-size: 20px;
+}
+
+.shareHeader h4 {
+  font-size: 28px;
+  width: 500px;
+}
+}
+
+
 
 @media (max-width: 992px) {
   .container{
@@ -835,8 +917,18 @@ table {
   .asideImage{
     width: 35vw;
     height: 12vh;
-    
+  
 }
+
+.box{
+  width: 40vw;
+}
+
+/* .boxCon{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+} */
 /* .container {
   margin-top: 7rem;
   
@@ -865,12 +957,17 @@ table {
   .about{
     margin-top:2rem ;
   }
-
+  
+  .moreSectionGrids{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
   .boxCon{
     padding: 0 0  0 2rem;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     
   } 
   .box{
@@ -1029,6 +1126,11 @@ table {
   margin: 2rem 3rem 2rem 3rem;
 }
 
+.moreSectionGrids{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 
 .content1Modal{
   position: absolute;
@@ -1083,6 +1185,21 @@ table {
     width: 87vw;
     padding:  0 1.5rem;
   }
+
+  .shareText{
+    margin: 2rem 1.5rem;
+  }
+  .moreSection {
+    margin: 1.5rem;
+}
+
+  .moreSection h1{
+    font-size: 18px;
+  }
+
+  .moreSectionGridImage{
+    width: 140px;
+}
 
   .asideImage{
     width: 87vw;

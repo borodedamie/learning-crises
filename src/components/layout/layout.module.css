@@ -198,6 +198,20 @@
   font-weight: 600;
 }
 
+@media (max-width: 1920px){
+  .search-box{
+    padding: 55px 50px;
+  }
+} 
+
+@media (max-width: 2560px){
+  .search-box{
+    padding: 65px;
+  }
+} 
+
+
+
 @media (max-width: 992px) {
   .logo {
     width: 35vw;
