@@ -146,7 +146,7 @@ const IndexPage = ({ data }) => {
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
               <SwiperSlide key={ node?.id }>
                 <div className={ indexStyles.swiperFlex}>
-                  <div className={ indexStyles.swiperFlexImage }  >
+                  <div >
                     <img 
                       alt='carousel'
                       src={ node?.coverImage.url } 

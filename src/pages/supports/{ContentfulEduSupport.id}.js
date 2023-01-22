@@ -6,7 +6,6 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import * as supportPageStyles from '../../styling/style.module.css'
 import Seo from '../../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
 
 const options = {
   renderMark: {

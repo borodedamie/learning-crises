@@ -4,7 +4,6 @@ import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
 import { convertDate } from '../../utils/convertDate'
 import * as dataPageStyles from '../../styling/style.module.css'
-import { StaticImage } from 'gatsby-plugin-image'
 
 const EduDataPage = (props) => {
   console.log(props)
@@ -19,7 +18,7 @@ const EduDataPage = (props) => {
         </div>
         <div className={dataPageStyles.shareImage}>
           <img
-            alt='infographics image'
+            alt='infographics'
             src={props.data.contentfulEduData.infographics.url}
             className={dataPageStyles.shareImagee}
           />
