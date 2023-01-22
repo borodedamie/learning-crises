@@ -393,12 +393,27 @@ color: #555555;
   object-fit: contain;
 }
 
-.grid3ColumnText{
+/* .grid3ColumnText{
   margin-top: 1rem;
-  /* margin-left: 6px; */
+} */
+
+.gridColumnText{
+  margin-left: 6px;
 }
 
-.grid3ColumnText h4{
+.gridColumnButton button{
+  color: #fff;
+  background-color: #FCB900;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #FCB900;
+  width: 120px;
+  border-radius: 6px;
+  margin-left: 6px;
+  margin-top: 1rem;
+}
+
+/* .grid3ColumnText h4{
   font-size: 18px;
   font-family: 'League Spartan';
   font-style: normal;
@@ -406,9 +421,9 @@ color: #555555;
   color: #555555;
   margin-bottom: 5px;
   text-align: center;
-}
+} */
 
-.grid3ColumnText p{
+/* .grid3ColumnText p{
   font-size: 15px;
   font-family: 'League Spartan';
   font-style: normal;
@@ -417,9 +432,18 @@ color: #555555;
   margin-bottom: 7px;
   text-align: center;
   margin-top: 0.85rem;
+} */
+
+.gridColumnText h4{
+  font-size: 18px;
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  color: #555555;
+  margin-bottom: 5px;
 }
 
-.grid3ColumnText h6{
+.gridColumnText h6{
   font-size: 12px;
   font-family: 'League Spartan';
   font-style: normal;

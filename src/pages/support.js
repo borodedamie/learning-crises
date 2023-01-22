@@ -40,12 +40,12 @@ const [ category, setCategory ] = useState('')
                            className={supportStyles.grid3ColumnflowImage}
                            />
                           </div> 
-                                <div className= {supportStyles.grid3ColumnText}>
+                                <div className= {supportStyles.gridColumnText}>
                                     <h4>{ node?.title }</h4>
                                     <h6>Category: { node?.category[0].name } </h6>
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
-                                <div className= {supportStyles.grid3ColumnButton}>
+                                <div className= {supportStyles.gridColumnButton}>
                                 <Link to={`/supports/${node.id}`}> <button>View</button></Link>
                                 </div>
                         </div>
