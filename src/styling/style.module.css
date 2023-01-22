@@ -901,6 +901,18 @@ table {
   font-size: 30px;
   width: 500px;
 } 
+.grid3ColumnflowImage{
+  width: 30vw;
+  height: 550px;
+}
+
+.gridColumnText h4 {
+  font-size: 24px;
+}
+
+.gridColumnText p{
+  font-size: 20px;
+}
 }
 
 @media(max-width: 1920px) {
@@ -924,6 +936,17 @@ table {
 .shareHeader h4 {
   font-size: 28px;
   width: 500px;
+}
+.grid2ColumnflowImg,
+.grid3ColumnflowImg{
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.grid3ColumnflowImage{
+  width: 30vw;
+  height: 400px;
 }
 }
 
