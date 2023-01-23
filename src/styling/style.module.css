@@ -855,6 +855,17 @@ table {
   align-items: flex-start;
 }
 
+@media(min-width: 1024px) {
+  .grid3ColumnflowImagee, .grid3ColumnflowImage {
+    margin-bottom: 0.5rem;
+    border-radius: 29.6624px;
+    width: 25vw;
+    height: 200px;
+    object-fit: contain;
+}
+  
+}
+
 @media(min-width: 1400px) {
   .overlay{
     bottom: -20px;
@@ -1054,7 +1065,7 @@ table {
   .grid3ColumnflowImage{
     width: 30vw;
     object-fit: contain;
-    /* height: 100px; */
+    height: 180px;
   }
   .grid2ColumnText{
     margin-top: 0.5rem ;
@@ -1141,6 +1152,20 @@ table {
     width: 37vw;
     height: 18vh;
     
+}
+
+.grid3ColumnflowImagee, .grid3ColumnflowImage{
+  width: 30vw;
+  object-fit: contain;
+  height: 120px;
+}
+
+.gridColumnText h4 {
+  font-size: 16px;
+}
+
+.gridColumnText p {
+  font-size: 13px;
 }
 
   .overlay{
