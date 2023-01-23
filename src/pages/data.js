@@ -79,7 +79,7 @@ const imgToPdf = (title, url) => {
                                 <img 
                                     alt="infographics"
                                     src={ node?.infographics.url } 
-                                    className={dataStyles.grid3ColumnflowImage} 
+                                    className={dataStyles.grid3ColumnflowImagee} 
                                 />
                             </div>
                             
