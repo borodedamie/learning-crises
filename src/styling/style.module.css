@@ -385,6 +385,7 @@ color: #555555;
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid3ColumnflowImagee,
 .grid3ColumnflowImage{
   margin-bottom: 0.5rem;
   border-radius: 29.6624px;
@@ -854,8 +855,44 @@ table {
   align-items: flex-start;
 }
 
+@media(min-width: 1400px) {
+  .overlay{
+    bottom: -20px;
+    width: 26vw;
+}
 
-@media(max-width: 2560px) {
+.moreSectionGridImage{
+  width: 250px;
+}
+
+.shareText p {
+  font-size: 20px;
+}
+
+.shareAuthor p {
+  font-size: 20px;
+}
+
+.shareHeader h4 {
+  font-size: 28px;
+  width: 500px;
+}
+.grid2ColumnflowImg,
+.grid3ColumnflowImg{
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.grid3ColumnflowImagee,
+.grid3ColumnflowImage{
+  width: 30vw;
+  height: 400px;
+}
+}
+
+
+@media(min-width: 2500px) {
   .overlay{
     bottom: -45px;
     width: 26.5vw;
@@ -901,11 +938,22 @@ table {
   font-size: 30px;
   width: 500px;
 } 
+
+.grid3ColumnflowImagee,
 .grid3ColumnflowImage{
   width: 30vw;
   height: 550px;
+  border-radius: 29.6624px;
 }
 
+.rid2ColumnflowImage{
+  border-radius: 37px;
+  width: 45vw;
+}
+
+.grid3ColumnflowImagee{
+  justify-self: start;
+}
 .gridColumnText h4 {
   font-size: 24px;
 }
@@ -915,40 +963,7 @@ table {
 }
 }
 
-@media(max-width: 1920px) {
-  .overlay{
-    bottom: -20px;
-    width: 26vw;
-}
 
-.moreSectionGridImage{
-  width: 250px;
-}
-
-.shareText p {
-  font-size: 20px;
-}
-
-.shareAuthor p {
-  font-size: 20px;
-}
-
-.shareHeader h4 {
-  font-size: 28px;
-  width: 500px;
-}
-.grid2ColumnflowImg,
-.grid3ColumnflowImg{
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-}
-
-.grid3ColumnflowImage{
-  width: 30vw;
-  height: 400px;
-}
-}
 
 
 
@@ -1035,7 +1050,7 @@ table {
   .grid3Column{
     grid-template-columns: repeat(2, 1fr);
   }
-
+  .grid3ColumnflowImagee,
   .grid3ColumnflowImage{
     width: 30vw;
     object-fit: contain;
@@ -1304,7 +1319,7 @@ table {
 }
 
 
-
+.grid3ColumnflowImagee,
 .grid3ColumnflowImage{
   width: 80vw;
   height: fit-content;
