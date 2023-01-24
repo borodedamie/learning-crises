@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Learning Crises`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://learningrises.org`
   },
   plugins: [
     {
@@ -36,7 +36,6 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-apollo",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
