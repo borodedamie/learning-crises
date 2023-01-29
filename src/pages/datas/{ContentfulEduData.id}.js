@@ -4,9 +4,11 @@ import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
 import { convertDate } from '../../utils/convertDate'
 import * as dataPageStyles from '../../styling/style.module.css'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const EduDataPage = (props) => {
-  console.log(props)
+  const image = getImage(props.data.contentfulEduData.infographics)
+
   return (
     <Layout>
       <section className={dataPageStyles.container1}>
@@ -17,9 +19,9 @@ const EduDataPage = (props) => {
           <p>Posted on {convertDate(props.data.contentfulEduData.createdAt)}</p>
         </div>
         <div className={dataPageStyles.shareImage}>
-          <img
-            alt='infographics'
-            src={props.data.contentfulEduData.infographics.url}
+          <GatsbyImage
+            image={image}
+            alt={props.data.contentfulEduData.infographics_alt}
             className={dataPageStyles.shareImagee}
           />
         </div>
@@ -29,13 +31,14 @@ const EduDataPage = (props) => {
             className={dataPageStyles.goButton}
           >Go Back</button>
         </div>
+
         <div className={dataPageStyles.moreSection}>
           <h1>You may also be interested in more content on EduData</h1>
           <div className={dataPageStyles.moreSectionGrids}>
             { props?.data.allContentfulEduData.nodes.map((node, i) => (
               <div className={dataPageStyles.moreSectionGrid} key={ node?.id }>
                 <div className={dataPageStyles.moreSectionGridImage}>
-                  <img alt='moreImage' src={ node?.infographics.url } className={dataPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt={ getImage(node?.infographics_alt) } image={ getImage(node?.infographics) } className={dataPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
                   <h3>{ node?.title }</h3>
@@ -58,7 +61,7 @@ query($id: String) {
       createdAt
       infographics {
         url
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(formats: WEBP)
       }
       title
     }
@@ -68,7 +71,7 @@ query($id: String) {
         createdAt
         title
         infographics {
-          url
+          gatsbyImageData(formats: WEBP)
         }
       }
     }

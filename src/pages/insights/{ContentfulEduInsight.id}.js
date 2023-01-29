@@ -6,6 +6,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { convertDate } from '../../utils/convertDate'
 import * as insightPageStyles from '../../styling/style.module.css'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const options = {
   renderMark: {
@@ -36,9 +37,9 @@ const EduInsightSharePage = (props) => {
           <p>By {props.data.contentfulEduInsight.author}, {convertDate(props.data.contentfulEduInsight.createdAt)}</p>
         </div>
         <div className={insightPageStyles.shareImage}>
-          <img
+          <GatsbyImage
             alt='cover'
-            src={props.data.contentfulEduInsight.coverImage.url}
+            image={ getImage(props.data.contentfulEduInsight.coverImage) }
             className={insightPageStyles.shareImagee}
           />
         </div>
@@ -55,7 +56,7 @@ const EduInsightSharePage = (props) => {
             { props?.data.allContentfulEduInsight.nodes.map((node, i) => (
               <div className={insightPageStyles.moreSectionGrid} key={ node?.id }>
                 <div className={insightPageStyles.moreSectionGridImage}>
-                  <img alt='moreImage' src={ node?.coverImage.url } className={insightPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt='moreImage' image={ getImage(node?.coverImage) } className={insightPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
                   <h3>{ node?.title }</h3>
@@ -81,7 +82,7 @@ query($id: String) {
       author
       coverImage {
         url
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(formats: WEBP)
       }
       article {
           raw
@@ -89,7 +90,7 @@ query($id: String) {
             ... on ContentfulAsset {
               contentful_id
               __typename
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(formats: WEBP)
           }
         }
       }
@@ -101,7 +102,7 @@ query($id: String) {
         author
         createdAt
         coverImage {
-          url
+          gatsbyImageData(formats: WEBP)
         }
       }
     }

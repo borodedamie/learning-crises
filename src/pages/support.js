@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
 import * as supportStyles from '../styling/style.module.css'
-import { convertDate } from "../utils/convertDate";
-import Seo from "../components/seo";
+import { convertDate } from "../utils/convertDate"
+import Seo from "../components/seo"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const SupportPage = ({ data }) => {
 const [ category, setCategory ] = useState('')
@@ -34,8 +35,8 @@ const [ category, setCategory ] = useState('')
                     }).map((node, i) => (
                         <div key={ node?.id } >
                           <div className= {supportStyles.grid3ColumnflowImg}>
-                          <img 
-                           src={ node?.image.url } 
+                          <GatsbyImage 
+                           image={ getImage(node?.image) } 
                            alt="edusupport"
                            className={supportStyles.grid3ColumnflowImage}
                            />
@@ -71,7 +72,7 @@ query EduSupport {
       title
       image {
         url
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(formats: WEBP)
       }
     }
   }

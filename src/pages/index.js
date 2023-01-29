@@ -15,7 +15,7 @@ import { Pagination } from "swiper";
 import { Navigation , Autoplay } from "swiper";
 import { convertDate } from "../utils/convertDate";
 import Seo from '../components/seo'
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const IndexPage = ({ data }) => {
   const swiper = useSwiper();
@@ -38,9 +38,9 @@ const IndexPage = ({ data }) => {
                     >
                     { data?.contentfulFrontpageCarousel.images.map((image, i) => (
                       <SwiperSlide key={ image?.id } >
-                        <img 
+                        <GatsbyImage 
                           alt='carousel'
-                          src={ image?.url }
+                          image={ getImage(image) }
                           className={indexStyles.swiperImage }
                         />
                       </SwiperSlide>
@@ -58,8 +58,8 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className={ indexStyles.asideBox } 
                     onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].id}`) }>
-                    <img
-                        src={ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage.url }
+                    <GatsbyImage
+                        image={ getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage) }
                         className={indexStyles.asideImage}
                         alt="index-page"
                       /> 
@@ -80,8 +80,8 @@ const IndexPage = ({ data }) => {
                   </div>                    
                   <div className={ indexStyles.asideBox } 
                     onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].id}`) }>
-                    <img
-                        src={  data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage.url }
+                    <GatsbyImage
+                        image={  getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage) }
                         className={indexStyles.asideImage}
                         alt="index-page"
                       /> 
@@ -147,9 +147,9 @@ const IndexPage = ({ data }) => {
               <SwiperSlide key={ node?.id }>
                 <div className={ indexStyles.swiperFlex}>
                   <div >
-                    <img 
+                    <GatsbyImage 
                       alt='carousel'
-                      src={ node?.coverImage.url } 
+                      image={ getImage(node?.coverImage) } 
                       className={indexStyles.swiperImagee }                     
                     />
                   </div>
@@ -181,9 +181,9 @@ const IndexPage = ({ data }) => {
                       <SwiperSlide key={ node?.id }>
                       <div className={ indexStyles.swiperFlex}>
                           <div >
-                            <img 
+                            <GatsbyImage 
                               alt='carousel'
-                              src={ node?.infographics.url }
+                              image={ getImage(node?.infographics) }
                               className={indexStyles.swiperImagee }
                             />
                           </div>
@@ -214,9 +214,9 @@ const IndexPage = ({ data }) => {
                       <SwiperSlide key={ node?.id }>
                         <div className={ indexStyles.swiperFlex}>
                             <div className={ indexStyles.swiperFlexImage }  >
-                              <img 
+                              <GatsbyImage 
                                 alt='carousel'
-                                src={ node?.image.url }
+                                image={ getImage(node?.image) }
                                 className={indexStyles.swiperImagee }
                               />
                             </div>
@@ -245,7 +245,7 @@ query EduInsightsDataSupport {
     images {
       id
       url
-      gatsbyImageData(layout: FULL_WIDTH)
+      gatsbyImageData(formats: WEBP)
     }
   }
   allContentfulEduInsight(limit: 3) {
@@ -255,7 +255,7 @@ query EduInsightsDataSupport {
       title
       author
       coverImage {
-        url
+        gatsbyImageData(formats: WEBP)
       }
     }
   }
@@ -265,7 +265,7 @@ query EduInsightsDataSupport {
       createdAt
       title
       infographics {
-        url
+        gatsbyImageData(formats: WEBP)
       }
     }
   }
@@ -275,7 +275,7 @@ query EduInsightsDataSupport {
       createdAt
       title
       image {
-        url
+        gatsbyImageData(formats: WEBP)
       }
     }
   }

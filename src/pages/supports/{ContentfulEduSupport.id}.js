@@ -6,6 +6,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import * as supportPageStyles from '../../styling/style.module.css'
 import Seo from '../../components/seo'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const options = {
   renderMark: {
@@ -31,7 +32,7 @@ const EduSupportPostPage = (props) => {
       <section>
         <div className={supportPageStyles.view}>
           <div className={supportPageStyles.viewImg}>
-            <img src={props.data.contentfulEduSupport.image.url} alt="support-post" className={supportPageStyles.viewImage} />
+            <GatsbyImage image={ getImage(props.data.contentfulEduSupport.image) } alt="support-post" className={supportPageStyles.viewImage} />
           </div>
           <div className={supportPageStyles.viewText}>
             <h4>{props.data.contentfulEduSupport.title}</h4>
@@ -51,7 +52,7 @@ const EduSupportPostPage = (props) => {
             {props?.data.allContentfulEduSupport.nodes.map((node, i) => (
               <div className={supportPageStyles.moreSectionGrid} key={ node?.id }>
                 <div className={supportPageStyles.moreSectionGridImage}>
-                  <img alt='moreImage' src={ node?.image.url } className={supportPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt='moreImage' image={ getImage(node?.image) } className={supportPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
                   <h3>{ node?.title }</h3>
@@ -74,7 +75,7 @@ query($id: String) {
       id
       title
       image {
-        url
+        gatsbyImageData(formats: WEBP)
       }
       post {
         raw
@@ -87,7 +88,7 @@ query($id: String) {
         createdAt
         title
         image {
-          url
+          gatsbyImageData(formats: WEBP)
         }
       }
     }

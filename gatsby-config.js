@@ -20,13 +20,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        footnotes: true,
-        gfm: true
-      }
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
@@ -35,6 +28,7 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    `gatsby-transformer-sharp`,
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-google-fonts`,

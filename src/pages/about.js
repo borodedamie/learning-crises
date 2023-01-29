@@ -7,6 +7,7 @@ import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import Seo from '../components/seo'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const AboutPage = ({ data }) => {
     return(
@@ -28,9 +29,9 @@ const AboutPage = ({ data }) => {
                         { data?.contentfulAbout.team.map((item, i) => (
                             <div key={ item?.id } className= {aboutStyles.grid2Columnflow}>
                                 <div className= {aboutStyles.grid2ColumnflowImg}>
-                                    <img 
+                                    <GatsbyImage 
                                         alt="profile"
-                                        src={ item?.avatar.url }
+                                        image={ getImage(item?.avatar) }
                                         className={ aboutStyles.grid2ColumnflowImage }
                                     />
                                 </div>
@@ -64,7 +65,7 @@ query AboutPage {
         name
         position
         avatar {
-          url
+            gatsbyImageData(formats: WEBP)
         }
         facebook
         twitter

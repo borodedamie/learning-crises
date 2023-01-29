@@ -19,6 +19,7 @@ import Seo from "../components/seo";
 // jsPDF
 import { jsPDF } from 'jspdf'
 import { GrClose } from '@react-icons/all-files/gr/GrClose'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const DataPage = ({ data }) => {
 const [modalIsOpen, setModalIsOpen] = useState(false)  
@@ -57,9 +58,9 @@ const imgToPdf = (title, url) => {
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
-                                <img
+                                <GatsbyImage
                                     alt='carousel'
-                                    src={ node?.infographics.url }
+                                    image={ getImage(node?.infographics) }
                                     className={dataStyles.mycarouselimage }
                                 />
                             </SwiperSlide> 
@@ -76,9 +77,9 @@ const imgToPdf = (title, url) => {
                     { data?.allContentfulEduData.nodes.map((node, i) => (
                         <div key={ node?.id } className= {dataStyles.grid3Columnflow}>
                             <div className= {dataStyles.grid3ColumnflowImg}>
-                                <img 
+                                <GatsbyImage 
                                     alt="infographics"
-                                    src={ node?.infographics.url } 
+                                    image={ getImage(node?.infographics) } 
                                     className={dataStyles.grid3ColumnflowImagee} 
                                 />
                             </div>
@@ -92,7 +93,7 @@ const imgToPdf = (title, url) => {
                                 setModalIsOpen(true)
                                 setModalData({
                                     title: node.title,
-                                    image: node.infographics.url
+                                    image: node.infographics
                                 })
                             }}>Preview</button> 
                             <button onClick={ () => imgToPdf(node.title, node.infographics.url) }>Download</button> 
@@ -123,9 +124,9 @@ const imgToPdf = (title, url) => {
                     </div>
                     <h4>{ modalData.title }</h4>
                     <div className= {dataStyles.ModalContentImg}>
-                        <img 
+                        <GatsbyImage 
                             alt="infographics"
-                            src={ modalData.image }
+                            image={ getImage(modalData.image) }
                             className = {dataStyles.ModalContentImage}
                         />
                     </div>
@@ -145,6 +146,7 @@ query EduData {
         createdAt
         infographics {
           url
+          gatsbyImageData(formats: WEBP)
         }
         title
       }

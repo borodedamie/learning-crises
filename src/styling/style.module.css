@@ -353,8 +353,8 @@ button {
 }
 
 .mycarouselimage{
-  width: 100%;
-  height: 50vw;
+  /* width: 100%; */
+  height: auto; 
   border-radius: 50px;
   object-fit: contain;
 }
@@ -690,8 +690,8 @@ color: #555555;
 }
 
 .shareImagee{
-  width: 70vw;
-  object-fit: contain;
+  height: auto;
+  /* object-fit: contain; */
   border-radius: 20px;
   margin-bottom: 2rem;
 }
@@ -836,15 +836,15 @@ table {
   color: rgb(255, 255, 255);
 }
 .moreSectionGridImage{
-  width: 180px;
+  /* width: 180px; */
   margin-top: 1rem;
   object-fit: cover;
   
 }
 
 .moreSectionGridImg{
-  width: 100%;
-  object-fit: cover;
+  /* width: 100%; */
+  /* object-fit: cover; */
   border-radius: 15px;
 }
 
@@ -993,10 +993,6 @@ table {
 }
 }
 
-
-
-
-
 @media (max-width: 992px) {
   .container{
     display:block;
@@ -1100,17 +1096,12 @@ table {
     margin: 2rem 5rem 2rem 5rem;
   }
 
-  
-
   .swiperImagee {
     object-fit: contain;
     width: 20vw;
     height: 18vh;
     border-radius: 15.9629px;
   }
-
-  
-
 }
 
 @media (max-width: 768px){
@@ -1135,8 +1126,6 @@ table {
     padding: 0 2rem;
   }
  
-
- 
 .grid2Columnflow{
   display: flex;
   flex-direction: column;
@@ -1147,16 +1136,12 @@ table {
   width: 60vw;
 }
 
-
 .swiperImagee {
   object-fit: contain;
   width: 18vw;
   height: 18vh;
   border-radius: 15.9629px;
 }
-
-
-
 }
 
 @media (max-width: 540px){

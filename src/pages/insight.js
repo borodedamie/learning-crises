@@ -10,7 +10,7 @@ import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // set render options for the JSON file fetched from Contentful 
 const options = {
@@ -60,6 +60,8 @@ const [ modalData, setModalData ] = useState({
   article: {},
 })
 
+console.log(modalData)
+
 // share functionality
 const share = async (id) => {
   const shareData = {
@@ -84,8 +86,8 @@ const share = async (id) => {
             { data?.allContentfulEduInsight.nodes.map((node, i) => (
               <div key={ node?.id } >
                 <div className= { insightStyles.grid3ColumnflowImg}>
-                  <img 
-                    src={node?.coverImage.url} 
+                  <GatsbyImage 
+                    image={ getImage(node?.coverImage) } 
                     alt="eduInsight"
                     className={ insightStyles.grid3ColumnflowImage}
                   />
@@ -103,7 +105,7 @@ const share = async (id) => {
                                       id: node?.id,
                                       title: node?.title,
                                       date: node?.date,
-                                      coverImage: node?.coverImage.url,
+                                      coverImage: node?.coverImage,
                                       article: node?.article
                                     }
                                     )
@@ -131,9 +133,9 @@ const share = async (id) => {
                           <p> By { modalData.date }</p>
                         </div>
                         <div className={ insightStyles.content1Image } >
-                          <img
+                          <GatsbyImage
                             alt='carousel'
-                            src={ modalData.coverImage }
+                            image={ getImage(modalData.coverImage) }
                             className={insightStyles.contentImage }
                           />
                         </div>
@@ -161,8 +163,7 @@ query EduInsights {
       title
       author
       coverImage {
-	      url
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(formats: WEBP)
       }
       article {
         raw
