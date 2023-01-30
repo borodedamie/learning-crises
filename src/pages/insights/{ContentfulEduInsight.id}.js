@@ -29,7 +29,7 @@ const options = {
 const EduInsightSharePage = (props) => {
   return (
     <Layout>
-      <section>
+      <section className={insightPageStyles.container1}>
         <div className={insightPageStyles.shareHeader} >
           <h4>{props.data.contentfulEduInsight.title}</h4>
         </div>
