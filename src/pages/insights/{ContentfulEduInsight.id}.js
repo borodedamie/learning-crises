@@ -40,7 +40,7 @@ const EduInsightSharePage = (props) => {
           <GatsbyImage
             alt='cover'
             image={ getImage(props.data.contentfulEduInsight.coverImage) }
-            className={insightPageStyles.shareImagee}
+            className={insightPageStyles.viewImage}
           />
         </div>
         <div className={insightPageStyles.shareText}>{renderRichText(props.data.contentfulEduInsight.article, options)}</div>
