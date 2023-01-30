@@ -339,7 +339,7 @@ button {
 
 /* EduData Page */
 .carouselContainer{
-  width: 75vw;
+  width: 50vw;
   margin: 3rem auto;
 }
 .mycarousel{
@@ -356,7 +356,10 @@ button {
   /* width: 100%; */
   height: auto; 
   border-radius: 50px;
-  object-fit: contain;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid{
@@ -1274,6 +1277,10 @@ table {
     
 }
 
+.boxCon{
+  padding: 0;
+}
+
   .overlay{
     width: 80.5vw;
     height: 3.5rem;
@@ -1392,10 +1399,10 @@ table {
   justify-content: center;
 }
 
-.boxSection {
+/* .boxSection {
   padding: 0.5rem;
   
-}
+} */
 
 .swiperImagee {
   object-fit: contain;
