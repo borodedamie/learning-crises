@@ -6,7 +6,7 @@ const pageQuery = `{
           title
           author
           coverImage {
-            url
+            gatsbyImageData(formats: WEBP)
           }
         }
     }
