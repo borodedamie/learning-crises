@@ -671,9 +671,9 @@ color: #555555;
 .shareAuthor,
 .shareHeader{
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-  text-align: start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .shareHeader h4{
@@ -708,7 +708,7 @@ color: #555555;
 }
 
 .shareText{
-  margin: 2rem 3rem;
+  margin: 4rem 8rem;
 }
 
 .shareText p{
@@ -903,6 +903,7 @@ table {
 .shareHeader h4 {
   font-size: 30px;
   width: 100%;
+
 }
 .grid2ColumnflowImg,
 .grid3ColumnflowImg{
