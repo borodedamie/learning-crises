@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => {
               <div className={ indexStyles.aboutCon2 }>
                 <h3>APPROACH</h3>
                 <ul>
-                  <li><span>R</span>-esearch and Data Analytics to conceptualize the learninf crisis</li>
+                  <li><span>R</span>-esearch and Data Analytics to conceptualize the learning crisis</li>
                   <li><span>I</span>-nnovative technology and diagnostic tools for understanding the learning crisis</li>
                   <li><span>S</span>-upport and capacity development for education workforce</li>
                   <li><span>E</span>-ducation partnership for action</li>

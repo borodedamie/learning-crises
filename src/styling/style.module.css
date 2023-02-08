@@ -7,6 +7,14 @@
   gap: 3rem;
   /* justify-content: space-between;*/
 } 
+
+.wrapper {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25.65px;
+  letter-spacing: -0.19px;
+}
+
 button {
     cursor: pointer;
 }
@@ -663,9 +671,9 @@ color: #555555;
 .shareAuthor,
 .shareHeader{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: start;
 }
 
 .shareHeader h4{
@@ -705,10 +713,11 @@ color: #555555;
 
 .shareText p{
   color: #555555;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 25px;
   font-weight: 500;
   font-family: 'League Spartan';
+  margin-bottom: 1em;
 }
 table{
   margin-bottom: 1rem;
@@ -888,8 +897,8 @@ table {
 }
 
 .shareHeader h4 {
-  font-size: 28px;
-  width: 500px;
+  font-size: 30px;
+  width: 100%;
 }
 .grid2ColumnflowImg,
 .grid3ColumnflowImg{

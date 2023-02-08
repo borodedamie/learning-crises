@@ -15,7 +15,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // set render options for the JSON file fetched from Contentful 
 const options = {
   renderMark: {
-    [ MARKS.BOLD ]: ( text ) => <b>{ text }</b>
+    [MARKS.BOLD]: (text) => <b>{text}</b>
   },
   renderNode: {
     "embedded-asset-block": node => {
@@ -26,16 +26,16 @@ const options = {
       }
       return <GatsbyImage image={gatsbyImageData} />
     },
-    [ BLOCKS.PARAGRAPH ]: (node, children) => <p>{ children }</p>,
-    [ INLINES.HYPERLINK ]: ( node, children ) => {
+    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+    [INLINES.HYPERLINK]: (node, children) => {
       const { uri } = node.data
       return (
-        <a href={ uri }>{ children }</a>
+        <a href={uri}>{children}</a>
       )
     }
   },
-    [ BLOCKS.HEADING_2 ]: ( node, children ) => {
-      return <h2>{ children }</h2>
+  [BLOCKS.HEADING_2]: (node, children) => {
+    return <h2>{children}</h2>
   },
 
   [BLOCKS.TABLE]: (node, children) => (
@@ -49,109 +49,109 @@ const options = {
 }
 
 const InsightPage = ({ data }) => {
-// states
-const [ newItems, setNewItems ] = useState({})
-const [modalIsOpen, setModalIsOpen] = useState(false)
-const [ modalData, setModalData ] = useState({
-  id: '',
-  title: '',
-  date: '',
-  coverImage: '',
-  article: {},
-})
+  // states
+  const [newItems, setNewItems] = useState({})
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalData, setModalData] = useState({
+    id: '',
+    title: '',
+    date: '',
+    coverImage: '',
+    article: {},
+  })
 
-console.log(modalData)
+  console.log(modalData)
 
-// share functionality
-const share = async (id) => {
-  const shareData = {
-    title: document.title,
-    url: window.location.origin + `/insights/${id}`
+  // share functionality
+  const share = async (id) => {
+    const shareData = {
+      title: document.title,
+      url: window.location.origin + `/insights/${id}`
+    }
+
+    try {
+      await navigator.share(shareData)
+    } catch (err) {
+      console.log(`Error: ${err}`)
+    }
   }
 
-  try {
-    await navigator.share( shareData )
-  } catch (err) {
-    console.log(`Error: ${err}`)
-  }
-}
-
-// Modal.setAppElement('#root')
-    return (
+  // Modal.setAppElement('#root')
+  return (
 
     <Layout>
-        <section >
-        <div className= { insightStyles.grid}>
-          <div className= { insightStyles.grid3Column }>
-            { data?.allContentfulEduInsight.nodes.map((node, i) => (
-              <div key={ node?.id } >
-                <div className= { insightStyles.grid3ColumnflowImg}>
-                  <GatsbyImage 
-                    image={ getImage(node?.coverImage) } 
+      <section>
+        <div className={insightStyles.grid}>
+          <div className={insightStyles.grid3Column}>
+            {data?.allContentfulEduInsight.nodes.map((node, i) => (
+              <div key={node?.id} >
+                <div className={insightStyles.grid3ColumnflowImg}>
+                  <GatsbyImage
+                    image={getImage(node?.coverImage)}
                     alt="eduInsight"
-                    className={ insightStyles.grid3ColumnflowImage}
+                    className={insightStyles.grid3ColumnflowImage}
                   />
-                </div> 
-                <div className= { insightStyles.gridColumnText}>
-                  <h4>{ node?.title }</h4>
-                  <p>Posted { node?.date }</p>
                 </div>
-              <div className= { insightStyles.gridColumnButton}>
-                <Link>
-                  <button onClick={
-                              () => {
-                                    setModalIsOpen(true)
-                                    setModalData({
-                                      id: node?.id,
-                                      title: node?.title,
-                                      date: node?.date,
-                                      coverImage: node?.coverImage,
-                                      article: node?.article
-                                    }
-                                    )
-                                  }
-                                }
-                               >Show More</button>
-                               </Link>
-                              </div>
-                          </div>
-                    ))}    
-                    <Modal 
-                      isOpen = {modalIsOpen} 
-                      ariaHideApp={false}
-                      onRequestClose = {() => setModalIsOpen(false)}
-                      className = { insightStyles.content1Modal} 
-                      overlayClassName = {insightStyles.content1ModalOverlay}
-                      >
-                        <div className={ insightStyles.content1Close } >
-                          <button onClick={() => setModalIsOpen(false)} ><GrClose/></button>
-                        </div>
-                        <div className={ insightStyles.content1Header } >
-                          <h4>{ modalData.title }</h4>
-                        </div>
-                        <div className={ insightStyles.content1Paragraph } >
-                          <p> By { modalData.date }</p>
-                        </div>
-                        <div className={ insightStyles.content1Image } >
-                          <GatsbyImage
-                            alt='carousel'
-                            image={ getImage(modalData.coverImage) }
-                            className={insightStyles.contentImage }
-                          />
-                        </div>
-                                
-                        <div className={ insightStyles.content1Body }>
-                          { modalIsOpen && <p>{ renderRichText(modalData.article, options)}</p> }
-                        </div> 
-                        <div className= {insightStyles.share} onClick={ () => share(modalData.id) }>
-                          <h6>Share <p><FaShareAlt /></p></h6>
-                        </div>
-                    </Modal>
-                       </div>                   
-                    </div> 
-        </section>
+                <div className={insightStyles.gridColumnText}>
+                  <h4>{node?.title}</h4>
+                  <p>Posted {node?.date}</p>
+                </div>
+                <div className={insightStyles.gridColumnButton}>
+                  <Link>
+                    <button onClick={
+                      () => {
+                        setModalIsOpen(true)
+                        setModalData({
+                          id: node?.id,
+                          title: node?.title,
+                          date: node?.date,
+                          coverImage: node?.coverImage,
+                          article: node?.article
+                        }
+                        )
+                      }
+                    }
+                    >Show More</button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+            <Modal
+              isOpen={modalIsOpen}
+              ariaHideApp={false}
+              onRequestClose={() => setModalIsOpen(false)}
+              className={insightStyles.content1Modal}
+              overlayClassName={insightStyles.content1ModalOverlay}
+            >
+              <div className={insightStyles.content1Close} >
+                <button onClick={() => setModalIsOpen(false)} ><GrClose /></button>
+              </div>
+              <div className={insightStyles.content1Header} >
+                <h4>{modalData.title}</h4>
+              </div>
+              <div className={insightStyles.content1Paragraph} >
+                <p> By {modalData.date}</p>
+              </div>
+              <div className={insightStyles.content1Image} >
+                <GatsbyImage
+                  alt='carousel'
+                  image={getImage(modalData.coverImage)}
+                  className={insightStyles.contentImage}
+                />
+              </div>
+
+              <div className={insightStyles.content1Body}>
+                {modalIsOpen && <p>{renderRichText(modalData.article, options)}</p>}
+              </div>
+              <div className={insightStyles.share} onClick={() => share(modalData.id)}>
+                <h6>Share <p><FaShareAlt /></p></h6>
+              </div>
+            </Modal>
+          </div>
+        </div>
+      </section>
     </Layout>
-    )
+  )
 }
 
 export const query = graphql`
