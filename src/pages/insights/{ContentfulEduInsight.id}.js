@@ -29,26 +29,28 @@ const options = {
 const EduInsightSharePage = (props) => {
   return (
     <Layout>
-      <section>
-        <div className={insightPageStyles.shareHeader} >
-          <h4>{props.data.contentfulEduInsight.title}</h4>
-        </div>
-        <div className={insightPageStyles.shareAuthor}>
-          <p>By {props.data.contentfulEduInsight.author}, {convertDate(props.data.contentfulEduInsight.createdAt)}</p>
-        </div>
-        <div className={insightPageStyles.shareImage}>
-          <GatsbyImage
-            alt='cover'
-            image={ getImage(props.data.contentfulEduInsight.coverImage) }
-            className={insightPageStyles.viewImage}
-          />
-        </div>
-        <div className={insightPageStyles.shareText}>{renderRichText(props.data.contentfulEduInsight.article, options)}</div>
-        <div className={insightPageStyles.goButtonCon}>
-          <button
-            onClick={() => navigate(-1)}
-            className={insightPageStyles.goButton}
-          >Go Back</button>
+      <section className={insightPageStyles.container1}>
+        <div className={insightPageStyles.insightContent}>
+            <div className={insightPageStyles.shareHeader} >
+              <h4>{props.data.contentfulEduInsight.title}</h4>
+            </div>
+            <div className={insightPageStyles.shareAuthor}>
+              <p>By {props.data.contentfulEduInsight.author}, {convertDate(props.data.contentfulEduInsight.createdAt)}</p>
+            </div>
+            <div className={insightPageStyles.shareImage}>
+              <GatsbyImage
+                alt='cover'
+                image={ getImage(props.data.contentfulEduInsight.coverImage) }
+                className={insightPageStyles.viewImage}
+              />
+            </div>
+            <div className={insightPageStyles.shareText}>{renderRichText(props.data.contentfulEduInsight.article, options)}</div>
+            <div className={insightPageStyles.goButtonCon}>
+              <button
+                onClick={() => navigate(-1)}
+                className={insightPageStyles.goButton}
+              >Go Back</button>
+            </div>
         </div>
         <div className={insightPageStyles.moreSection}>
           <h1>You may also be interested in more content on EduInsight</h1>

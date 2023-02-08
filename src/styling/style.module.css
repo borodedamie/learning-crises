@@ -631,7 +631,7 @@ color: #555555;
   margin: 3rem 0;
 }
 .viewImage{
-  width: 80vw;
+  width: 60vw;
   border-radius: 37px;
 }
 
@@ -678,7 +678,7 @@ color: #555555;
 
 .shareHeader h4{
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   width: 350px;
   color: #555555;
   margin: 2rem 0 0rem 0;
@@ -687,7 +687,7 @@ color: #555555;
 
 .shareAuthor p{
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   color: #555555;
   margin: 2rem 0 2rem 0;
   font-family: League Spartan;  
@@ -714,10 +714,10 @@ color: #555555;
 .shareText p{
   color: #555555;
   font-size: 16px;
-  line-height: 25px;
-  font-weight: 500;
+  line-height: 22px;
+  font-weight: 400;
   font-family: 'League Spartan';
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 table{
   margin-bottom: 1rem;
@@ -865,6 +865,10 @@ table {
   display: flex;
   justify-content: left;
   align-items: flex-start;
+}
+
+.insightContent{
+  margin: 0 7rem;
 }
 
 @media(min-width: 1024px) {
@@ -1103,6 +1107,9 @@ table {
     object-fit: contain;
 
   }
+  .insightContent{
+    margin: 0 3rem;
+  }
 
   .viewText {
     margin: 2rem 5rem 2rem 5rem;
@@ -1153,6 +1160,10 @@ table {
   width: 18vw;
   height: 18vh;
   border-radius: 15.9629px;
+}
+
+.insightContent{
+  margin: 0;
 }
 }
 
