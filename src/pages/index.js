@@ -37,13 +37,17 @@ const IndexPage = ({ data }) => {
                     id='main-swiper'
                     >
                     { data?.contentfulFrontpageCarousel.images.map((image, i) => (
-                      <SwiperSlide key={ image?.id } >
-                        <GatsbyImage 
-                          alt='carousel'
-                          image={ getImage(image) }
-                          className={indexStyles.swiperImage }
-                        />
-                      </SwiperSlide>
+                      <div>
+                          <SwiperSlide key={ image?.id } >
+                            <div>
+                              <GatsbyImage 
+                                alt='carousel'
+                                image={ getImage(image) }
+                                className={indexStyles.swiperImage }
+                              />
+                            </div>
+                          </SwiperSlide>
+                      </div>
                     ))
                     }                                     
                   </Swiper>
@@ -58,11 +62,13 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className={ indexStyles.asideBox } 
                     onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].id}`) }>
-                    <GatsbyImage
-                        image={ getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage) }
-                        className={indexStyles.asideImage}
-                        alt="index-page"
-                      /> 
+                    <div>
+                      <GatsbyImage
+                          image={ getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].coverImage) }
+                          className={indexStyles.asideImage}
+                          alt="index-page"
+                        />
+                    </div> 
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
                           <h4>{ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 1 ].title }</h4>
@@ -80,11 +86,13 @@ const IndexPage = ({ data }) => {
                   </div>                    
                   <div className={ indexStyles.asideBox } 
                     onClick={ () => navigate(`/insights/${data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].id}`) }>
-                    <GatsbyImage
-                        image={  getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage) }
-                        className={indexStyles.asideImage}
-                        alt="index-page"
-                      /> 
+                    <div>
+                        <GatsbyImage
+                            image={  getImage(data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].coverImage) }
+                            className={indexStyles.asideImage}
+                            alt="index-page"
+                          /> 
+                    </div>
                       <div className={indexStyles.overlay}>
                         <div className={ indexStyles.asideText}>
                           <h4>{ data.allContentfulEduInsight.nodes[ data.allContentfulEduInsight.nodes.length - 2 ].title }</h4>

@@ -58,11 +58,13 @@ const imgToPdf = (title, url) => {
                         >
                         { data?.allContentfulEduData.nodes.slice(0, 3).map((node, i) => (
                             <SwiperSlide key={ node?.id }>
-                                <GatsbyImage
-                                    alt='carousel'
-                                    image={ getImage(node?.infographics) }
-                                    className={dataStyles.mycarouselimage }
-                                />
+                                <div>
+                                    <GatsbyImage
+                                        alt='carousel'
+                                        image={ getImage(node?.infographics) }
+                                        className={dataStyles.mycarouselimage }
+                                    />
+                                </div>
                             </SwiperSlide> 
                         ))}                       
                     </Swiper>
