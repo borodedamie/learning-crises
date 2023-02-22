@@ -16,7 +16,7 @@ button {
 }
 
 .swiperImage {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 20px;
@@ -176,7 +176,7 @@ button {
   width: 25vw;
 } */
 .swiperImagee {
-  object-fit: contain;
+  object-fit: cover;
   width: 13vw;
   height: 18vh;
   border-radius: 15.9629px;
@@ -253,7 +253,7 @@ button {
 
 .contentImage{
  width: 70vw;
- object-fit: contain;
+ object-fit: cover;
  border-radius: 20px;
  margin-bottom: 2rem;
 }
@@ -395,7 +395,7 @@ color: #555555;
   border-radius: 29.6624px;
   width: 25vw;
   height: 220px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* .grid3ColumnText{
@@ -870,7 +870,7 @@ table {
     border-radius: 29.6624px;
     width: 25vw;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
 }
   
 }
@@ -1088,7 +1088,7 @@ table {
   .grid3ColumnflowImagee,
   .grid3ColumnflowImage{
     width: 30vw;
-    object-fit: contain;
+    object-fit: cover;
     height: 180px;
   }
   .grid2ColumnText{
@@ -1097,7 +1097,7 @@ table {
 
   .grid2ColumnflowImage{
     width: 40vw;
-    object-fit: contain;
+    object-fit: cover;
 
   }
   .insightContent{
@@ -1109,7 +1109,7 @@ table {
   }
 
   .swiperImagee {
-    object-fit: contain;
+    object-fit: cover;
     width: 20vw;
     height: 18vh;
     border-radius: 15.9629px;
@@ -1149,7 +1149,7 @@ table {
 }
 
 .swiperImagee {
-  object-fit: contain;
+  object-fit: cover;
   width: 18vw;
   height: 18vh;
   border-radius: 15.9629px;
@@ -1176,7 +1176,7 @@ table {
 
 .grid3ColumnflowImagee, .grid3ColumnflowImage{
   width: 30vw;
-  object-fit: contain;
+  object-fit: cover;
   height: 120px;
 }
 
@@ -1220,7 +1220,7 @@ table {
   }
 
   .swiperImagee {
-    object-fit: contain;
+    object-fit: cover;
     width: 30vw;
     height: 18vh;
     border-radius: 15.9629px;
@@ -1418,7 +1418,7 @@ table {
 } */
 
 .swiperImagee {
-  object-fit: contain;
+  object-fit: cover;
   width: 35vw;
   height: 15vh;
 }
@@ -1453,7 +1453,7 @@ table {
   }
 
   .swiperImagee {
-    object-fit: contain;
+    object-fit: cover;
     width: 30vw;
     height: 18vh;
     border-radius: 15.9629px;
