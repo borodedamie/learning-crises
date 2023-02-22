@@ -39,11 +39,13 @@ const IndexPage = ({ data }) => {
                     { data?.contentfulFrontpageCarousel.images.map((image, i) => (
                       <div>
                           <SwiperSlide key={ image?.id } >
-                            <GatsbyImage 
-                              alt='carousel'
-                              image={ getImage(image) }
-                              className={indexStyles.swiperImage }
-                            />
+                            <div>
+                              <GatsbyImage 
+                                alt='carousel'
+                                image={ getImage(image) }
+                                className={indexStyles.swiperImage }
+                              />
+                            </div>
                           </SwiperSlide>
                       </div>
                     ))
