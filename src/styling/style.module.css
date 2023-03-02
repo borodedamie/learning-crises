@@ -159,7 +159,7 @@ button {
 .box h4 {
   margin-bottom: 0.7rem;
   font-family: League Spartan;
-  font-size: 15px;
+  font-size: 14px;
   color: #555555;
   font-weight: 700;
 }
@@ -168,7 +168,7 @@ button {
   gap: 1rem;
   justify-content: space-between; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   align-items: center;
   gap: 1rem;
   padding-bottom: 20%;
@@ -185,8 +185,8 @@ button {
 } */
 .swiperImagee {
   object-fit: cover;
-  width: 13vw;
-  height: 18vh;
+  width: 12vw;
+  height: 25vh;
   border-radius: 15.9629px;
 }
 
@@ -194,7 +194,7 @@ button {
 .author,
 .date {
   font-family: League Spartan;
-  font-size: 14px;
+  font-size: 12px;
   color: #555555;
   font-weight: 600;
   margin-top: 7px;
@@ -1067,6 +1067,7 @@ table {
   }
   .swiperImage{
     width: 100%;
+    border-radius: 20px;
   }
 
   .about{
@@ -1431,6 +1432,7 @@ table {
   object-fit: cover;
   width: 35vw;
   height: 15vh;
+  border-radius: 20px;
 }
 .content1Body{
   margin: 0;
