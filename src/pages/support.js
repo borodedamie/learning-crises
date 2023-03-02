@@ -29,7 +29,7 @@ const [ category, setCategory ] = useState('')
                     { data?.allContentfulEduSupport.nodes.filter((node) => {
                       if(category === '' || category === 'All') {
                         return node
-                      } else if( node?.category[0].name.toLowerCase().includes(category.toLowerCase())) {
+                      } else if( node?.category && node.category[0].name.toLowerCase().includes(category.toLowerCase())) {
                         return node
                       } return false
                     }).map((node, i) => (
@@ -43,7 +43,7 @@ const [ category, setCategory ] = useState('')
                           </div> 
                                 <div className= {supportStyles.gridColumnText}>
                                     <h4>{ node?.title }</h4>
-                                    <h6>Category: { node?.category[0].name } </h6>
+                                    <h6>Category: { node?.category ? node?.category[0].name : null } </h6>
                                     <p>Posted { convertDate(node?.createdAt) }</p>
                                 </div>
                                 <div className= {supportStyles.gridColumnButton}>
