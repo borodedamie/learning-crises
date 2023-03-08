@@ -1306,6 +1306,7 @@ table {
   .asideImage{
     width: 30vw;
     height: 18vh;
+    border-radius: 20px;
     
 }
 
@@ -1322,6 +1323,7 @@ table {
   .sliderContainer {
     width: 87vw;
     padding:  0 1.5rem;
+    border-radius: 20px;
   }
 
   .shareText{
@@ -1346,6 +1348,7 @@ table {
   }
   .grid2ColumnflowImage{
     width: 80vw;
+    border-radius: 20px;
   }
 
   .asideText h4{
@@ -1359,6 +1362,7 @@ table {
 }
 .box{
   width: 70vw;
+  border-radius: 20px;
 }
 .swiperFlex {
   display: grid;
@@ -1395,6 +1399,7 @@ table {
   justify-content: center;
   align-items: center;
   border-radius: 29.6624px;
+  object-fit: contain;
 }
 
 .grid3ColumnButton{
