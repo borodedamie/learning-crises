@@ -8,6 +8,10 @@
   /* justify-content: space-between;*/
 } 
 
+img{
+  border-collapse: separate;
+}
+
 .wrapper {
   font-weight: 400;
   font-size: 19px;
@@ -27,7 +31,8 @@ button {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 29.6624px;
+  
 }
 /* aside section */
 .aside{
@@ -187,7 +192,7 @@ button {
   object-fit: cover;
   width: 12vw;
   height: 25vh;
-  border-radius: 15.9629px;
+  border-radius: 29.6624px;
 }
 
 
@@ -918,6 +923,7 @@ table {
 .grid3ColumnflowImage{
   width: 29.5vw;
   height: 400px;
+  border-radius: 29.6624px;
 }
 
 .container{
@@ -1067,7 +1073,7 @@ table {
   }
   .swiperImage{
     width: 100%;
-    border-radius: 20px;
+    border-radius: 29.6624px;
   }
 
   .about{
@@ -1101,6 +1107,7 @@ table {
     width: 30vw;
     object-fit: cover;
     height: 180px;
+
   }
   .grid2ColumnText{
     margin-top: 0.5rem ;
@@ -1123,7 +1130,7 @@ table {
     object-fit: cover;
     width: 20vw;
     height: 18vh;
-    border-radius: 15.9629px;
+    border-radius: 29.6624px;
   }
 }
 
@@ -1163,7 +1170,7 @@ table {
   object-fit: cover;
   width: 18vw;
   height: 18vh;
-  border-radius: 15.9629px;
+  border-radius: 29.6624px;
 }
 
 .insightContent{
@@ -1189,6 +1196,7 @@ table {
   width: 30vw;
   object-fit: cover;
   height: 120px;
+  border-radius: 29.6624px;
 }
 
 .gridColumnText h4 {
@@ -1234,7 +1242,7 @@ table {
     object-fit: cover;
     width: 30vw;
     height: 18vh;
-    border-radius: 15.9629px;
+    border-radius: 29.6624px;
   }
 
   .grid2ColumnflowImage{
@@ -1298,6 +1306,7 @@ table {
   .asideImage{
     width: 30vw;
     height: 18vh;
+    border-radius: 20px;
     
 }
 
@@ -1314,6 +1323,7 @@ table {
   .sliderContainer {
     width: 87vw;
     padding:  0 1.5rem;
+    border-radius: 20px;
   }
 
   .shareText{
@@ -1338,6 +1348,7 @@ table {
   }
   .grid2ColumnflowImage{
     width: 80vw;
+    border-radius: 20px;
   }
 
   .asideText h4{
@@ -1351,6 +1362,7 @@ table {
 }
 .box{
   width: 70vw;
+  border-radius: 20px;
 }
 .swiperFlex {
   display: grid;
@@ -1386,6 +1398,8 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 29.6624px;
+  object-fit: contain;
 }
 
 .grid3ColumnButton{
@@ -1432,7 +1446,7 @@ table {
   object-fit: cover;
   width: 35vw;
   height: 15vh;
-  border-radius: 20px;
+  border-radius: 29.6624px;
 }
 .content1Body{
   margin: 0;
@@ -1468,7 +1482,7 @@ table {
     object-fit: cover;
     width: 30vw;
     height: 18vh;
-    border-radius: 15.9629px;
+    border-radius: 29.6624px;
   }
 
   .swiperText button{
