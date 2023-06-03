@@ -4,7 +4,6 @@ import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { convertDate } from '../../utils/convertDate'
 import * as insightPageStyles from '../../styling/style.module.css'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -35,7 +34,7 @@ const EduInsightSharePage = (props) => {
               <h4>{props.data.contentfulEduInsight.title}</h4>
             </div>
             <div className={insightPageStyles.shareAuthor}>
-              <p>By {props.data.contentfulEduInsight.author}, {convertDate(props.data.contentfulEduInsight.createdAt)}</p>
+              <p>By {props.data.contentfulEduInsight.author}, {props.data.contentfulEduInsight.date}</p>
             </div>
             <div className={insightPageStyles.shareImage}>
               <GatsbyImage
@@ -63,7 +62,7 @@ const EduInsightSharePage = (props) => {
                 <div>
                   <h3>{ node?.title }</h3>
                   <p>By { node?.author }</p>
-                  <p>{ convertDate( node?.createdAt ) }</p>
+                  <p>{ node?.date }</p>
                   <button><Link to={`/insights/${node.id}`}>Read More</Link></button>
                 </div>
               </div>
@@ -82,6 +81,7 @@ query($id: String) {
       createdAt
       title
       author
+      date
       coverImage {
         url
         gatsbyImageData(formats: WEBP)
@@ -106,6 +106,7 @@ query($id: String) {
         coverImage {
           gatsbyImageData(formats: WEBP)
         }
+        date
       }
     }
   }  

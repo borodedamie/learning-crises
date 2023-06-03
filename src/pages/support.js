@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Layout from "../components/layout/layout"
 import { Link, graphql } from "gatsby";
 import * as supportStyles from '../styling/style.module.css'
-import { convertDate } from "../utils/convertDate"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -44,7 +43,7 @@ const [ category, setCategory ] = useState('')
                                 <div className= {supportStyles.gridColumnText}>
                                     <h4>{ node?.title }</h4>
                                     <h6>Category: { node?.category ? node?.category[0].name : null } </h6>
-                                    <p>Posted { convertDate(node?.createdAt) }</p>
+                                    <p>Posted { node?.date }</p>
                                 </div>
                                 <div className= {supportStyles.gridColumnButton}>
                                 <Link to={`/supports/${node.id}`}> <button>View</button></Link>
@@ -74,6 +73,7 @@ query EduSupport {
         url
         gatsbyImageData(formats: WEBP)
       }
+      date
     }
   }
   allContentfulCategory(limit: 10) {

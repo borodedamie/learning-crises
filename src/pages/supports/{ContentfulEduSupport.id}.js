@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link, graphql, navigate } from 'gatsby'
 import Layout from '../../components/layout/layout'
-import { convertDate } from "../../utils/convertDate"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import * as supportPageStyles from '../../styling/style.module.css'
@@ -36,7 +35,7 @@ const EduSupportPostPage = (props) => {
           </div>
           <div className={supportPageStyles.viewText}>
             <h4>{props.data.contentfulEduSupport.title}</h4>
-            <h6>Posted {convertDate(props.data.contentfulEduSupport.createdAt)}</h6>
+            <h6>Posted {props.data.contentfulEduSupport.date}</h6>
             <p>{renderRichText(props.data.contentfulEduSupport.post, options)}</p>
           </div>
         </div>
@@ -57,7 +56,7 @@ const EduSupportPostPage = (props) => {
                 <div>
                   <h3>{ node?.title }</h3>
                   <p>By { node?.author }</p>
-                  <p>{ convertDate(node?.createdAt) }</p>
+                  <p>{ node?.date }</p>
                   <button><Link to={`/supports/${node.id}`}>Read More</Link></button>
                 </div>
               </div>
@@ -81,12 +80,14 @@ query($id: String) {
         raw
       }
       createdAt
+      date
     }
     allContentfulEduSupport(filter: {createdAt: {lt: "TODAY"}}, limit: 3) {
       nodes {
         id
         createdAt
         title
+        date
         image {
           gatsbyImageData(formats: WEBP)
         }

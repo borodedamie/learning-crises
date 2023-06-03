@@ -2,7 +2,6 @@ import { Link, graphql, navigate } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
-import { convertDate } from '../../utils/convertDate'
 import * as dataPageStyles from '../../styling/style.module.css'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -16,7 +15,7 @@ const EduDataPage = (props) => {
           <h4>{props.data.contentfulEduData.title}</h4>
         </div>
         <div className={dataPageStyles.shareAuthor}>
-          <p>Posted on {convertDate(props.data.contentfulEduData.createdAt)}</p>
+          <p>Posted on {props.data.contentfulEduData.date}</p>
         </div>
         <div className={dataPageStyles.shareImage}>
           <GatsbyImage
@@ -42,7 +41,7 @@ const EduDataPage = (props) => {
                 </div>
                 <div>
                   <h3>{ node?.title }</h3>
-                  <p>Posted on { convertDate(node?.createdAt) }</p>
+                  <p>Posted on { node?.date }</p>
                   <button><Link to={`/datas/${node.id}`}>View</Link></button>
                 </div>
               </div>
@@ -64,6 +63,7 @@ query($id: String) {
         gatsbyImageData(formats: WEBP)
       }
       title
+      date
     }
     allContentfulEduData(filter: {createdAt: {lt: "TODAY"}}, limit: 3) {
       nodes {
@@ -73,6 +73,7 @@ query($id: String) {
         infographics {
           gatsbyImageData(formats: WEBP)
         }
+        date
       }
     }
   }

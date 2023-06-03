@@ -8,14 +8,14 @@
   /* top: 0 !important; */
   top: 80% !important;
   z-index: 100;
-  /* left: 50% !important; */
+  left: 10% !important;
 }
 #box-swiper .swiper-button-next {
   background-image: url(../images/Vectorr.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
-  right:70% !important;
+  right: 78% !important;
   z-index: 100;
   top: 80% !important;
 }
