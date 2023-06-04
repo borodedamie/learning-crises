@@ -19,7 +19,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const IndexPage = ({ data }) => {
   const swiper = useSwiper();
-  
+
   return (
     <Layout>
       <section className={indexStyles.container}>
@@ -111,7 +111,7 @@ const IndexPage = ({ data }) => {
         <div className={indexStyles.aboutCon}>
           <div className={indexStyles.aboutCon1}>
             <h3>BRIEF</h3>
-            <p>{ data?.contentfulBrief.writeUp.writeUp }</p>
+            <p>{data?.contentfulBrief.writeUp.writeUp}</p>
           </div>
           <div className={indexStyles.aboutCon2}>
             <h3>APPROACH</h3>

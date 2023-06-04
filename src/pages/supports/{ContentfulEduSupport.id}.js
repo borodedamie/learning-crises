@@ -31,7 +31,7 @@ const EduSupportPostPage = (props) => {
       <section>
         <div className={supportPageStyles.view}>
           <div className={supportPageStyles.viewImg}>
-            <GatsbyImage image={ getImage(props.data.contentfulEduSupport.image) } alt="support-post" className={supportPageStyles.viewImage} />
+            <GatsbyImage image={getImage(props.data.contentfulEduSupport.image)} alt="support-post" className={supportPageStyles.viewImage} />
           </div>
           <div className={supportPageStyles.viewText}>
             <h4>{props.data.contentfulEduSupport.title}</h4>
@@ -49,14 +49,14 @@ const EduSupportPostPage = (props) => {
           <h1>You may also be interested in more content on EduSupport</h1>
           <div className={supportPageStyles.moreSectionGrids}>
             {props?.data.allContentfulEduSupport.nodes.map((node, i) => (
-              <div className={supportPageStyles.moreSectionGrid} key={ node?.id }>
+              <div className={supportPageStyles.moreSectionGrid} key={node?.id}>
                 <div className={supportPageStyles.moreSectionGridImage}>
-                  <GatsbyImage alt='moreImage' image={ getImage(node?.image) } className={supportPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt='moreImage' image={getImage(node?.image)} className={supportPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
-                  <h3>{ node?.title }</h3>
-                  <p>By { node?.author }</p>
-                  <p>{ node?.date }</p>
+                  <h3>{node?.title}</h3>
+                  <p>By {node?.author}</p>
+                  <p>{node?.date}</p>
                   <button><Link to={`/supports/${node.id}`}>Read More</Link></button>
                 </div>
               </div>

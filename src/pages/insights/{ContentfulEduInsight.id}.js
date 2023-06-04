@@ -30,43 +30,43 @@ const EduInsightSharePage = (props) => {
     <Layout>
       <section className={insightPageStyles.container1}>
         <div className={insightPageStyles.insightContent}>
-            <div className={insightPageStyles.shareHeader} >
-              <h4>{props.data.contentfulEduInsight.title}</h4>
-            </div>
-            <div className={insightPageStyles.shareAuthor}>
-              <p>By {props.data.contentfulEduInsight.author}, {props.data.contentfulEduInsight.date}</p>
-            </div>
-            <div className={insightPageStyles.shareImage}>
-              <GatsbyImage
-                alt='cover'
-                image={ getImage(props.data.contentfulEduInsight.coverImage) }
-                className={insightPageStyles.viewImage}
-              />
-            </div>
-            <div className={insightPageStyles.shareText}>{renderRichText(props.data.contentfulEduInsight.article, options)}</div>
-            <div className={insightPageStyles.goButtonCon}>
-              <button
-                onClick={() => navigate(-1)}
-                className={insightPageStyles.goButton}
-              >Go Back</button>
-            </div>
+          <div className={insightPageStyles.shareHeader} >
+            <h4>{props.data.contentfulEduInsight.title}</h4>
+          </div>
+          <div className={insightPageStyles.shareAuthor}>
+            <p>By {props.data.contentfulEduInsight.author}, {props.data.contentfulEduInsight.date}</p>
+          </div>
+          <div className={insightPageStyles.shareImage}>
+            <GatsbyImage
+              alt='cover'
+              image={getImage(props.data.contentfulEduInsight.coverImage)}
+              className={insightPageStyles.viewImage}
+            />
+          </div>
+          <div className={insightPageStyles.shareText}>{renderRichText(props.data.contentfulEduInsight.article, options)}</div>
+          <div className={insightPageStyles.goButtonCon}>
+            <button
+              onClick={() => navigate(-1)}
+              className={insightPageStyles.goButton}
+            >Go Back</button>
+          </div>
         </div>
         <div className={insightPageStyles.moreSection}>
           <h1>You may also be interested in more content on EduInsight</h1>
           <div className={insightPageStyles.moreSectionGrids}>
-            { props?.data.allContentfulEduInsight.nodes.map((node, i) => (
-              <div className={insightPageStyles.moreSectionGrid} key={ node?.id }>
+            {props?.data.allContentfulEduInsight.nodes.map((node, i) => (
+              <div className={insightPageStyles.moreSectionGrid} key={node?.id}>
                 <div className={insightPageStyles.moreSectionGridImage}>
-                  <GatsbyImage alt='moreImage' image={ getImage(node?.coverImage) } className={insightPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt='moreImage' image={getImage(node?.coverImage)} className={insightPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
-                  <h3>{ node?.title }</h3>
-                  <p>By { node?.author }</p>
-                  <p>{ node?.date }</p>
+                  <h3>{node?.title}</h3>
+                  <p>By {node?.author}</p>
+                  <p>{node?.date}</p>
                   <button><Link to={`/insights/${node.id}`}>Read More</Link></button>
                 </div>
               </div>
-            )) }
+            ))}
           </div>
         </div>
       </section>

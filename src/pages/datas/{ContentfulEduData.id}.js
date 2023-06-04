@@ -34,18 +34,18 @@ const EduDataPage = (props) => {
         <div className={dataPageStyles.moreSection}>
           <h1>You may also be interested in more content on EduData</h1>
           <div className={dataPageStyles.moreSectionGrids}>
-            { props?.data.allContentfulEduData.nodes.map((node, i) => (
-              <div className={dataPageStyles.moreSectionGrid} key={ node?.id }>
+            {props?.data.allContentfulEduData.nodes.map((node, i) => (
+              <div className={dataPageStyles.moreSectionGrid} key={node?.id}>
                 <div className={dataPageStyles.moreSectionGridImage}>
-                  <GatsbyImage alt={ getImage(node?.infographics_alt) } image={ getImage(node?.infographics) } className={dataPageStyles.moreSectionGridImg} />
+                  <GatsbyImage alt={getImage(node?.infographics_alt)} image={getImage(node?.infographics)} className={dataPageStyles.moreSectionGridImg} />
                 </div>
                 <div>
-                  <h3>{ node?.title }</h3>
-                  <p>Posted on { node?.date }</p>
+                  <h3>{node?.title}</h3>
+                  <p>Posted on {node?.date}</p>
                   <button><Link to={`/datas/${node.id}`}>View</Link></button>
                 </div>
               </div>
-            )) }
+            ))}
           </div>
         </div>
       </section>

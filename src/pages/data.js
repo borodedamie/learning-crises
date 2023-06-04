@@ -86,7 +86,7 @@ const DataPage = ({ data }) => {
 
                                 <div className={dataStyles.gridColumnText}>
                                     <h4>{node?.title}</h4>
-                                    <p>Posted { node?.date }</p>
+                                    <p>Posted {node?.date}</p>
                                 </div>
                                 <div className={dataStyles.grid3ColumnButton}>
                                     <button onClick={() => {
