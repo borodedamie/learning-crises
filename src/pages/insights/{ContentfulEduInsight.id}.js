@@ -88,13 +88,6 @@ query($id: String) {
       }
       article {
           raw
-          references {
-            ... on ContentfulAsset {
-              contentful_id
-              __typename
-              gatsbyImageData(formats: WEBP)
-          }
-        }
       }
     }
     allContentfulEduInsight(filter: {createdAt: {lt: "TODAY"}}, limit: 3) {

@@ -164,13 +164,6 @@ query EduInsights {
       }
       article {
         raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            __typename
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
       }
       date
     }
